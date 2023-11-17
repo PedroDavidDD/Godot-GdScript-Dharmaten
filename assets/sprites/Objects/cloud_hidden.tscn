@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://x2oowp3ldqvs"]
+
+[ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/Cloud_hidden.gd" id="1_hgqnf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r4e10"]
+load_path = "res://.godot/imported/small_cloud_3.png-2824e524f4818e08cf60700642ab74ab.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c7an"]
+size = Vector2(45.4808, 36.1209)
+
+[node name="Cloud_hidden" type="Sprite2D"]
+modulate = Color(0.854902, 0.854902, 0.854902, 1)
+position = Vector2(49, -5.00001)
+scale = Vector2(1.80296, 1.96562)
+texture = SubResource("CompressedTexture2D_r4e10")
+script = ExtResource("1_hgqnf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-25.5136, 1.27187)
+shape = SubResource("RectangleShape2D_3c7an")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

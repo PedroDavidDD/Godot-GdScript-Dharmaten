@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxwt30fqytsrw"
+path="res://.godot/imported/Fall Out Boy - Centuries Official Instrumental.mp3-890010c1066e2b1299d484fdf158cee4.mp3str"
+
+[deps]
+
+source_file="res://scenes/Fall Out Boy - Centuries Official Instrumental.mp3"
+dest_files=["res://.godot/imported/Fall Out Boy - Centuries Official Instrumental.mp3-890010c1066e2b1299d484fdf158cee4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,14 @@
+~ dialogue_1
+
+Selena la Ballena: ¡Hola aventurero! ¿qué te trae por estos rumbos?
+Pirata Malaplata: Necesito recuperar mi riqueza. ¿Puedes ayudarme?
+Selena la Ballena: Sí, claro. Sólo tienes que encontrar el tesoro que se encuentra oculta en la isla, pero ten cuidado ya que mencionan que un mounstro lo protege...
+Selena la Ballena: Te deje una posion mas adelante que te ayudara en tu aventura, recuerda presionar boton del medio del ratón y el inventario se abrira
+
+- Gracias, ¡lo intentaré!
+  => dialogue_2
+
+
+~ dialogue_2
+Selena la Ballena: ¡Ten cuidado en tu viaje!
+=> END

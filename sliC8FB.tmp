@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cakk10ffh2nby"]
+
+[ext_resource type="Texture2D" uid="uid://bl5qj3xk6884" path="res://SlimeBasic_00006.png" id="1_y8o7s"]
+[ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_1/SlimeGreen.gd" id="2_xtw7r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_726pj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y8o7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_y8o7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_y8o7s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qsv5"]
+radius = 7.0
+
+[node name="SlimeGreen" type="Node2D" groups=["slimeJump"]]
+position = Vector2(236, 537)
+script = ExtResource("2_xtw7r")
+
+[node name="SlimeBasic" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.384314, 0.580392, 0.196078, 1)
+position = Vector2(0, -0.750019)
+scale = Vector2(0.0585107, 0.0722656)
+sprite_frames = SubResource("SpriteFrames_726pj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1qsv5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

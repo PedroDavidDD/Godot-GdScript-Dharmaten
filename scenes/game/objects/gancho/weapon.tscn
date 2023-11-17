@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bom5hbofv42n0"]
+
+[ext_resource type="Script" path="res://scenes/game/objects/gancho/weapon.gd" id="1_kmyh0"]
+[ext_resource type="Texture2D" uid="uid://co588mabao55m" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/gancho/weapon_gancho.png" id="2_t7xm6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvv2q"]
+atlas = ExtResource("2_t7xm6")
+region = Rect2(0, 42, 32, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8fjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvv2q")
+}],
+"loop": true,
+"name": &"pistola",
+"speed": 5.0
+}]
+
+[node name="Weapon" type="Node2D"]
+z_index = 9
+script = ExtResource("1_kmyh0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m8fjs")
+
+[node name="Direction" type="Node2D" parent="."]
+position = Vector2(22, -4)

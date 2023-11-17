@@ -1,0 +1,162 @@
+[gd_scene load_steps=15 format=3 uid="uid://b5qjvfbte4svk"]
+
+[ext_resource type="Texture2D" uid="uid://bmn2hx61jlm7n" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/gold_coin/01.png" id="2_edow6"]
+[ext_resource type="Texture2D" uid="uid://bosp5l4cys2vv" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/gold_coin/02.png" id="3_o1sj4"]
+[ext_resource type="Texture2D" uid="uid://l026ummyfo1j" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/gold_coin/03.png" id="4_kva8p"]
+[ext_resource type="Texture2D" uid="uid://bf07pseiwwxp6" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/diamond_effect/01.png" id="4_pca1h"]
+[ext_resource type="Texture2D" uid="uid://dhjgv3bpubs32" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/gold_coin/04.png" id="5_3cgyq"]
+[ext_resource type="Texture2D" uid="uid://byqyu752jfnr1" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/diamond_effect/02.png" id="5_wps02"]
+[ext_resource type="Texture2D" uid="uid://bmgyta8ufw14h" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/diamond_effect/03.png" id="6_0xa2y"]
+[ext_resource type="Texture2D" uid="uid://n47d46qjjtlm" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/01.png" id="6_xv0o1"]
+[ext_resource type="Texture2D" uid="uid://bkqcurpg6xq3v" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/02.png" id="7_ewl5e"]
+[ext_resource type="Texture2D" uid="uid://b4s6057mbcjcg" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/diamond_effect/04.png" id="7_qmpyn"]
+[ext_resource type="Texture2D" uid="uid://bqtelhgdi3cfn" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/03.png" id="8_udmu3"]
+
+[sub_resource type="GDScript" id="GDScript_5io65"]
+resource_local_to_scene = true
+script/source = "extends Area2D
+## Clase que controla animación y configuración de los objetos recolectables
+##
+## Setea la animación del objeto segun el nombre configurado
+## Cambia animación de idle a recolectado, elimina objeto recolectado de la escena
+
+
+# Nombre del personaje principal
+@export_enum(
+	\"blue_diamond\",
+	\"green_diamond\", 
+	\"red_diamond\",
+	\"gold_coin\",
+	\"silver_coin\",
+) var animation: String
+
+# Definimos el sprite animado de la moneda
+@onready var _animated_sprite = $AnimatedSprite2D
+@onready var _audio_player= $AudioStreamPlayer2D # Reproductor de audios
+
+var _pickup_sound = preload(\"res://assets/sounds/pickup.mp3\")
+
+
+# Función de carga del nodo
+func _ready():
+	if not animation:
+		return
+	
+	# Cargamos las texturas de animación según el nombre configurado
+	var _animation1 = \"res://assets/sprites/treasure_hunters/pirate_treasure/sprites/\" + animation + \"/01.png\"
+	var _animation2 = \"res://assets/sprites/treasure_hunters/pirate_treasure/sprites/\" + animation + \"/02.png\"
+	var _animation3 = \"res://assets/sprites/treasure_hunters/pirate_treasure/sprites/\" + animation + \"/03.png\"
+	var _animation4 = \"res://assets/sprites/treasure_hunters/pirate_treasure/sprites/\" + animation + \"/04.png\"
+
+	# Aplicamos la textura cargada a la animación
+	_animated_sprite.sprite_frames.set_frame(\"idle\", 0, load(_animation1))
+	_animated_sprite.sprite_frames.set_frame(\"idle\", 1, load(_animation2))
+	_animated_sprite.sprite_frames.set_frame(\"idle\", 2, load(_animation3))
+	_animated_sprite.sprite_frames.set_frame(\"idle\", 3, load(_animation4))
+	
+	# Reproducimos la animación idle
+	_animated_sprite.play(\"idle\")
+	
+
+func _on_animated_sprite_2d_animation_finished():
+	# Eliminamos el objeto recogido de la escena
+	queue_free()
+	
+	
+func do_animation():
+	# Validamos si la animación es de moneda
+	audio_player.stream = _pickup_sound
+	audio_player.play()
+	if animation == \"gold_coin\" or animation == \"silver_coin\":
+		# Reproducimos la animación de la moneda
+		_animated_sprite.play(\"coin_taken\")
+	else:
+		# Reproducimos la animación del diamante
+		_animated_sprite.play(\"diamond_taken\")
+
+
+func _on_area_entered(area):
+	# Validamos que la colisión es con el personaje principal 
+	if area.is_in_group(\"player\"):
+		# Reproducimos la animación de la moneda recogida
+		do_animation()
+
+
+func _on_body_entered(body):
+	# Validamos que la colisión es con el personaje principal 
+	if body.is_in_group(\"player\"):
+		# Reproducimos la animación de la moneda recogida
+		do_animation()
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ebd0"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xv0o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ewl5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_udmu3")
+}],
+"loop": false,
+"name": &"coin_taken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pca1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wps02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0xa2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qmpyn")
+}],
+"loop": false,
+"name": &"diamond_taken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_edow6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o1sj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kva8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3cgyq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0cjw"]
+radius = 7.0
+
+[node name="PickableObject" type="Area2D"]
+script = SubResource("GDScript_5io65")
+animation = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ebd0")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p0cjw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

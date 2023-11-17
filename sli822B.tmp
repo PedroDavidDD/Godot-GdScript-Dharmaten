@@ -1,0 +1,184 @@
+[gd_scene load_steps=37 format=3 uid="uid://cakk10ffh2nby"]
+
+[ext_resource type="Script" path="res://scenes/game/enemy/Slime/SlimeGreen.gd" id="1_3din6"]
+[ext_resource type="Texture2D" uid="uid://d3edmkektkmdl" path="res://assets/sprites/pirate_bomb/9_enemy_slime/2_fall/slime_fall.png" id="2_0sa3h"]
+[ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="2_e4mcm"]
+[ext_resource type="Texture2D" uid="uid://cmg8m1trnokq2" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00001.png" id="3_ll2nm"]
+[ext_resource type="Texture2D" uid="uid://dgaw6i1qayvus" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00002.png" id="4_xkjqq"]
+[ext_resource type="Texture2D" uid="uid://dns87ex1omrim" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00003.png" id="5_amrsb"]
+[ext_resource type="Texture2D" uid="uid://bp3kxont7ba6d" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00004.png" id="6_xrq3o"]
+[ext_resource type="Texture2D" uid="uid://bcbmtsycsv20w" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00005.png" id="7_5ql6n"]
+[ext_resource type="Texture2D" uid="uid://cw0gp18j587pm" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00006.png" id="8_fw21g"]
+[ext_resource type="Texture2D" uid="uid://dnma57eejmr84" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00007.png" id="9_5ds58"]
+[ext_resource type="Texture2D" uid="uid://bgsyx25kbuxtw" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00008.png" id="10_hntce"]
+[ext_resource type="Texture2D" uid="uid://dw5x4k7a7f7sp" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00009.png" id="11_3isu1"]
+[ext_resource type="Texture2D" uid="uid://dx0i4caq5b85w" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00010.png" id="12_nc4we"]
+[ext_resource type="Texture2D" uid="uid://bvyo56ttodpvy" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00011.png" id="13_alchv"]
+[ext_resource type="Texture2D" uid="uid://bpowdeo34t1xi" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00012.png" id="14_82yy7"]
+[ext_resource type="Texture2D" uid="uid://be5f1452mamug" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00013.png" id="15_hucq8"]
+[ext_resource type="Texture2D" uid="uid://hbxs6lxoxpop" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00014.png" id="16_5f8tu"]
+[ext_resource type="Texture2D" uid="uid://clegat7tr55yk" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00015.png" id="17_xcept"]
+[ext_resource type="Texture2D" uid="uid://suhe5ss5igbm" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00016.png" id="18_ycedk"]
+[ext_resource type="Texture2D" uid="uid://dqofvi0710ykp" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00017.png" id="19_0lns2"]
+[ext_resource type="Texture2D" uid="uid://c16xwkvi1py6r" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00018.png" id="20_sv6if"]
+[ext_resource type="Texture2D" uid="uid://dauoqbq8l1383" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00019.png" id="21_u8cm1"]
+[ext_resource type="Texture2D" uid="uid://bjh03ljbasmi3" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00020.png" id="22_dnkrv"]
+[ext_resource type="Texture2D" uid="uid://bnxot1blekpdg" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00021.png" id="23_muwdf"]
+[ext_resource type="Texture2D" uid="uid://drfvgtvqss0u1" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00022.png" id="24_jdhk8"]
+[ext_resource type="Texture2D" uid="uid://di1etde6wn5yy" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00023.png" id="25_h6u6k"]
+[ext_resource type="Texture2D" uid="uid://di8eh3emk7o20" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00024.png" id="26_nxrjy"]
+[ext_resource type="Texture2D" uid="uid://b8pk2gc4uouyg" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00025.png" id="27_w6u4w"]
+[ext_resource type="Texture2D" uid="uid://ccsw4c2bjkxk1" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00026.png" id="28_cjagp"]
+[ext_resource type="Texture2D" uid="uid://dn54r572md6d7" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00027.png" id="29_40jel"]
+[ext_resource type="Texture2D" uid="uid://cdcsrs87ci4x4" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00028.png" id="30_mpkfy"]
+[ext_resource type="Texture2D" uid="uid://yudb2pdocyn2" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00029.png" id="31_tjxod"]
+[ext_resource type="Texture2D" uid="uid://bay1ar3ukjx7f" path="res://assets/sprites/pirate_bomb/9_enemy_slime/3_jump/slime_jump.png" id="33_5an8e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_726pj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0sa3h")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e4mcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ll2nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xkjqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_amrsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xrq3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5ql6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fw21g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5ds58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hntce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3isu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nc4we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_alchv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_82yy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hucq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5f8tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xcept")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ycedk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0lns2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_sv6if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_u8cm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dnkrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_muwdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jdhk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h6u6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_nxrjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_w6u4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_cjagp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_40jel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mpkfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_tjxod")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_5an8e")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjko8"]
+size = Vector2(12, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pox4m"]
+size = Vector2(11.5, 12.5)
+
+[node name="SlimeGreen" type="CharacterBody2D"]
+position = Vector2(236, 537)
+script = ExtResource("1_3din6")
+
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4.17233e-06, -0.750021)
+scale = Vector2(0.0531915, 0.0722656)
+sprite_frames = SubResource("SpriteFrames_726pj")
+animation = &"fall"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_bjko8")
+
+[node name="RayCastTerrain" type="RayCast2D" parent="Area2D"]
+target_position = Vector2(0, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_pox4m")
+debug_color = Color(0.921569, 0.188235, 0.517647, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
