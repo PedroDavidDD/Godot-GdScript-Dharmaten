@@ -15,13 +15,19 @@ func _ready():
 	_move_script = get_parent().get_node("MainCharacterMovement")
 
 # Called when the node enters the scene tree for the first time.
-func _getBomb(bomb_scene, _character_position):
+func _getBomb():
 	# Validamos cuantas bombas tenemos
 	var _count_bomb = HealthDashboard.points["Bomb"]
 	# Cuando se presiona la tecla (B - bomb) y no tiramos la bomba antes
 	if not _move_script.bombing and _count_bomb > 0:
 		# Quitamos la bomba del invetario
 		HealthDashboard.add_bomb(-1)
+		
+		var bomb_scene = _bomb.instantiate()
+		# Seteamos la posisión a la par del personaje principal
+		var _character_position = get_parent().position
+		bomb_scene.position = _character_position
+	
 		# Seteamos la dirección de la fuerza y offset
 		if _move_script.turn_side == "right":
 			bomb_scene.linear_velocity.x = abs(bomb_scene.linear_velocity.x)
@@ -31,3 +37,5 @@ func _getBomb(bomb_scene, _character_position):
 			bomb_scene.linear_velocity.x = - abs(bomb_scene.linear_velocity.x)
 			bomb_scene.linear_velocity.y = abs(bomb_scene.linear_velocity.y) - 5
 			bomb_scene.position.x = _character_position.x - 25
+	# Agregamos la bomba a la escena
+		get_parent().get_parent().add_child(bomb_scene)

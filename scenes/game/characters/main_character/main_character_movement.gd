@@ -77,7 +77,8 @@ var btnRight = Input.is_action_pressed("derecha")
 func _process(_delta):
 	_move(_delta)
 
-func _move(delta):
+func _move(delta):	
+	direction = Vector2()
 	
 	# Keys
 	btnUp = Input.is_action_pressed("arriba")
@@ -96,8 +97,10 @@ func _move(delta):
 		
 		if btnLeft:
 			direction.x -= 1
+			turn_side = "left"
 		elif btnRight:
 			direction.x += 1
+			turn_side = "right"
 		_current_movement = _movements.RUN_WITH_SWORD
 	else:
 		_current_movement = _movements.IDLE
@@ -118,8 +121,8 @@ func _move(delta):
 	
 	# Cuando se presiona la tecla b, lanzamos bomba
 	if Input.is_action_just_pressed("bomb"):
-		_current_movement = _movements.BOMB
 		throw_bomb()
+		# _current_movement = _movements.BOMB
 	
 	_set_animation()
 
@@ -196,10 +199,4 @@ func shoot_weapon():
 
 	# Tirar bombas
 func throw_bomb():
-	var new_bomb = bomb.instantiate()
-	# Seteamos la posisión a la par del personaje principal
-	var _character_position = player.position
-	new_bomb.position = _character_position
-	MainCharacterBomb._getBomb(new_bomb, _character_position)	
-	# Agregamos la bomba a la escena
-	get_tree().call_group("scene_0", "add_child", new_bomb)
+	MainCharacterBomb._getBomb()
