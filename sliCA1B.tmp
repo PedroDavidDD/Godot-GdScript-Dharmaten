@@ -167,7 +167,7 @@ position = Vector2(4.17233e-06, -0.750021)
 scale = Vector2(0.0531915, 0.0722656)
 sprite_frames = SubResource("SpriteFrames_726pj")
 animation = &"fall"
-frame_progress = 0.0648143
+frame_progress = 0.446633
 
 [node name="Area2D" type="Area2D" parent="."]
 

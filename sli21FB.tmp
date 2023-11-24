@@ -151,11 +151,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5axda"]
-radius = 38.0526
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxue6"]
+radius = 23.0868
 
 [node name="SlimeGreen" type="CharacterBody2D"]
 script = ExtResource("1_3din6")
+_current_movement = null
+moving_direction = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_utts5")
@@ -167,12 +169,11 @@ position = Vector2(4.17233e-06, -0.750021)
 scale = Vector2(0.0531915, 0.0722656)
 sprite_frames = SubResource("SpriteFrames_726pj")
 animation = &"fall"
-frame_progress = 0.0648143
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_5axda")
+shape = SubResource("CircleShape2D_jxue6")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

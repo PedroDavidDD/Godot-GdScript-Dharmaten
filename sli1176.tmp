@@ -156,6 +156,8 @@ radius = 38.0526
 
 [node name="SlimeGreen" type="CharacterBody2D"]
 script = ExtResource("1_3din6")
+_current_movement = null
+moving_direction = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_utts5")
@@ -167,7 +169,7 @@ position = Vector2(4.17233e-06, -0.750021)
 scale = Vector2(0.0531915, 0.0722656)
 sprite_frames = SubResource("SpriteFrames_726pj")
 animation = &"fall"
-frame_progress = 0.0648143
+frame_progress = 0.817207
 
 [node name="Area2D" type="Area2D" parent="."]
 

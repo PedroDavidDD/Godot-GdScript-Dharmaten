@@ -200,3 +200,22 @@ func shoot_weapon():
 	# Tirar bombas
 func throw_bomb():
 	MainCharacterBomb._getBomb()
+
+# Recibir daño
+func hit(value: int):
+	if _died:
+		return
+	attacking = false
+	HealthDashboard.remove_life(value)
+	_play_sound(_male_hurt_sound)
+	main_animation.play("hit_with_sword")
+	
+	# Bajamos vida y validamos si el personaje ha perdido
+	if HealthDashboard.life == 0:
+		die()
+	else:
+		pass
+
+func die():
+	# Seteamos la variable de morir averdadero
+	_died = true
