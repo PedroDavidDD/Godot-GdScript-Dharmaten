@@ -10,6 +10,8 @@ extends Area2D
 
 var _trampolin_sound = preload("res://assets/sounds/Trampolim.wav")
 
+@export_range(1, 10) var point_orbe = 2
+
 # Función de carga del nodo
 func _ready():
 	if not animation:
@@ -47,7 +49,7 @@ func do_animation():
 		# Reproducimos la animación de la moneda
 		_animated_sprite.play("blood_orbe_effect")
 	# Aumenta la barra
-	HealthDashboard.add_exp(1) 
+	HealthDashboard.add_exp(point_orbe) 
 
 func _on_animated_sprite_2d_animation_finished():
 	# Esperamos 2 segundos 

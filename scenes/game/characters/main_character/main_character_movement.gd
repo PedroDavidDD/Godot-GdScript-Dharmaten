@@ -10,29 +10,19 @@ extends Node2D
 
 @onready var MainCharacterBomb := $"../MainCharacterBomb"
 
-var gravity = 650 # Gravedad para el personaje
 var velocity = 100 # Velocidad de movimiento en horizontal
-var fast_velocity = 300
-var jump = 220 # Capacidad de salto, entre mayor el número más se puede saltar
+var fast_velocity = 150
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
 	IDLE_WITH_SWORD = "idle_with_sword",
 	RUN_WITH_SWORD = "run_with_sword",
-	JUMP_WITH_SWORD = "jump_with_sword",
-	FALL_WITH_SWORD = "fall_with_sword",
 	HIT_WITH_SWORD = "hit_with_sword",
 	DEAD_HIT = "dead_hit",
 	ATTACK = "attack_2",
 	BOMB = "attack_3",
-	TELEPORT = "teleport",
-	TELEPORT_EFFECT = "teleport_effect",
-	FLY = "fly",
 }
 var _current_movement = _movements.IDLE # Variable de movimiento
-var _is_jumping = false # Indicamos que el personaje está saltando
-var _max_jumps = 2 # Máximo número de saltos
-var _jump_count = 0 # Contador de saltos realizados
 var _died = false # Define si esta vovo o muerto
 var attacking = false # Define si esta atacando
 var bombing = false # Define si esta atacando
@@ -40,7 +30,6 @@ var _is_playing: String = "" # Define si se esta reproducionedo el sonido
 var turn_side: String = "right" # Define si se esta reproducionedo el sonido
 
 # Precargamos los sonidos de saltar
-var _jump_sound = preload("res://assets/sounds/jump.mp3")
 var _run_sound = preload("res://assets/sounds/running.mp3")
 var _dead_sound = preload("res://assets/sounds/dead.mp3")
 var _male_hurt_sound = preload("res://assets/sounds/male_hurt.mp3")
@@ -48,22 +37,6 @@ var _hit_sound = preload("res://assets/sounds/slash.mp3")
 
 #conseguir llaves del player
 var playerKeys = [] # C0, C20, ...
-
-# Teleport
-var canTeleport = true
-var _is_teleporting = false
-@export var teleportSpeed = 100
-var _teleport_sound = preload("res://assets/sounds/teleport.wav")
-
-# Disparar cada 1s
-var isShootBall: bool = false
-
-# Player mueve hacia el gancho
-var canPlayerMove: bool = false
-var player_movement_speed: int = 100.0 
-
-# Define una variable para controlar si la función player_to_ball está activa o no
-var isPlayerToBallActive = false
 
 var direction = Vector2()
 var bomb = preload("res://scenes/game/levels/objects/damage_object/bomb/bomb.tscn")  # Ruta al recurso de la bomba
@@ -113,7 +86,7 @@ func _move(delta):
 	
 	# Disparar un gancho
 	if Input.is_action_pressed("isGancho"):
-		shoot_weapon()
+		pass
 	
 	# Cuando se presiona la tecla x, atacamos	
 	if Input.is_action_just_pressed("hit"):
@@ -145,8 +118,6 @@ func _set_animation():
 		_play_sound(_hit_sound)
 		# Agregamos el effecto especial
 		_play_sword_effect()
-	elif _current_movement == _movements.TELEPORT:
-		main_animation.play(_movements.TELEPORT)
 	elif _current_movement == _movements.BOMB:
 		# Lanzamos bomba
 		bombing = true
@@ -192,12 +163,6 @@ func _play_sound(sound):
 # Función para mover al jugador
 func move_player(speed, delta):
 	player.position += direction * speed * delta
-
-# Función para disparar un gancho
-func shoot_weapon():
-	var new_weapon = weapon.ball.instantiate()
-	new_weapon.position = player.position
-	get_tree().call_group("scene_0", "add_child", new_weapon)
 
 	# Tirar bombas
 func throw_bomb():

@@ -48,6 +48,7 @@ var _index_number_0 = 17
 @onready var label_SkillGancho = $EnemyGroup/Panel/SkillGancho/LabelSkillGancho
 
 @onready var expBar = $ExpBar/Bar
+@onready var label_expBar = $ExpBar/LabelBar
 
 # Función de inicialización
 func _ready():
@@ -120,6 +121,7 @@ func _set_life_progress(value: int):
 # Actualiza la barra de progreso de la vida en el valor proporcionado
 func _set_exp_progress(value: int):
 	expBar.value = value
+	label_expBar.text = str(expBar.value) + " / " + str(expBar.max_value)
 
 
 # Actualiza el número de puntos obtenidos por el usuario (usando imágenes como números)

@@ -150,10 +150,6 @@ animation = "gold_coin"
 position = Vector2(302, 128)
 animation = "gold_coin"
 
-[node name="PickableObject4" parent="Collectibles" instance=ExtResource("7_x5wxv")]
-position = Vector2(118, 421)
-animation = "gold_coin"
-
 [node name="PickableObject13" parent="Collectibles" instance=ExtResource("7_x5wxv")]
 position = Vector2(116, 372)
 animation = "gold_coin"
@@ -197,7 +193,6 @@ texture = ExtResource("10_cyhjx")
 position = Vector2(329, 164)
 
 [node name="UI_comandos" type="Node2D" parent="."]
-visible = false
 position = Vector2(55.135, 230)
 scale = Vector2(0.54, 0.54)
 
@@ -218,7 +213,8 @@ position = Vector2(122, 468)
 texture = ExtResource("15_lsr4t")
 
 [node name="Keyboard203_space" type="Sprite2D" parent="UI_comandos"]
-position = Vector2(396.046, 435.185)
+visible = false
+position = Vector2(368.268, 448.148)
 scale = Vector2(1.225, 1.225)
 texture = ExtResource("16_pa832")
 
@@ -240,17 +236,18 @@ offset_bottom = -17.5414
 text = "[ SPACE ] X 2"
 
 [node name="Keyboard137_bomb" type="Sprite2D" parent="UI_comandos"]
-position = Vector2(1312.71, -90.7407)
+position = Vector2(188.639, 370.37)
 scale = Vector2(1.85185, 1.85185)
 texture = ExtResource("17_p1yip")
 
 [node name="Keyboard134_attack" type="Sprite2D" parent="UI_comandos"]
-position = Vector2(159.009, -125.926)
+position = Vector2(118.268, 366.667)
 scale = Vector2(1.85185, 1.85185)
 texture = ExtResource("18_yer3f")
 
 [node name="Keyboard127_teleport" type="Sprite2D" parent="UI_comandos"]
-position = Vector2(725.676, 81.4815)
+visible = false
+position = Vector2(318.269, 274.074)
 scale = Vector2(1.85185, 1.85185)
 texture = ExtResource("19_o8y28")
 
@@ -272,4 +269,13 @@ position = Vector2(-541, 187)
 position = Vector2(-221, 254)
 
 [node name="Orbe" parent="." instance=ExtResource("20_c6lnx")]
-position = Vector2(209, 560)
+position = Vector2(194, 571)
+
+[node name="Orbe2" parent="." instance=ExtResource("20_c6lnx")]
+position = Vector2(233, 574)
+
+[node name="Orbe3" parent="." instance=ExtResource("20_c6lnx")]
+position = Vector2(193, 550)
+
+[node name="Orbe4" parent="." instance=ExtResource("20_c6lnx")]
+position = Vector2(235, 554)
