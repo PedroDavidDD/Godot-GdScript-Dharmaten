@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=41 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
 [ext_resource type="Texture2D" uid="uid://cl5b1weh62et3" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/1.png" id="2_q6wv6"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bh50bsc31vx8q" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/1.png" id="14_a1a50"]
 [ext_resource type="Texture2D" uid="uid://t0l007ytcfir" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/key_white.png" id="16_yjwxp"]
 [ext_resource type="Texture2D" uid="uid://xh2j35i86wt4" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/gancho/disparo_cuerda.png" id="17_xixcd"]
+[ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
+[ext_resource type="Texture2D" uid="uid://dutce1a8j47nq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_Bar.png" id="18_j8clb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jphx6"]
 atlas = ExtResource("7_kitrq")
@@ -675,3 +677,48 @@ theme_override_font_sizes/font_size = 35
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ExpBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ContainerBar" type="TextureRect" parent="ExpBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -501.0
+offset_top = -20.0
+offset_right = 501.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_j8clb")
+
+[node name="Bar" type="TextureProgressBar" parent="ExpBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -495.5
+offset_top = -16.0
+offset_right = 495.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+rounded = true
+nine_patch_stretch = true
+texture_progress = ExtResource("18_ed6mp")

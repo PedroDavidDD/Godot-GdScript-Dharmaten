@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://ejy38yyf3cxa"]
+
+[ext_resource type="Script" path="res://scenes/game/enemy/Orbe/orbe.gd" id="1_gg5qu"]
+[ext_resource type="Texture2D" uid="uid://n47d46qjjtlm" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/01.png" id="2_h2621"]
+[ext_resource type="Texture2D" uid="uid://bkqcurpg6xq3v" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/02.png" id="3_oh38s"]
+[ext_resource type="Texture2D" uid="uid://bqtelhgdi3cfn" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/03.png" id="4_p3ymg"]
+[ext_resource type="Texture2D" uid="uid://cnw246dndtooq" path="res://assets/sprites/Objects/orbe/blood_orbe.png" id="5_4buju"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_auwsi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h2621")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oh38s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p3ymg")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"blood_orbe_effect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4buju")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v075j"]
+radius = 7.0
+
+[node name="Orbe" type="Area2D"]
+script = ExtResource("1_gg5qu")
+animation = "blood_orbe"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_auwsi")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v075j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

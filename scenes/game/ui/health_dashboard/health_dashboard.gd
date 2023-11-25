@@ -9,6 +9,7 @@ extends CanvasLayer
 
 # Variable (públicas) de vida y puntuación
 var life = 10 # Variable para menejo de vida
+var exp = 0 # Variable para menejo de vida
 
 # Variable para menejo de puntos y cantidad de bombas
 var points = {
@@ -46,6 +47,7 @@ var _index_number_0 = 17
 @onready var LabelKey_white = $EnemyGroup/Panel/Keys_door_scene/LabelKey
 @onready var label_SkillGancho = $EnemyGroup/Panel/SkillGancho/LabelSkillGancho
 
+@onready var expBar = $ExpBar/Bar
 
 # Función de inicialización
 func _ready():
@@ -58,6 +60,15 @@ func add_life(value: int):
 	if life > 10:
 		life = 10
 	_set_life_progress(life)
+
+
+# Agrega experiencia
+func add_exp(value: int):
+	exp += value
+#	Subir de nivel
+	if expBar.value >= expBar.max_value:
+		expBar.max_value *= 2
+	_set_exp_progress(exp)
 
 
 # Quita vida del personaje principal, según el valor proporcionado
@@ -106,6 +117,9 @@ func restart():
 # Actualiza la barra de progreso de la vida en el valor proporcionado
 func _set_life_progress(value: int):
 	bar.value = value
+# Actualiza la barra de progreso de la vida en el valor proporcionado
+func _set_exp_progress(value: int):
+	expBar.value = value
 
 
 # Actualiza el número de puntos obtenidos por el usuario (usando imágenes como números)

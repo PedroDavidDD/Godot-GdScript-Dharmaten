@@ -78,8 +78,8 @@ func die():
 func slime_to_player(delta):
 	if player and isMoving:
 		var target_position = player.global_position
-		var distance_threshold = 20
-		var direction = (target_position - global_position).normalized()
+		var distance_threshold = 30
+		var direction = global_position.direction_to(target_position)
 		var move_amount = direction * speedSlime * delta
 		
 		if global_position.distance_to(target_position) > distance_threshold:

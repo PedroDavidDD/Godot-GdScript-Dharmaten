@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=21 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -18,7 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://ccg3xgw2g8lih" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_134.png" id="18_yer3f"]
 [ext_resource type="PackedScene" uid="uid://x2oowp3ldqvs" path="res://assets/sprites/Objects/cloud_hidden.tscn" id="19_dcsx2"]
 [ext_resource type="Texture2D" uid="uid://6pipywim3ap" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_127.png" id="19_o8y28"]
-[ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://slime_green.tscn" id="19_onf22"]
+[ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="19_onf22"]
+[ext_resource type="PackedScene" uid="uid://ejy38yyf3cxa" path="res://scenes/game/enemy/Orbe/orbe.tscn" id="20_c6lnx"]
 
 [node name="scene_0" type="Node2D" groups=["scene_0"]]
 script = ExtResource("1_lrpxo")
@@ -262,3 +263,6 @@ modulate = Color(0.964706, 0.964706, 0.964706, 1)
 
 [node name="SlimeGreen" parent="." instance=ExtResource("19_onf22")]
 position = Vector2(59, 479)
+
+[node name="Orbe" parent="." instance=ExtResource("20_c6lnx")]
+position = Vector2(209, 560)
