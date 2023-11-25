@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 @onready var _animation := $EnemyAnimation
 @onready var _raycast_terrain := $Area2D/RayCastTerrain
+@onready var audio_player:= $AudioStreamPlayer2D # Reproductor de audios
 
 var animation = {
 	IDLE = "idle",
@@ -32,6 +33,12 @@ var animation = {
 var isMoving = true
 var speedSlime = 100
 var player = null
+var _died = false
+
+var _orbe = preload("res://scenes/game/enemy/Orbe/orbe.tscn")
+var _male_hurt_sound = preload("res://assets/sounds/male_hurt.mp3")
+
+var slime_life = 2
 
 func _ready():
 	if not _current_movement:
@@ -72,8 +79,42 @@ func attacking():
 	player.hit(1)
 	_current_movement = animation.RUN
 
+# Recibir daño
+func hit(value: int):
+	if _died:
+		return
+	
+	slime_life -= value
+	if slime_life < 0:
+		slime_life = 0
+	
+	_play_sound(_male_hurt_sound)
+	_animation.play("hit")
+	# Bajamos vida y validamos si el personaje ha perdido
+	if slime_life == 0:
+		die()
+	else:
+		pass
+
+func _play_sound(sound):
+	# Pausamos el sonido
+	audio_player.stop()
+	# Reproducimos el sonido
+	audio_player.stream = sound
+	audio_player.play()
+
 func die():
+	createOrbe()
 	self.queue_free()  # Liberamos la memoria
+
+func createOrbe():
+	var shoot_orbe = _orbe.instantiate()
+	if shoot_orbe.scale.x < 0:
+		shoot_orbe.scale = Vector2(-1, 1)
+	else:
+		shoot_orbe.scale = Vector2(1, 1)
+	shoot_orbe.global_position = global_position
+	get_parent().get_parent().add_child(shoot_orbe)
 
 func slime_to_player(delta):
 	if player and isMoving:

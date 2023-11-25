@@ -772,7 +772,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_841yf"]
-size = Vector2(13, 26)
+size = Vector2(20, 33)
 
 [node name="MainCharacter" type="CharacterBody2D" groups=["player"]]
 disable_mode = 1
@@ -791,9 +791,7 @@ script = ExtResource("3_odvu6")
 z_index = 1
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_sohxe")
-animation = &"teleport"
-frame = 23
-frame_progress = 1.0
+animation = &"dead_hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0.5)
@@ -815,7 +813,7 @@ animation = &"idle"
 [node name="AreaSword" type="Area2D" parent="." groups=["hit"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSword"]
-position = Vector2(21.5, 6)
+position = Vector2(20, 0.5)
 shape = SubResource("RectangleShape2D_841yf")
 disabled = true
 

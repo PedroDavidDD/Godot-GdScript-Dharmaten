@@ -8,7 +8,7 @@ extends Area2D
 @onready var _audio_player = $AudioStreamPlayer2D # Reproductor de audios
 @onready var _collider = $CollisionShape2D # Collider
 
-var _pickup_sound = preload("res://assets/sounds/pickup.mp3")
+var _trampolin_sound = preload("res://assets/sounds/Trampolim.wav")
 
 # Función de carga del nodo
 func _ready():
@@ -41,7 +41,7 @@ func _on_body_exited(body):
 
 func do_animation():
 	# Validamos si la animación es de moneda
-	_audio_player.stream = _pickup_sound
+	_audio_player.stream = _trampolin_sound
 	_audio_player.play()
 	if animation == "blood_orbe":
 		# Reproducimos la animación de la moneda

@@ -117,7 +117,9 @@ func _move(delta):
 	
 	# Cuando se presiona la tecla x, atacamos	
 	if Input.is_action_just_pressed("hit"):
-		print("atacando")
+		var nearest_slime_green = find_nearest_slime_green_player()
+		if nearest_slime_green:
+			nearest_slime_green.hit(1)
 	
 	# Cuando se presiona la tecla b, lanzamos bomba
 	if Input.is_action_just_pressed("bomb"):
@@ -219,3 +221,22 @@ func hit(value: int):
 func die():
 	# Seteamos la variable de morir averdadero
 	_died = true
+
+# Función para encontrar el slimeGreen más cercano al jugador
+func find_nearest_slime_green_player():
+	var player_position = player.global_position
+	var slimes = get_tree().get_nodes_in_group("slimeGreen")
+	var nearest_slime = null
+	var nearest_distance = 1000000  # Valor grande que representa una distancia máxima razonable
+	
+	for slime in slimes:
+		var slime_global_position = slime.global_position
+		var distance_to_player = slime_global_position.distance_to(player_position)
+		
+		if distance_to_player < nearest_distance:
+			nearest_distance = distance_to_player
+			nearest_slime = slime
+
+	return nearest_slime
+
+

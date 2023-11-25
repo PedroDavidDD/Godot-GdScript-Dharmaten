@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://cakk10ffh2nby"]
+[gd_scene load_steps=38 format=3 uid="uid://cakk10ffh2nby"]
 
 [ext_resource type="Script" path="res://scenes/game/enemy/Slime/SlimeGreen.gd" id="1_bpv7h"]
 [ext_resource type="Texture2D" uid="uid://d3edmkektkmdl" path="res://assets/sprites/pirate_bomb/9_enemy_slime/2_fall/slime_fall.png" id="2_e1mnt"]
 [ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="3_nm03m"]
+[ext_resource type="Texture2D" uid="uid://dmqfjd8venbxt" path="res://assets/sprites/pirate_bomb/9_enemy_slime/4_hit/Slime_hit.png" id="4_hf7s5"]
 [ext_resource type="Texture2D" uid="uid://cmg8m1trnokq2" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00001.png" id="4_rmcsg"]
 [ext_resource type="Texture2D" uid="uid://dgaw6i1qayvus" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00002.png" id="5_qjwdd"]
 [ext_resource type="Texture2D" uid="uid://dns87ex1omrim" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00003.png" id="6_1sqpu"]
@@ -45,6 +46,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nm03m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hf7s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nm03m")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 5.0
 }, {
 "frames": [{
@@ -152,9 +167,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5axda"]
-radius = 16.0
+radius = 16.0312
 
-[node name="SlimeGreen" type="CharacterBody2D"]
+[node name="SlimeGreen" type="CharacterBody2D" groups=["slimeGreen"]]
 script = ExtResource("1_bpv7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -166,13 +181,13 @@ texture_filter = 1
 position = Vector2(4.17233e-06, -0.750021)
 scale = Vector2(0.0531915, 0.0722656)
 sprite_frames = SubResource("SpriteFrames_726pj")
-animation = &"fall"
-frame_progress = 0.129693
+animation = &"hit"
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5axda")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

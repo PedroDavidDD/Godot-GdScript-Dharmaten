@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ejy38yyf3cxa" path="res://scenes/game/enemy/Orbe/orbe.tscn" id="20_c6lnx"]
 
 [node name="scene_0" type="Node2D" groups=["scene_0"]]
+position = Vector2(0, -1)
 script = ExtResource("1_lrpxo")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -261,8 +262,14 @@ position = Vector2(600, 292)
 [node name="Cloud_hidden" parent="Node2D" instance=ExtResource("19_dcsx2")]
 modulate = Color(0.964706, 0.964706, 0.964706, 1)
 
-[node name="SlimeGreen" parent="." instance=ExtResource("19_onf22")]
-position = Vector2(59, 479)
+[node name="SlimeGreens" type="Node2D" parent="."]
+position = Vector2(600, 292)
+
+[node name="SlimeGreen" parent="SlimeGreens" instance=ExtResource("19_onf22")]
+position = Vector2(-541, 187)
+
+[node name="SlimeGreen2" parent="SlimeGreens" instance=ExtResource("19_onf22")]
+position = Vector2(-221, 254)
 
 [node name="Orbe" parent="." instance=ExtResource("20_c6lnx")]
 position = Vector2(209, 560)
