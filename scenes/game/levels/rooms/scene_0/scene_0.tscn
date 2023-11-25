@@ -53,7 +53,7 @@ layer_3/tile_data = PackedInt32Array()
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_2vh60")]
 z_index = 5
-position = Vector2(118, 475)
+position = Vector2(181, 477)
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_ftrd5")]
 character = NodePath("../MainCharacter")
@@ -261,4 +261,4 @@ position = Vector2(600, 292)
 modulate = Color(0.964706, 0.964706, 0.964706, 1)
 
 [node name="SlimeGreen" parent="." instance=ExtResource("19_onf22")]
-position = Vector2(200, 481)
+position = Vector2(59, 479)

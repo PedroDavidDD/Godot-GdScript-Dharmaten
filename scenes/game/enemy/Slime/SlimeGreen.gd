@@ -56,23 +56,21 @@ func _process(delta):
 		slime_to_player(delta)
 	# Atacar si esta cerca del colider
 	elif _current_movement == animation.ATTACKING:
-		print("ataco")
+		isMoving = false
 	
 	_animation.play(_current_movement)
 	# Iniciamos el movimiento
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
-	""" 
 #	contrl + k
 	if body.is_in_group("player"):
 		_current_movement = animation.ATTACKING
-		isMoving = false
 		attacking()
-	"""
 
 func attacking():
 	player.hit(1)
+	_current_movement = animation.RUN
 
 func die():
 	self.queue_free()  # Liberamos la memoria
