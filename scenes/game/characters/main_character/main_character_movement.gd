@@ -51,7 +51,7 @@ var btnLeft = Input.is_action_pressed("izquierda")
 var btnRight = Input.is_action_pressed("derecha")
 
 # Elementos 
-var type_element = ["flame", "water"]
+var type_element = ["flame", "water", "darkness"]
 var type_element_value = 0
 
 func _process(_delta):
@@ -91,16 +91,16 @@ func _move(delta):
 	else:
 		move_player(velocity, delta)
 	
-	# Cambiar estado
-	if Input.is_action_just_pressed("clic_derecho"):
+	# Cambiar estado: K
+	if Input.is_action_just_pressed("change_element"):
 		if type_element_value == (type_element.size() - 1):
 			type_element_value = 0
 		else:
 			type_element_value += 1
 		HealthDashboard.update_element_icon(type_element[type_element_value])
 	
-	# Cuando se presiona la tecla X, atacamos	
-	if Input.is_action_just_pressed("hit"):
+	# Cuando se presiona la tecla J, atacamos
+	if Input.is_action_just_pressed("attack"):
 		var nearest_slime_green = find_nearest_slime_green_player()
 		if nearest_slime_green:
 			create_magic_bullet(nearest_slime_green, type_element[type_element_value])

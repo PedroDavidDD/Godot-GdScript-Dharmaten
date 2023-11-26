@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://clbokiaiasfcd"]
+[gd_scene load_steps=8 format=3 uid="uid://clbokiaiasfcd"]
 
 [ext_resource type="Script" path="res://scenes/game/objects/balls/ball.gd" id="1_wq2fq"]
 [ext_resource type="Texture2D" uid="uid://dcdmpyxok86ts" path="res://assets/sprites/Objects/elements/elements.png" id="2_aodhh"]
+[ext_resource type="Texture2D" uid="uid://crm1ysmcfkr3s" path="res://assets/sprites/Objects/elements/darkness.png" id="2_vnjhl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1hjl"]
 atlas = ExtResource("2_aodhh")
@@ -13,6 +14,14 @@ region = Rect2(0, 0, 197, 197)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6urgt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vnjhl")
+}],
+"loop": false,
+"name": &"darkness",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": null
@@ -33,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6sr1e")
 }],
-"loop": true,
+"loop": false,
 "name": &"water",
 "speed": 5.0
 }]
@@ -46,7 +55,7 @@ script = ExtResource("1_wq2fq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6urgt")
-animation = &"water"
+animation = &"darkness"
 
 [node name="Area2D" type="Area2D" parent="."]
 

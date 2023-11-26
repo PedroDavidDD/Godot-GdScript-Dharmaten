@@ -13,7 +13,8 @@ var copy_enemy_player: Vector2 = Vector2.ZERO
 var type_element: String = "flame"
 var list_damage_type_element = {
 	"flame": 1,
-	"water": 2,
+	"water": 1,
+	"darkness": 1,
 }
 var damage_bullet = 0
 
