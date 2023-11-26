@@ -50,6 +50,10 @@ var btnDown = Input.is_action_pressed("abajo")
 var btnLeft = Input.is_action_pressed("izquierda")
 var btnRight = Input.is_action_pressed("derecha")
 
+# Elementos 
+var type_element = ["flame", "water"]
+var type_element_value = 0
+
 func _process(_delta):
 	_move(_delta)
 
@@ -87,11 +91,18 @@ func _move(delta):
 	else:
 		move_player(velocity, delta)
 	
-	# Cuando se presiona la tecla x, atacamos	
+	# Cambiar estado
+	if Input.is_action_just_pressed("clic_derecho"):
+		if type_element_value == (type_element.size() - 1):
+			type_element_value = 0
+			return
+		type_element_value += 1
+	
+	# Cuando se presiona la tecla X, atacamos	
 	if Input.is_action_just_pressed("hit"):
 		var nearest_slime_green = find_nearest_slime_green_player()
 		if nearest_slime_green:
-			create_magic_bullet(nearest_slime_green)
+			create_magic_bullet(nearest_slime_green, type_element[type_element_value])
 	
 	# Cuando se presiona la tecla b, lanzamos bomba
 	if Input.is_action_just_pressed("bomb"):
@@ -203,7 +214,7 @@ func find_nearest_slime_green_player():
 	
 	return nearest_slime
 
-func create_magic_bullet(enemy_player: CharacterBody2D):
+func create_magic_bullet(enemy_player: CharacterBody2D, type_element: String):
 	var magic_bullet = magicBullet.instantiate()
 	var copy_enemy_player = enemy_player.global_position
 	
@@ -216,7 +227,7 @@ func create_magic_bullet(enemy_player: CharacterBody2D):
 	
 	magic_bullet.enemy_player = enemy_player
 	magic_bullet.copy_enemy_player = copy_enemy_player
-	
+	magic_bullet.type_element = type_element
 	magic_bullet.global_position = containerMagic.get_node("ShootPointer").global_position
 	get_tree().call_group("scene_0", "add_child", magic_bullet)
 
