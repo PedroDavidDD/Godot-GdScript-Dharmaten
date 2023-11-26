@@ -95,8 +95,9 @@ func _move(delta):
 	if Input.is_action_just_pressed("clic_derecho"):
 		if type_element_value == (type_element.size() - 1):
 			type_element_value = 0
-			return
-		type_element_value += 1
+		else:
+			type_element_value += 1
+		HealthDashboard.update_element_icon(type_element[type_element_value])
 	
 	# Cuando se presiona la tecla X, atacamos	
 	if Input.is_action_just_pressed("hit"):

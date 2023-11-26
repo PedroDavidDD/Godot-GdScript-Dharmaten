@@ -11,7 +11,7 @@ var copy_enemy_player: Vector2 = Vector2.ZERO
 
 # Elementos 
 var type_element: String = "flame"
-var type_element_damage = {
+var list_damage_type_element = {
 	"flame": 1,
 	"water": 2,
 }
@@ -41,7 +41,7 @@ func _on_area_2d_body_entered(body):
 
 func choose_damage():
 	if type_element:
-		damage_bullet = type_element_damage[type_element]
+		damage_bullet = list_damage_type_element[type_element]
 	else:
 		damage_bullet = 0
 

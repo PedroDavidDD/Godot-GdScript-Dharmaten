@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=42 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
 [ext_resource type="Texture2D" uid="uid://cl5b1weh62et3" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/1.png" id="2_q6wv6"]
@@ -16,7 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cmlgr3i0h1klc" path="res://assets/sprites/treasure_hunters/the_crusty_crew/sprites/crabby/01_idle/idle_01.png" id="13_uppaq"]
 [ext_resource type="Texture2D" uid="uid://bh50bsc31vx8q" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/1.png" id="14_a1a50"]
 [ext_resource type="Texture2D" uid="uid://t0l007ytcfir" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/key_white.png" id="16_yjwxp"]
-[ext_resource type="Texture2D" uid="uid://xh2j35i86wt4" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/gancho/disparo_cuerda.png" id="17_xixcd"]
+[ext_resource type="Texture2D" uid="uid://se5qxhvskbfa" path="res://assets/sprites/Objects/elements/flame.png" id="17_mp1ff"]
+[ext_resource type="Texture2D" uid="uid://b7drs1kuhkybp" path="res://assets/sprites/Objects/elements/mark.png" id="17_qct4s"]
 [ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
 [ext_resource type="Texture2D" uid="uid://dutce1a8j47nq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_Bar.png" id="18_j8clb"]
 
@@ -634,49 +635,45 @@ text = "0/0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SkillGancho" type="Control" parent="EnemyGroup/Panel"]
+[node name="Skills" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 99.0
-offset_right = 139.0
-offset_bottom = 40.0
-scale = Vector2(0.7, 0.7)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
 
-[node name="TextureReactSkillGancho" type="TextureRect" parent="EnemyGroup/Panel/SkillGancho"]
+[node name="ContainerSkill" type="TextureRect" parent="Skills"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -57.1429
-offset_right = 50.0
-offset_bottom = 42.8571
+offset_left = -89.0
+offset_top = 9.0
+offset_right = 65.0
+offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.6, 1.6)
-texture = ExtResource("17_xixcd")
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("17_qct4s")
+expand_mode = 2
 
-[node name="LabelSkillGancho" type="Label" parent="EnemyGroup/Panel/SkillGancho"]
+[node name="TextureReactSkill" type="TextureRect" parent="Skills/ContainerSkill"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 70.0
-offset_top = -10.0
-offset_right = 133.0
-offset_bottom = 42.0
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 33.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.945098, 0.4, 0, 1)
-theme_override_font_sizes/font_size = 35
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("17_mp1ff")
+expand_mode = 2
 
 [node name="ExpBar" type="Control" parent="."]
 layout_mode = 3

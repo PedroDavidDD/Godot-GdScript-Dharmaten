@@ -49,6 +49,7 @@ var _index_number_0 = 17
 
 @onready var expBar = $ExpBar/Bar
 @onready var label_expBar = $ExpBar/LabelBar
+@onready var textureReactSkill = $Skills/ContainerSkill/TextureReactSkill
 
 # Función de inicialización
 func _ready():
@@ -179,3 +180,8 @@ func _get_text_region(position: int):
 			
 	return Rect2(x, y, w, h)
 
+# Cambiar el Icon del elemento actual
+func update_element_icon(type: String):
+	# Cambiar la textura del TextureRect
+	var texture_to_set =  load("res://assets/sprites/Objects/elements/"+ type +".png")
+	textureReactSkill.texture = texture_to_set
