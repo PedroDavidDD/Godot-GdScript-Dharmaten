@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://b5qjvfbte4svk" path="res://scenes/game/levels/objects/pickable_object/pickable_object.tscn" id="20_juf85"]
 [ext_resource type="PackedScene" uid="uid://glchvmmfffqa" path="res://scenes/game/levels/areas/bomb_shop/bomb_shop.tscn" id="21_sh538"]
 [ext_resource type="PackedScene" uid="uid://dl8afnvp5w315" path="res://scenes/game/levels/objects/power_up/power_up.tscn" id="22_vr6n4"]
-[ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://slime_green.tscn" id="24_pkljj"]
+[ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="24_pkljj"]
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="25_apkul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3x710"]
@@ -457,11 +457,11 @@ character = NodePath("../MainCharacter")
 position = Vector2(1254, 531)
 animation = &"green_bottle"
 
-[node name="SlimeGreen2" parent="." groups=["enemy"] instance=ExtResource("24_pkljj")]
+[node name="SlimeGreen2" parent="." instance=ExtResource("24_pkljj")]
 position = Vector2(305, 248)
 
-[node name="SlimeGreen3" parent="." groups=["enemy"] instance=ExtResource("24_pkljj")]
+[node name="SlimeGreen3" parent="." instance=ExtResource("24_pkljj")]
 position = Vector2(1397, 410)
 
-[node name="SlimeGreen" parent="." groups=["enemy"] instance=ExtResource("24_pkljj")]
+[node name="SlimeGreen" parent="." instance=ExtResource("24_pkljj")]
 position = Vector2(342, 537)

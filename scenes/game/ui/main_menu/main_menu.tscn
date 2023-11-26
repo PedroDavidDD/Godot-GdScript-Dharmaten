@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://ln85llv8md7"]
+[gd_scene load_steps=91 format=3 uid="uid://ln85llv8md7"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/main_menu/main_menu.gd" id="1_g1i31"]
 [ext_resource type="Texture2D" uid="uid://c8apilaqosli4" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/additional_sky.png" id="2_66173"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b4y4paxn2nw2y" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/yellow_button/4.png" id="4_76ed7"]
 [ext_resource type="Texture2D" uid="uid://d0uycw76ah71t" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/sliders/6.png" id="4_s2jl3"]
 [ext_resource type="Texture2D" uid="uid://kfc2kokx4vgl" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/water_reflect_big_01.png" id="5_j1k1l"]
+[ext_resource type="Texture2D" uid="uid://dxpfrxt7fwubj" path="res://scenes/game/ui/main_menu/fondo menu del juego.png" id="6_4wfnd"]
 [ext_resource type="Texture2D" uid="uid://b1m0xfdhglhsx" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/ship/idle/2.png" id="6_svah5"]
 [ext_resource type="Texture2D" uid="uid://dk760y4e06pg4" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/water_reflect_big_02.png" id="6_ui466"]
 [ext_resource type="Texture2D" uid="uid://chay07asogtoi" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/water_reflect_big_03.png" id="7_fla8q"]
@@ -22,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://8owkcbg613gq" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/ship/idle/6.png" id="10_nkn1e"]
 [ext_resource type="PackedScene" uid="uid://ca3ueo0yewjov" path="res://scenes/game/characters/main_character/main_character.tscn" id="11_4tiyj"]
 [ext_resource type="Texture2D" uid="uid://bqh3l63o3d7g1" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/sail/wind/1.png" id="11_lublc"]
+[ext_resource type="Texture2D" uid="uid://8rgdgt8djwml" path="res://scenes/game/ui/main_menu/mago juego logo.png" id="11_rfo8t"]
 [ext_resource type="Texture2D" uid="uid://bskegan6e27fi" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/ship/idle/1.png" id="12_5fnsh"]
 [ext_resource type="Texture2D" uid="uid://cmkbl2imk4eyd" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/sail/wind/2.png" id="12_xkehm"]
 [ext_resource type="Texture2D" uid="uid://dmbw1ubsgqxwe" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/sail/wind/3.png" id="13_olerl"]
@@ -375,11 +377,20 @@ position = Vector2(597, 566)
 scale = Vector2(39.0625, 7.0625)
 texture = ExtResource("4_0xs5f")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Main/World/Background"]
+position = Vector2(598.5, 331)
+scale = Vector2(1.22754, 1.17667)
+texture = ExtResource("6_4wfnd")
+
 [node name="AnimWater" type="AnimatedSprite2D" parent="Main/World/Background"]
 position = Vector2(618, 462)
 scale = Vector2(3.94118, 5.6)
 sprite_frames = SubResource("SpriteFrames_4u6xb")
 frame_progress = 0.303069
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/World/Background"]
+position = Vector2(285, 127)
+texture = ExtResource("11_rfo8t")
 
 [node name="Ship" type="Node2D" parent="Main/World"]
 
@@ -411,24 +422,28 @@ position = Vector2(505, -109)
 shape = SubResource("RectangleShape2D_rab7k")
 
 [node name="Flag" type="AnimatedSprite2D" parent="Main/World/Ship"]
+visible = false
 position = Vector2(397, 398)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_rd73b")
 frame_progress = 0.786022
 
 [node name="MainCharacter" parent="Main/World/Ship" instance=ExtResource("11_4tiyj")]
+visible = false
 position = Vector2(149, 467)
 scale = Vector2(5, 5)
 collision_layer = 2147483648
 collision_mask = 2147483648
 
 [node name="Ship" type="AnimatedSprite2D" parent="Main/World/Ship"]
+visible = false
 position = Vector2(296, 586)
 scale = Vector2(7.2375, 6)
 sprite_frames = SubResource("SpriteFrames_q32o8")
 frame_progress = 0.136203
 
 [node name="Water2" type="Sprite2D" parent="Main/World"]
+visible = false
 position = Vector2(597, 640)
 scale = Vector2(39.0625, 2.4375)
 texture = ExtResource("4_0xs5f")
@@ -908,6 +923,7 @@ theme_override_font_sizes/font_size = 24
 text = "Controles"
 
 [node name="GameControls" type="CanvasLayer" parent="Main"]
+visible = false
 
 [node name="Background" type="ColorRect" parent="Main/GameControls"]
 anchors_preset = 15
@@ -1182,6 +1198,7 @@ position = Vector2(579, 325)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Main"]
 layer = 0
+visible = false
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 

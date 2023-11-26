@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cg6wkkuni8aq8" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/bg_image.png" id="1_a12cs"]
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_atorb"]
-[ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://slime_green.tscn" id="1_q772s"]
+[ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="1_q772s"]
 [ext_resource type="PackedScene" uid="uid://ca3ueo0yewjov" path="res://scenes/game/characters/main_character/main_character.tscn" id="1_vi0ax"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_2/scene_2.gd" id="1_xno70"]
 [ext_resource type="AudioStream" uid="uid://dfb4lvan1kwl2" path="res://assets/sounds/pirate_theme.ogg" id="1_xvhx7"]
@@ -64,14 +64,14 @@ position = Vector2(351, 149)
 animation = "run"
 moving_direction = "right"
 
-[node name="SlimeGreen" parent="." groups=["enemy"] instance=ExtResource("1_q772s")]
+[node name="SlimeGreen" parent="." instance=ExtResource("1_q772s")]
 position = Vector2(240, 379)
 
 [node name="Chest" type="Sprite2D" parent="."]
 position = Vector2(1029, 431)
 texture = ExtResource("10_2jg0w")
 
-[node name="SlimeGreen2" parent="." groups=["enemy"] instance=ExtResource("1_q772s")]
+[node name="SlimeGreen2" parent="." instance=ExtResource("1_q772s")]
 position = Vector2(1076, 422)
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
