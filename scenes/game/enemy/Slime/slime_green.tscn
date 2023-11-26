@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bay1ar3ukjx7f" path="res://assets/sprites/pirate_bomb/9_enemy_slime/3_jump/slime_jump.png" id="33_e5xe1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_utts5"]
-radius = 15.0
+radius = 9.05539
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_726pj"]
 animations = [{
@@ -169,7 +169,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_5axda"]
 radius = 16.0312
 
-[node name="SlimeGreen" type="CharacterBody2D" groups=["slimeGreen"]]
+[node name="SlimeGreen" type="CharacterBody2D" groups=["enemy", "slimeGreen"]]
 script = ExtResource("1_bpv7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

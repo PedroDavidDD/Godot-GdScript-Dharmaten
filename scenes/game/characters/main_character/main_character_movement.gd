@@ -10,6 +10,9 @@ extends Node2D
 
 @onready var MainCharacterBomb := $"../MainCharacterBomb"
 
+@onready var containerMagic := $"../ContainerMagic"
+@export var magicBullet = preload("res://scenes/game/objects/balls/ball.tscn")
+
 var velocity = 100 # Velocidad de movimiento en horizontal
 var fast_velocity = 150
 # Mapa de movimientos del personaje
@@ -84,15 +87,11 @@ func _move(delta):
 	else:
 		move_player(velocity, delta)
 	
-	# Disparar un gancho
-	if Input.is_action_pressed("isGancho"):
-		pass
-	
 	# Cuando se presiona la tecla x, atacamos	
 	if Input.is_action_just_pressed("hit"):
 		var nearest_slime_green = find_nearest_slime_green_player()
 		if nearest_slime_green:
-			nearest_slime_green.hit(1)
+			create_magic_bullet(nearest_slime_green)
 	
 	# Cuando se presiona la tecla b, lanzamos bomba
 	if Input.is_action_just_pressed("bomb"):
@@ -201,7 +200,23 @@ func find_nearest_slime_green_player():
 		if distance_to_player < nearest_distance:
 			nearest_distance = distance_to_player
 			nearest_slime = slime
-
+	
 	return nearest_slime
 
+func create_magic_bullet(enemy_player: CharacterBody2D):
+	var magic_bullet = magicBullet.instantiate()
+	var copy_enemy_player = enemy_player.global_position
+	
+	if player.scale.x < 0:
+		magic_bullet.scale = Vector2(-0.1, 0.1)
+		magic_bullet.speed_ball = -320
+	else:
+		magic_bullet.scale = Vector2(0.1, 0.1)
+		magic_bullet.speed_ball = 320
+	
+	magic_bullet.enemy_player = enemy_player
+	magic_bullet.copy_enemy_player = copy_enemy_player
+	
+	magic_bullet.global_position = containerMagic.get_node("ShootPointer").global_position
+	get_tree().call_group("scene_0", "add_child", magic_bullet)
 

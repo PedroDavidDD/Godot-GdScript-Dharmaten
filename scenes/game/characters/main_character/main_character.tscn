@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://ca3ueo0yewjov"]
+[gd_scene load_steps=122 format=3 uid="uid://ca3ueo0yewjov"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/main_character/MainCharacterBomb.gd" id="3_odvu6"]
 [ext_resource type="Texture2D" uid="uid://ty7vj41shftk" path="res://assets/sprites/Player/Blue_witch/B_witch_attack.png" id="4_eeya6"]
@@ -51,7 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://bkqcurpg6xq3v" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/02.png" id="56_xxxct"]
 [ext_resource type="Script" path="res://scenes/game/characters/main_character/main_character_collision.gd" id="57_7h47x"]
 [ext_resource type="Texture2D" uid="uid://bqtelhgdi3cfn" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/coin_effect/03.png" id="57_8tvbx"]
-[ext_resource type="PackedScene" uid="uid://bom5hbofv42n0" path="res://scenes/game/objects/gancho/weapon.tscn" id="77_pqqlk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sffe"]
 atlas = ExtResource("4_eeya6")
@@ -650,7 +649,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q04ya"]
-size = Vector2(22, 33)
+size = Vector2(22, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cwldb"]
 animations = [{
@@ -794,7 +793,7 @@ sprite_frames = SubResource("SpriteFrames_sohxe")
 animation = &"dead_hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0.5)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_q04ya")
 
 [node name="Effects" type="AnimatedSprite2D" parent="."]
@@ -820,8 +819,10 @@ disabled = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 bus = &"Effects"
 
-[node name="Weapon" parent="." instance=ExtResource("77_pqqlk")]
-position = Vector2(4, 7)
+[node name="ContainerMagic" type="Node2D" parent="."]
+position = Vector2(0, 6)
+
+[node name="ShootPointer" type="Marker2D" parent="ContainerMagic"]
 
 [connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
