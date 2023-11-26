@@ -378,18 +378,20 @@ scale = Vector2(39.0625, 7.0625)
 texture = ExtResource("4_0xs5f")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Main/World/Background"]
-position = Vector2(598.5, 331)
+position = Vector2(600, 332)
 scale = Vector2(1.22754, 1.17667)
 texture = ExtResource("6_4wfnd")
 
 [node name="AnimWater" type="AnimatedSprite2D" parent="Main/World/Background"]
+visible = false
 position = Vector2(618, 462)
 scale = Vector2(3.94118, 5.6)
 sprite_frames = SubResource("SpriteFrames_4u6xb")
 frame_progress = 0.303069
 
 [node name="Sprite2D" type="Sprite2D" parent="Main/World/Background"]
-position = Vector2(285, 127)
+position = Vector2(320, 104)
+scale = Vector2(0.878594, 0.834046)
 texture = ExtResource("11_rfo8t")
 
 [node name="Ship" type="Node2D" parent="Main/World"]
