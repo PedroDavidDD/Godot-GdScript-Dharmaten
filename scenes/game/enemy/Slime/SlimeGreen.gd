@@ -37,7 +37,7 @@ var _died = false
 var wave = 0
 
 
-var enemy = load("res://scenes/game/enemy/Slime/slime_green.tscn")
+
 
 var _orbe = preload("res://scenes/game/enemy/Orbe/orbe.tscn")
 var _male_hurt_sound = preload("res://assets/sounds/male_hurt.mp3")
@@ -74,12 +74,7 @@ func _process(delta):
 	# Iniciamos el movimiento
 	move_and_slide()
 	
-	var inst=enemy.instantiate()
-	
-	if (get_tree().get_nodes_in_group("enemy").size() == 0):
-		for wave in 15:
-			print(wave)
-			inst.position = Vector2(0,0)
+
 			
 	
 
