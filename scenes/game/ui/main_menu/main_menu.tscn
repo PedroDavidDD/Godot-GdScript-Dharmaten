@@ -379,11 +379,6 @@ position = Vector2(597, 566)
 scale = Vector2(39.0625, 7.0625)
 texture = ExtResource("4_0xs5f")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Main/World/Background"]
-position = Vector2(557.75, 343)
-scale = Vector2(1.22803, 1.17667)
-texture = ExtResource("6_4wfnd")
-
 [node name="Sprite2D3" type="Sprite2D" parent="Main/World/Background"]
 visible = false
 position = Vector2(554.5, 343)
@@ -518,6 +513,11 @@ offset_right = -400.0
 offset_bottom = -130.0
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="Main/CanvasLayer/Options/Init"]
+position = Vector2(-154.25, 239)
+scale = Vector2(1.22803, 1.17667)
+texture = ExtResource("6_4wfnd")
 
 [node name="Letter1" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
@@ -983,6 +983,7 @@ theme_override_font_sizes/font_size = 24
 text = "Controles"
 
 [node name="GameControls" type="CanvasLayer" parent="Main"]
+visible = false
 
 [node name="Background" type="ColorRect" parent="Main/GameControls"]
 anchors_preset = 15
