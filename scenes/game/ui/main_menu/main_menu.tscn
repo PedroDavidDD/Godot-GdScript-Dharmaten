@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cmkbl2imk4eyd" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/sail/wind/2.png" id="12_xkehm"]
 [ext_resource type="Texture2D" uid="uid://dmbw1ubsgqxwe" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/sail/wind/3.png" id="13_olerl"]
 [ext_resource type="Texture2D" uid="uid://dwsfqoltg7rlt" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/ship/sail/wind/4.png" id="14_t7icp"]
+[ext_resource type="Texture2D" uid="uid://cnc0tsxikthcl" path="res://assets/atlases/text2.png" id="23_4enki"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="27_eb3si"]
 [ext_resource type="Texture2D" uid="uid://c1565oiq4iveu" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/13.png" id="28_2um5v"]
 [ext_resource type="Texture2D" uid="uid://b0x5mxa2tsy1u" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/14.png" id="29_qsbm4"]
@@ -111,32 +112,32 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xlum2"]
-load_path = "res://.godot/imported/text.png-c60f3c71437097c445e5745800ab64ed.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0nh0"]
-atlas = SubResource("CompressedTexture2D_xlum2")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 84, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4uxy"]
-atlas = SubResource("CompressedTexture2D_xlum2")
+atlas = ExtResource("23_4enki")
 region = Rect2(24, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fftmn"]
-atlas = SubResource("CompressedTexture2D_xlum2")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 84, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xq1pu"]
-atlas = SubResource("CompressedTexture2D_xlum2")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0yw2"]
-atlas = SubResource("CompressedTexture2D_xlum2")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 84, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8gxc"]
-atlas = SubResource("CompressedTexture2D_xlum2")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 104, 10, 11)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xlum2"]
+load_path = "res://.godot/imported/text.png-c60f3c71437097c445e5745800ab64ed.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2vnd"]
 atlas = SubResource("CompressedTexture2D_xlum2")
@@ -157,99 +158,96 @@ region = Rect2(24, 104, 10, 11)
 [sub_resource type="Theme" id="Theme_f6sn6"]
 default_font_size = 24
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q3nub"]
-load_path = "res://.godot/imported/text.png-c60f3c71437097c445e5745800ab64ed.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_roilr"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(64, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p0m1"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(4, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3bk8"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(24, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rovxd"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(24, 4, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jiknw"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(4, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha8t5"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(104, 84, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4qguk"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(104, 84, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahbbe"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(4, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ydpge"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddbbl"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc4ep"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(4, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qogtb"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(64, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3i8u"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(104, 84, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qber"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(84, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46ho6"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(24, 4, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5py4y"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(4, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y2l5w"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(4, 4, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ubua"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vjfv"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(24, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1akk5"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 84, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aoa2w"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(64, 64, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1q23x"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(44, 104, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c50bg"]
-atlas = SubResource("CompressedTexture2D_q3nub")
+atlas = ExtResource("23_4enki")
 region = Rect2(4, 4, 10, 11)
 
 [sub_resource type="Theme" id="Theme_6e42f"]
@@ -559,12 +557,16 @@ offset_right = 40.0
 offset_bottom = 90.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 45.0
 texture = ExtResource("2_foa6f")
 
 [node name="Center" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 36.0
 offset_right = 153.0
@@ -572,6 +574,8 @@ offset_bottom = 45.0
 texture = ExtResource("3_10kh6")
 
 [node name="Right" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 150.0
 offset_right = 190.0
@@ -579,6 +583,7 @@ offset_bottom = 45.0
 texture = ExtResource("4_76ed7")
 
 [node name="Button" type="Button" parent="Main/CanvasLayer/Options/Init/Button"]
+modulate = Color(1, 1, 0.72549, 1)
 layout_mode = 0
 offset_right = 189.0
 offset_bottom = 42.0
@@ -812,6 +817,7 @@ offset_right = 411.0
 offset_bottom = 40.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Main/CanvasLayer/Options/Sounds/Sliders/Ambient"]
+modulate = Color(1, 1, 0.72549, 1)
 layout_mode = 0
 offset_right = 161.0
 offset_bottom = 40.0
@@ -827,6 +833,7 @@ offset_right = 40.0
 offset_bottom = 45.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Sounds/Sliders/Ambient/Slider"]
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 150.0
 offset_right = 190.0
@@ -834,6 +841,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_ifayy")
 
 [node name="Center" type="TextureRect" parent="Main/CanvasLayer/Options/Sounds/Sliders/Ambient/Slider"]
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 165.0
 offset_right = 377.0
@@ -841,6 +849,7 @@ offset_bottom = 40.0
 texture = ExtResource("3_ha70u")
 
 [node name="Right" type="TextureRect" parent="Main/CanvasLayer/Options/Sounds/Sliders/Ambient/Slider"]
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 350.0
 offset_right = 390.0
@@ -848,6 +857,7 @@ offset_bottom = 40.0
 texture = ExtResource("4_s2jl3")
 
 [node name="SliderAmbient" type="HSlider" parent="Main/CanvasLayer/Options/Sounds/Sliders/Ambient/Slider"]
+modulate = Color(1, 0.921569, 0.494118, 1)
 layout_mode = 0
 offset_left = 160.0
 offset_top = 12.0
@@ -864,6 +874,7 @@ offset_right = 411.0
 offset_bottom = 80.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Main/CanvasLayer/Options/Sounds/Sliders/Effects"]
+modulate = Color(1, 1, 0.72549, 1)
 layout_mode = 0
 offset_right = 161.0
 offset_bottom = 40.0
@@ -879,6 +890,7 @@ offset_right = 40.0
 offset_bottom = 45.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Sounds/Sliders/Effects/Slider"]
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 150.0
 offset_right = 190.0
@@ -886,6 +898,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_ifayy")
 
 [node name="Center" type="TextureRect" parent="Main/CanvasLayer/Options/Sounds/Sliders/Effects/Slider"]
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 165.0
 offset_right = 377.0
@@ -893,6 +906,7 @@ offset_bottom = 40.0
 texture = ExtResource("3_ha70u")
 
 [node name="Right" type="TextureRect" parent="Main/CanvasLayer/Options/Sounds/Sliders/Effects/Slider"]
+self_modulate = Color(0.184314, 0.772549, 1, 1)
 layout_mode = 0
 offset_left = 350.0
 offset_right = 390.0
@@ -900,6 +914,7 @@ offset_bottom = 40.0
 texture = ExtResource("4_s2jl3")
 
 [node name="SliderEffects" type="HSlider" parent="Main/CanvasLayer/Options/Sounds/Sliders/Effects/Slider"]
+modulate = Color(1, 0.929412, 0.521569, 1)
 layout_mode = 0
 offset_left = 160.0
 offset_top = 12.0
@@ -917,6 +932,7 @@ offset_right = -360.0
 offset_bottom = 320.0
 
 [node name="ShowControls" type="Button" parent="Main/CanvasLayer/Options/Controls"]
+modulate = Color(1, 1, 0.72549, 1)
 layout_mode = 0
 offset_right = 244.0
 offset_bottom = 47.0
