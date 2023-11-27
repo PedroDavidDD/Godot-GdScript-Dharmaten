@@ -13,6 +13,7 @@ extends Node2D
 @onready var containerMagic := $"../ContainerMagic"
 @export var magicBullet = preload("res://scenes/game/objects/balls/ball.tscn")
 
+var collision: KinematicCollision2D
 var velocity = 100 # Velocidad de movimiento en horizontal
 var fast_velocity = 150
 # Mapa de movimientos del personaje
@@ -57,7 +58,8 @@ var type_element_value = 0
 func _process(_delta):
 	_move(_delta)
 
-func _move(delta):	
+func _move(delta):
+	velocity = 100
 	direction = Vector2()
 	
 	# Keys
@@ -87,9 +89,7 @@ func _move(delta):
 	
 	# Movimiento normal o rápido al presionar la tecla shif
 	if Input.is_key_pressed(KEY_SHIFT):
-		move_player(fast_velocity, delta)
-	else:
-		move_player(velocity, delta)
+		velocity = fast_velocity  
 	
 	# Cambiar estado: K
 	if Input.is_action_just_pressed("change_element"):
@@ -111,6 +111,8 @@ func _move(delta):
 		# _current_movement = _movements.BOMB
 	
 	_set_animation()
+	# Activar colisiones y movimiento: move_and_collide
+	collision = player.move_and_collide(direction * velocity * delta)
 
 # Controla la animación según el movimiento del personaje
 func _set_animation():
@@ -170,10 +172,6 @@ func _play_sound(sound):
 	# Reproducimos el sonido
 	audio_player.stream = sound
 	audio_player.play()
-
-# Función para mover al jugador
-func move_player(speed, delta):
-	player.position += direction * speed * delta
 
 	# Tirar bombas
 func throw_bomb():
