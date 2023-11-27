@@ -2,12 +2,8 @@ extends Node2D
 
 @onready var player = $".." # Referencia al personaje a mover
 @onready var main_animation := $"../Animation" # Referencia al sprite del personaje
-@export var effect_animation_sword: AnimatedSprite2D # Referencia al sprite del personaje
 @onready var audio_player:= $"../AudioStreamPlayer2D" # Reproductor de audios
 @onready var main_animation_effects= $"../Effects" # Sprite effectos Player
-
-
-@onready var MainCharacterBomb := $"../MainCharacterBomb"
 
 @onready var containerMagic := $"../ContainerMagic"
 @export var magicBullet = preload("res://scenes/game/objects/balls/ball.tscn")
@@ -18,17 +14,14 @@ var fast_velocity = 150
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
-	IDLE_WITH_SWORD = "idle_with_sword",
-	RUN_WITH_SWORD = "run_with_sword",
-	HIT_WITH_SWORD = "hit_with_sword",
+	RUN = "run",
+	HIT = "hit",
 	DEAD_HIT = "dead_hit",
 	ATTACK = "attack_2",
-	BOMB = "attack_3",
 }
 var _current_movement = _movements.IDLE # Variable de movimiento
 var _died = false # Define si esta vovo o muerto
 var attacking = false # Define si esta atacando
-var bombing = false # Define si esta atacando
 var _is_playing: String = "" # Define si se esta reproducionedo el sonido
 var turn_side: String = "right" # Define si se esta reproducionedo el sonido
 
@@ -42,7 +35,6 @@ var _hit_sound = preload("res://assets/sounds/slash.mp3")
 var playerKeys = [] # C0, C20, ...
 
 var direction = Vector2()
-var bomb = preload("res://scenes/game/levels/objects/damage_object/bomb/bomb.tscn")  # Ruta al recurso de la bomba
 
 # Keys
 var btnUp = Input.is_action_pressed("arriba")
@@ -82,7 +74,7 @@ func _move(delta):
 		elif btnRight:
 			direction.x += 1
 			turn_side = "right"
-		_current_movement = _movements.RUN_WITH_SWORD
+		_current_movement = _movements.RUN
 	else:
 		_current_movement = _movements.IDLE
 	
@@ -104,11 +96,6 @@ func _move(delta):
 		if nearest_slime_green:
 			create_magic_bullet(nearest_slime_green, type_element[type_element_value])
 	
-	# Cuando se presiona la tecla b, lanzamos bomba
-	if Input.is_action_just_pressed("bomb"):
-		throw_bomb()
-		# _current_movement = _movements.BOMB
-	
 	_set_animation()
 	# Activar colisiones y movimiento: move_and_collide
 	collision = player.move_and_collide(direction * velocity * delta)
@@ -116,7 +103,7 @@ func _move(delta):
 # Controla la animación según el movimiento del personaje
 func _set_animation():
 	# Si esta atacando no interrumpimos la animació	
-	if attacking or bombing:
+	if attacking:
 		return
 	# Personaje murio
 	if _died:
@@ -128,43 +115,21 @@ func _set_animation():
 		main_animation.play(_movements.ATTACK)
 		#weapon.get_node("AnimatedSprite2D").play("default")
 		_play_sound(_hit_sound)
-		# Agregamos el effecto especial
-		#_play_sword_effect()
-	elif _current_movement == _movements.BOMB:
-		# Lanzamos bomba
-		bombing = true
-		main_animation.play(_movements.BOMB)
-	elif _current_movement == _movements.RUN_WITH_SWORD:
+	elif _current_movement == _movements.RUN:
 		if btnRight:
 			# Movimiento hacia la derecha (animación "correr" no volteada)
 			main_animation.flip_h = false
 		elif btnLeft:
 			# Movimiento hacia la izquierda (animación "correr" volteada)
 			main_animation.flip_h = true
-		main_animation.play(_movements.RUN_WITH_SWORD)
+		main_animation.play(_movements.RUN)
 	else:
 		# Movimiento por defecto (animación de "reposo")
 		main_animation.play(_movements.IDLE)
 		# Pausamos el sonido
 		audio_player.stop()
 		_is_playing = ""
-""""
-func _play_sword_effect():
-	# Obtenems que efecto tenemos activo
-	var type = Global.attack_effect
-	if type == "blue_potion":
-		# Aplicamos el efecto blue_potion
-		effect_animation_sword.self_modulate = Color("#70a2ff")
-	elif type == "green_bottle":
-		# Aplicamos el efecto green_bottle
-		effect_animation_sword.self_modulate = Color("#80b65a")
-	else:
-		# Aplicamos el efecto predefinido
-		effect_animation_sword.self_modulate = Color("#ffffff")
-	
-	# Reproducimos el efecto de la espada
-	effect_animation_sword.play("attack_2_effect")
-"""
+
 func _play_sound(sound):
 	# Pausamos el sonido
 	audio_player.stop()
@@ -172,9 +137,6 @@ func _play_sound(sound):
 	audio_player.stream = sound
 	audio_player.play()
 
-	# Tirar bombas
-func throw_bomb():
-	MainCharacterBomb._getBomb()
 
 # Recibir daño
 func hit(value: int):
@@ -183,7 +145,7 @@ func hit(value: int):
 	attacking = false
 	HealthDashboard.remove_life(value)
 	_play_sound(_male_hurt_sound)
-	#main_animation.play("hit_with_sword")
+	#main_animation.play("HIT")
 	
 	# Bajamos vida y validamos si el personaje ha perdido
 	if HealthDashboard.life == 0:

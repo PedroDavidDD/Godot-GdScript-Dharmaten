@@ -93,12 +93,6 @@ func add_points(type: String, value: int, group = null):
 		points[type] += value
 		_set_points(points[type])
 
-
-# Permite sumar o restar la cantidad de bombas disponibles
-func add_bomb(value: int):
-	add_points("Bomb", value, bomb_group)
-
-
 # Función para resetear los valores de vida y puntos
 func restart():
 	life = 10
