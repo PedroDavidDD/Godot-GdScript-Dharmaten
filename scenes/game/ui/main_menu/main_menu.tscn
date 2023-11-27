@@ -1007,6 +1007,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TopLeft" type="TextureRect" parent="Main/GameControls/Background/Background"]
+visible = false
 modulate = Color(0.52549, 0.729412, 0.972549, 1)
 layout_mode = 0
 offset_left = -450.0
@@ -1015,6 +1016,7 @@ offset_bottom = -180.0
 texture = ExtResource("28_2um5v")
 
 [node name="TopRight" type="TextureRect" parent="Main/GameControls/Background/Background"]
+visible = false
 modulate = Color(0.52549, 0.729412, 0.972549, 1)
 layout_mode = 0
 offset_top = -330.0
@@ -1023,6 +1025,7 @@ offset_bottom = -180.0
 texture = ExtResource("29_qsbm4")
 
 [node name="MiddleLeft" type="TextureRect" parent="Main/GameControls/Background/Background"]
+visible = false
 modulate = Color(0.52549, 0.729412, 0.972549, 1)
 layout_mode = 0
 offset_left = -450.0
@@ -1031,6 +1034,7 @@ offset_bottom = 260.0
 texture = ExtResource("30_qlj7f")
 
 [node name="MiddleRight" type="TextureRect" parent="Main/GameControls/Background/Background"]
+visible = false
 modulate = Color(0.52549, 0.729412, 0.972549, 1)
 layout_mode = 0
 offset_top = -180.0
@@ -1039,6 +1043,7 @@ offset_bottom = 260.0
 texture = ExtResource("31_76hrj")
 
 [node name="BottomLeft" type="TextureRect" parent="Main/GameControls/Background/Background"]
+visible = false
 modulate = Color(0.52549, 0.729412, 0.972549, 1)
 layout_mode = 0
 offset_left = -450.0
@@ -1047,6 +1052,7 @@ offset_bottom = 400.0
 texture = ExtResource("32_sxqtv")
 
 [node name="BottomRight" type="TextureRect" parent="Main/GameControls/Background/Background"]
+visible = false
 modulate = Color(0.52549, 0.729412, 0.972549, 1)
 layout_mode = 0
 offset_top = 250.0
