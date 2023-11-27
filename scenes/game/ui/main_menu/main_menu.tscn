@@ -424,11 +424,6 @@ offset_right = 414.0
 offset_bottom = 83.0
 texture = ExtResource("14_ykl76")
 
-[node name="Sprite2D" type="Sprite2D" parent="Main/World/Background"]
-position = Vector2(339.344, 93)
-scale = Vector2(0.886082, 0.812455)
-texture = ExtResource("11_rfo8t")
-
 [node name="Ship" type="Node2D" parent="Main/World"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Main/World/Ship"]
@@ -518,6 +513,11 @@ grow_vertical = 2
 position = Vector2(-154.25, 239)
 scale = Vector2(1.22803, 1.17667)
 texture = ExtResource("6_4wfnd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/CanvasLayer/Options/Init"]
+position = Vector2(-372.656, -11)
+scale = Vector2(0.886082, 0.812455)
+texture = ExtResource("11_rfo8t")
 
 [node name="Letter1" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
