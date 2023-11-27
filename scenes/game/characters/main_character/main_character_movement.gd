@@ -4,9 +4,8 @@ extends Node2D
 @onready var main_animation := $"../Animation" # Referencia al sprite del personaje
 @export var effect_animation_sword: AnimatedSprite2D # Referencia al sprite del personaje
 @onready var audio_player:= $"../AudioStreamPlayer2D" # Reproductor de audios
-@onready var _collision := $"../AreaSword/CollisionShape2D" # Colicionador de espada
 @onready var main_animation_effects= $"../Effects" # Sprite effectos Player
-@onready var weapon := $"../Weapon" # Scena del gancho
+
 
 @onready var MainCharacterBomb := $"../MainCharacterBomb"
 
@@ -127,10 +126,10 @@ func _set_animation():
 		# Atacamos
 		attacking = true
 		main_animation.play(_movements.ATTACK)
-		weapon.get_node("AnimatedSprite2D").play("default")
+		#weapon.get_node("AnimatedSprite2D").play("default")
 		_play_sound(_hit_sound)
 		# Agregamos el effecto especial
-		_play_sword_effect()
+		#_play_sword_effect()
 	elif _current_movement == _movements.BOMB:
 		# Lanzamos bomba
 		bombing = true
@@ -149,7 +148,7 @@ func _set_animation():
 		# Pausamos el sonido
 		audio_player.stop()
 		_is_playing = ""
-
+""""
 func _play_sword_effect():
 	# Obtenems que efecto tenemos activo
 	var type = Global.attack_effect
@@ -165,7 +164,7 @@ func _play_sword_effect():
 	
 	# Reproducimos el efecto de la espada
 	effect_animation_sword.play("attack_2_effect")
-
+"""
 func _play_sound(sound):
 	# Pausamos el sonido
 	audio_player.stop()
@@ -184,7 +183,7 @@ func hit(value: int):
 	attacking = false
 	HealthDashboard.remove_life(value)
 	_play_sound(_male_hurt_sound)
-	main_animation.play("hit_with_sword")
+	#main_animation.play("hit_with_sword")
 	
 	# Bajamos vida y validamos si el personaje ha perdido
 	if HealthDashboard.life == 0:
@@ -230,3 +229,5 @@ func create_magic_bullet(enemy_player: CharacterBody2D, type_element: String):
 	magic_bullet.global_position = containerMagic.get_node("ShootPointer").global_position
 	get_tree().call_group("scene_0", "add_child", magic_bullet)
 
+func _on_animation_frame_changed():
+	pass

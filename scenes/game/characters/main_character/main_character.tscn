@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://ca3ueo0yewjov"]
+[gd_scene load_steps=121 format=3 uid="uid://ca3ueo0yewjov"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/main_character/MainCharacterBomb.gd" id="3_odvu6"]
 [ext_resource type="Texture2D" uid="uid://ty7vj41shftk" path="res://assets/sprites/Player/Blue_witch/B_witch_attack.png" id="4_eeya6"]
@@ -649,7 +649,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q04ya"]
-size = Vector2(22, 32)
+size = Vector2(20, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cwldb"]
 animations = [{
@@ -770,9 +770,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_841yf"]
-size = Vector2(20, 33)
-
 [node name="MainCharacter" type="CharacterBody2D" groups=["player"]]
 disable_mode = 1
 
@@ -793,7 +790,7 @@ sprite_frames = SubResource("SpriteFrames_sohxe")
 animation = &"dead_hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_q04ya")
 
 [node name="Effects" type="AnimatedSprite2D" parent="."]
@@ -808,13 +805,6 @@ z_index = 2
 position = Vector2(32, -1)
 sprite_frames = SubResource("SpriteFrames_isfec")
 animation = &"idle"
-
-[node name="AreaSword" type="Area2D" parent="." groups=["hit"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSword"]
-position = Vector2(20, 0.5)
-shape = SubResource("RectangleShape2D_841yf")
-disabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 bus = &"Effects"

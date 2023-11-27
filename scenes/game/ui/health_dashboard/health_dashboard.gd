@@ -45,7 +45,7 @@ var _index_number_0 = 17
 @onready var LabelCrabby = $EnemyGroup/Panel/Crabby/LabelCrabby
 @onready var LabelKey = $EnemyGroup/Panel/Keys/LabelKey
 @onready var LabelKey_white = $EnemyGroup/Panel/Keys_door_scene/LabelKey
-@onready var label_SkillGancho = $EnemyGroup/Panel/SkillGancho/LabelSkillGancho
+#@onready var label_SkillGancho = $EnemyGroup/Panel/SkillGancho/LabelSkillGancho
 
 @onready var expBar = $ExpBar/Bar
 @onready var label_expBar = $ExpBar/LabelBar

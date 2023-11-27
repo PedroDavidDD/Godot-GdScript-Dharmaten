@@ -1100,8 +1100,9 @@ text = "Controles"
 
 [node name="Row1" type="Control" parent="Main/GameControls/Background/Texts"]
 anchors_preset = 0
+offset_top = 54.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 94.0
 
 [node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row1"]
 layout_mode = 0
@@ -1114,42 +1115,21 @@ text = "Movimiento:"
 
 [node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row1"]
 layout_mode = 0
-offset_left = -50.0
-offset_right = 490.0
-offset_bottom = 23.0
+offset_left = -52.0
+offset_top = -12.0
+offset_right = 488.0
+offset_bottom = 34.0
 theme_override_fonts/font = ExtResource("27_eb3si")
 theme_override_font_sizes/font_size = 20
-text = "Flechas ← y → "
-
-[node name="Row2" type="Control" parent="Main/GameControls/Background/Texts"]
-anchors_preset = 0
-offset_top = 60.0
-offset_right = 40.0
-offset_bottom = 100.0
-
-[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row2"]
-layout_mode = 0
-offset_left = -400.0
-offset_right = -158.0
-offset_bottom = 25.0
-theme_override_fonts/font = ExtResource("27_eb3si")
-theme_override_font_sizes/font_size = 22
-text = "Salto:"
-
-[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row2"]
-layout_mode = 0
-offset_left = -50.0
-offset_right = 490.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("27_eb3si")
-theme_override_font_sizes/font_size = 20
-text = "Espacio"
+text = "W(up) A(left)
+S(down) D(right)"
+horizontal_alignment = 1
 
 [node name="Row3" type="Control" parent="Main/GameControls/Background/Texts"]
 anchors_preset = 0
-offset_top = 120.0
+offset_top = 143.0
 offset_right = 40.0
-offset_bottom = 160.0
+offset_bottom = 183.0
 
 [node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row3"]
 layout_mode = 0
@@ -1167,61 +1147,14 @@ offset_right = 490.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("27_eb3si")
 theme_override_font_sizes/font_size = 20
-text = "Tecla X"
-
-[node name="Row4" type="Control" parent="Main/GameControls/Background/Texts"]
-anchors_preset = 0
-offset_top = 180.0
-offset_right = 40.0
-offset_bottom = 220.0
-
-[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row4"]
-layout_mode = 0
-offset_left = -400.0
-offset_right = -158.0
-offset_bottom = 25.0
-theme_override_fonts/font = ExtResource("27_eb3si")
-theme_override_font_sizes/font_size = 22
-text = "Mercado:"
-
-[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row4"]
-layout_mode = 0
-offset_left = -50.0
-offset_right = 490.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("27_eb3si")
-theme_override_font_sizes/font_size = 20
-text = "Tecla M"
-
-[node name="Row5" type="Control" parent="Main/GameControls/Background/Texts"]
-anchors_preset = 0
-offset_top = 240.0
-offset_right = 40.0
-offset_bottom = 280.0
-
-[node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row5"]
-layout_mode = 0
-offset_left = -400.0
-offset_right = -158.0
-offset_bottom = 25.0
-theme_override_fonts/font = ExtResource("27_eb3si")
-theme_override_font_sizes/font_size = 22
-text = "Iventario:"
-
-[node name="Description" type="Label" parent="Main/GameControls/Background/Texts/Row5"]
-layout_mode = 0
-offset_left = -50.0
-offset_right = 490.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("27_eb3si")
-theme_override_font_sizes/font_size = 20
-text = "Rueda del ratón"
+text = "Tecla J"
+horizontal_alignment = 1
 
 [node name="Row6" type="Control" parent="Main/GameControls/Background/Texts"]
 anchors_preset = 0
-offset_top = 300.0
+offset_top = 223.0
 offset_right = 40.0
-offset_bottom = 340.0
+offset_bottom = 263.0
 
 [node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row6"]
 layout_mode = 0
@@ -1240,6 +1173,7 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("27_eb3si")
 theme_override_font_sizes/font_size = 20
 text = "Escape"
+horizontal_alignment = 1
 
 [node name="Close" type="Control" parent="Main/GameControls/Background"]
 layout_mode = 1

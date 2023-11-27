@@ -34,6 +34,10 @@ var isMoving = true
 var speedSlime = 100
 var player = null
 var _died = false
+var wave = 0
+
+
+var enemy = load("res://scenes/game/enemy/Slime/slime_green.tscn")
 
 var _orbe = preload("res://scenes/game/enemy/Orbe/orbe.tscn")
 var _male_hurt_sound = preload("res://assets/sounds/male_hurt.mp3")
@@ -48,6 +52,7 @@ func _ready():
 		set_physics_process(false)
 	# animacion
 	_init_state()
+	
 
 func _init_state():
 	# Animación de estado inicial
@@ -65,9 +70,18 @@ func _process(delta):
 	elif _current_movement == animation.ATTACKING:
 		isMoving = false
 	
-	_animation.play(_current_movement)
+	#_animation.play(_current_movement)
 	# Iniciamos el movimiento
 	move_and_slide()
+	
+	var inst=enemy.instantiate()
+	
+	if (get_tree().get_nodes_in_group("enemy").size() == 0):
+		for wave in 15:
+			print(wave)
+			inst.position = Vector2(0,0)
+			
+	
 
 func _on_area_2d_body_entered(body):
 #	contrl + k
