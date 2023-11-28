@@ -40,7 +40,7 @@ layer_3/tile_data = PackedInt32Array()
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_2vh60")]
 z_index = 5
-position = Vector2(1389, 58)
+position = Vector2(779, 292)
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_ftrd5")]
 limit_top = -44
@@ -51,16 +51,16 @@ character = NodePath("../MainCharacter")
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="SpawnLocation1" parent="." groups=["spawn"] instance=ExtResource("5_34krj")]
-position = Vector2(38, 570)
+[node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(1, 593)
 
-[node name="SpawnLocation2" parent="." groups=["spawn"] instance=ExtResource("5_34krj")]
-position = Vector2(1501, 588)
+[node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(0, 14)
 
-[node name="SpawnLocation3" parent="." groups=["spawn"] instance=ExtResource("5_34krj")]
-position = Vector2(1492, 21)
+[node name="SpawnLocation3" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(1510, 589)
 
-[node name="SpawnLocation4" parent="." groups=["spawn"] instance=ExtResource("5_34krj")]
-position = Vector2(27, 27)
+[node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(1519, 15)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
