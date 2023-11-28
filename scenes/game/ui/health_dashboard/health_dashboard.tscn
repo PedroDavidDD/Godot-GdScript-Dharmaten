@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://d3bljsqlyvvf1" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/blue_diamond/01.png" id="9_culmi"]
 [ext_resource type="Texture2D" uid="uid://dag1d05f4evdq" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/green_diamond/01.png" id="10_fhwqc"]
 [ext_resource type="Texture2D" uid="uid://xiw4qwa52ual" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/red_diamond/01.png" id="11_7u8si"]
-[ext_resource type="Texture2D" uid="uid://cmlgr3i0h1klc" path="res://assets/sprites/treasure_hunters/the_crusty_crew/sprites/crabby/01_idle/idle_01.png" id="13_uppaq"]
-[ext_resource type="Texture2D" uid="uid://bh50bsc31vx8q" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/1.png" id="14_a1a50"]
-[ext_resource type="Texture2D" uid="uid://t0l007ytcfir" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/key_white.png" id="16_yjwxp"]
+[ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="14_lva2v"]
+[ext_resource type="Texture2D" uid="uid://bhbbl50de1861" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa item.png" id="15_g8ngi"]
+[ext_resource type="Texture2D" uid="uid://ds4liwhndrddn" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa item2.png" id="16_y8cwn"]
 [ext_resource type="Texture2D" uid="uid://se5qxhvskbfa" path="res://assets/sprites/Objects/elements/flame.png" id="17_mp1ff"]
 [ext_resource type="Texture2D" uid="uid://b7drs1kuhkybp" path="res://assets/sprites/Objects/elements/mark.png" id="17_qct4s"]
 [ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
@@ -206,6 +206,7 @@ scale = Vector2(0.9, 0.9)
 texture = SubResource("AtlasTexture_25xk4")
 
 [node name="PointGroup" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -215,6 +216,7 @@ offset_bottom = 40.0
 grow_horizontal = 0
 
 [node name="GoldCoin" type="Control" parent="PointGroup"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -320.0
@@ -267,6 +269,7 @@ scale = Vector2(0.9, 0.9)
 texture = SubResource("AtlasTexture_pw7ap")
 
 [node name="SilverCoin" type="Control" parent="PointGroup"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -320.0
@@ -512,14 +515,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -21.5
-offset_right = 36.0
-offset_bottom = 21.5
+offset_left = -7.14294
+offset_top = -8.57143
+offset_right = 33.8571
+offset_bottom = 26.4286
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("13_uppaq")
+texture = ExtResource("14_lva2v")
+expand_mode = 1
 
 [node name="LabelCrabby" type="Label" parent="EnemyGroup/Panel/Crabby"]
 layout_mode = 1
@@ -566,7 +570,8 @@ offset_bottom = 21.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("14_a1a50")
+texture = ExtResource("15_g8ngi")
+expand_mode = 1
 
 [node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys"]
 layout_mode = 1
@@ -613,7 +618,8 @@ offset_bottom = 21.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("16_yjwxp")
+texture = ExtResource("16_y8cwn")
+expand_mode = 1
 
 [node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys_door_scene"]
 layout_mode = 1

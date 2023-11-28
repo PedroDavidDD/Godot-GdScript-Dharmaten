@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brhmupxo2xjim"]
 
 [ext_resource type="Script" path="res://scenes/game/levels/objects/change_scene/door_change_scene.gd" id="1_o73yr"]
-[ext_resource type="Texture2D" uid="uid://cgho6nexmb30i" path="res://assets/sprites/treasure_hunters/pirate_ship/sprites/decorations/door/closing/01.png" id="2_gps70"]
+[ext_resource type="Texture2D" uid="uid://m3tvxr1kx8id" path="res://assets/sprites/treasure_hunters/pirate_ship/sprites/decorations/door/opening/Portal_100x100px11.png" id="2_24h85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pukn"]
 size = Vector2(37, 45)
@@ -10,8 +10,9 @@ size = Vector2(37, 45)
 script = ExtResource("1_o73yr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 18)
-texture = ExtResource("2_gps70")
+position = Vector2(2, 28.5)
+scale = Vector2(1.04, 1.13)
+texture = ExtResource("2_24h85")
 
 [node name="Area2D" type="Area2D" parent="."]
 

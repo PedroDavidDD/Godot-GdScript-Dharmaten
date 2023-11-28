@@ -68,7 +68,7 @@ func _load_next_level(body):
 		else:
 			enemies_died = false
 			# print("Te falta eliminar enemigos: " + str(living_enemies.size()))
-		enemies_died = true # Quitamos el requisito
+		#enemies_died = true # Quitamos el requisito
 		if enemies_died:
 			if door_keys.size() > 0 and player_keys.size() > 0:
 				var keys_accepted: int = 0
