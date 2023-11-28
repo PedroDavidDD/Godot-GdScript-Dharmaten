@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=48 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
 [ext_resource type="Texture2D" uid="uid://cl5b1weh62et3" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/1.png" id="2_q6wv6"]
@@ -14,12 +14,18 @@
 [ext_resource type="Texture2D" uid="uid://dag1d05f4evdq" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/green_diamond/01.png" id="10_fhwqc"]
 [ext_resource type="Texture2D" uid="uid://xiw4qwa52ual" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/red_diamond/01.png" id="11_7u8si"]
 [ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="14_lva2v"]
+[ext_resource type="Texture2D" uid="uid://c1565oiq4iveu" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/13.png" id="14_xxptq"]
 [ext_resource type="Texture2D" uid="uid://6r1xqhu5na37" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo.png" id="15_7xry1"]
+[ext_resource type="Texture2D" uid="uid://b0x5mxa2tsy1u" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/14.png" id="15_0216f"]
 [ext_resource type="Texture2D" uid="uid://bdkpg0v64750g" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo 2.png" id="16_4tu1t"]
+[ext_resource type="Texture2D" uid="uid://c8ashne3hoseq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/15.png" id="16_ci8oi"]
+[ext_resource type="Texture2D" uid="uid://bqcbpn2cey2eg" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/16.png" id="17_drw4b"]
 [ext_resource type="Texture2D" uid="uid://se5qxhvskbfa" path="res://assets/sprites/Objects/elements/flame.png" id="17_mp1ff"]
-[ext_resource type="Texture2D" uid="uid://b7drs1kuhkybp" path="res://assets/sprites/Objects/elements/mark.png" id="17_qct4s"]
 [ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
 [ext_resource type="Texture2D" uid="uid://dutce1a8j47nq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_Bar.png" id="18_j8clb"]
+[ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="18_s683d"]
+[ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="19_thhxn"]
+[ext_resource type="Texture2D" uid="uid://brwx3lkdp4684" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/inventory/16.png" id="23_6471h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jphx6"]
 atlas = ExtResource("7_kitrq")
@@ -494,12 +500,90 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -315.0
-offset_top = 166.0
-offset_right = -20.0
-offset_bottom = 326.0
+offset_left = -322.0
+offset_top = 36.0
+offset_right = -27.0
+offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TopRight5" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 265.0
+offset_top = 171.0
+offset_right = 443.0
+offset_bottom = 240.0
+rotation = 4.71239
+texture = ExtResource("15_0216f")
+flip_h = true
+flip_v = true
+
+[node name="TopRight4" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 265.0
+offset_top = 177.0
+offset_right = 443.0
+offset_bottom = 246.0
+rotation = 4.71239
+texture = ExtResource("15_0216f")
+flip_v = true
+
+[node name="TopRight3" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -57.0
+offset_top = 176.0
+offset_right = 126.0
+offset_bottom = 245.0
+rotation = 4.71239
+texture = ExtResource("15_0216f")
+flip_h = true
+
+[node name="TopRight2" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -57.0
+offset_top = 177.0
+offset_right = 121.0
+offset_bottom = 246.0
+rotation = 4.71239
+texture = ExtResource("15_0216f")
+
+[node name="TopLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -16.0
+offset_top = -57.0
+offset_right = 134.0
+offset_bottom = 12.0
+texture = ExtResource("14_xxptq")
+
+[node name="TopRight" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 134.0
+offset_top = -57.0
+offset_right = 293.0
+offset_bottom = 12.0
+texture = ExtResource("15_0216f")
+
+[node name="MiddleLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -16.0
+offset_top = 12.0
+offset_right = 134.0
+offset_bottom = 153.0
+texture = ExtResource("16_ci8oi")
+
+[node name="MiddleRight" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 134.0
+offset_top = 12.0
+offset_right = 293.0
+offset_bottom = 152.0
+texture = ExtResource("17_drw4b")
+
+[node name="BottomLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -16.0
+offset_top = 152.0
+offset_right = 134.0
+offset_bottom = 242.0
+texture = ExtResource("18_s683d")
+
+[node name="BottomRight" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 134.0
+offset_top = 152.0
+offset_right = 293.0
+offset_bottom = 242.0
+texture = ExtResource("19_thhxn")
 
 [node name="Crabby" type="Control" parent="EnemyGroup/Panel"]
 layout_mode = 1
@@ -515,10 +599,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -7.14294
-offset_top = -8.57143
-offset_right = 33.8571
-offset_bottom = 26.4286
+offset_left = 97.1428
+offset_top = -5.71429
+offset_right = 138.143
+offset_bottom = 29.2857
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
@@ -532,10 +616,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 70.0
-offset_top = -10.0
-offset_right = 133.0
-offset_bottom = 42.0
+offset_left = 188.571
+offset_top = -5.71428
+offset_right = 251.571
+offset_bottom = 46.2857
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -563,10 +647,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -15.7143
-offset_right = 34.0
-offset_bottom = 23.2857
+offset_left = 95.7142
+offset_top = -20.0
+offset_right = 139.714
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
@@ -580,10 +664,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 70.0
-offset_top = -10.0
-offset_right = 133.0
-offset_bottom = 42.0
+offset_left = 191.429
+offset_top = -15.7143
+offset_right = 254.429
+offset_bottom = 36.2857
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -611,10 +695,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -11.0
-offset_top = -16.0
-offset_right = 33.0
-offset_bottom = 24.0
+offset_left = 97.1428
+offset_top = -21.4286
+offset_right = 141.143
+offset_bottom = 18.5714
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
@@ -628,10 +712,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 70.0
-offset_top = -10.0
-offset_right = 133.0
-offset_bottom = 42.0
+offset_left = 194.286
+offset_top = -15.7143
+offset_right = 257.286
+offset_bottom = 36.2857
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -662,7 +746,7 @@ offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.535, 0.535)
-texture = ExtResource("17_qct4s")
+texture = ExtResource("23_6471h")
 expand_mode = 2
 
 [node name="TextureReactSkill" type="TextureRect" parent="Skills/ContainerSkill"]
