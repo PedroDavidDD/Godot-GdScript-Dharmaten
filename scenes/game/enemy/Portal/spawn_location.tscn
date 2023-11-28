@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://wqk83768mm4c"]
+
+[sub_resource type="Gradient" id="Gradient_l3ndu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1syik"]
+gradient = SubResource("Gradient_l3ndu")
+
+[node name="SpawnLocation" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_1syik")

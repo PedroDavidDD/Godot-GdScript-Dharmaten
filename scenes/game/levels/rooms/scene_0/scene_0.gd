@@ -1,7 +1,8 @@
 extends Node2D
 var player = []
 var enemy = load("res://scenes/game/enemy/Slime/slime_green.tscn")
-var wave = 0
+var wave = 1
+var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
@@ -12,10 +13,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	pass
+
+
+func _on_spawn_timer_timeout():
+	wave +=1
+	var random_number = rng.randi_range(1,4)
+	print (random_number)
 	var inst=enemy.instantiate()
 	
-	if (get_tree().get_nodes_in_group("enemy").size() == 0 and wave <=15):
-			wave +=1
-			add_child(inst)
-			inst.position = Vector2(0,0)
-			print(wave)
+	if (random_number == 1):
+		inst.position = $SpawnLocation1.position
+	elif (random_number == 2):
+		inst.position = $SpawnLocation2.position
+	elif (random_number == 3):
+		inst.position = $SpawnLocation3.position
+	else:
+		inst.position = $SpawnLocation4.position	
+	
+	add_child(inst)
+	print(inst.position)
