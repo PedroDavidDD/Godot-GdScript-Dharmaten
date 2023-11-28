@@ -508,6 +508,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TopRight5" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 265.0
 offset_top = 171.0
 offset_right = 443.0
@@ -518,6 +519,7 @@ flip_h = true
 flip_v = true
 
 [node name="TopRight4" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 265.0
 offset_top = 177.0
 offset_right = 443.0
@@ -527,6 +529,7 @@ texture = ExtResource("15_0216f")
 flip_v = true
 
 [node name="TopRight3" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -57.0
 offset_top = 176.0
 offset_right = 126.0
@@ -536,6 +539,7 @@ texture = ExtResource("15_0216f")
 flip_h = true
 
 [node name="TopRight2" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -57.0
 offset_top = 177.0
 offset_right = 121.0
@@ -544,6 +548,7 @@ rotation = 4.71239
 texture = ExtResource("15_0216f")
 
 [node name="TopLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -57.0
 offset_right = 134.0
@@ -551,6 +556,7 @@ offset_bottom = 12.0
 texture = ExtResource("14_xxptq")
 
 [node name="TopRight" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 134.0
 offset_top = -57.0
 offset_right = 293.0
@@ -558,6 +564,7 @@ offset_bottom = 12.0
 texture = ExtResource("15_0216f")
 
 [node name="MiddleLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 12.0
 offset_right = 134.0
@@ -565,6 +572,7 @@ offset_bottom = 153.0
 texture = ExtResource("16_ci8oi")
 
 [node name="MiddleRight" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 134.0
 offset_top = 12.0
 offset_right = 293.0
@@ -572,6 +580,7 @@ offset_bottom = 152.0
 texture = ExtResource("17_drw4b")
 
 [node name="BottomLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 152.0
 offset_right = 134.0
@@ -579,6 +588,7 @@ offset_bottom = 242.0
 texture = ExtResource("18_s683d")
 
 [node name="BottomRight" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 134.0
 offset_top = 152.0
 offset_right = 293.0
@@ -793,6 +803,7 @@ grow_vertical = 2
 texture = ExtResource("18_j8clb")
 
 [node name="Right2" type="TextureRect" parent="ExpBar/ContainerBar"]
+layout_mode = 0
 offset_left = -15.0
 offset_top = -53.0
 offset_right = 91.0
@@ -802,6 +813,7 @@ texture = ExtResource("4_r3fbm")
 flip_h = true
 
 [node name="Right" type="TextureRect" parent="ExpBar/ContainerBar"]
+layout_mode = 0
 offset_left = 801.0
 offset_top = -53.0
 offset_right = 910.0
@@ -810,6 +822,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_r3fbm")
 
 [node name="Center" type="TextureRect" parent="ExpBar/ContainerBar"]
+layout_mode = 0
 offset_left = 152.0
 offset_top = -53.0
 offset_right = 478.0
