@@ -58,15 +58,6 @@ position = Vector2(-541, 187)
 [node name="SlimeGreen2" parent="SlimeGreens" instance=ExtResource("19_onf22")]
 position = Vector2(-221, 254)
 
-[node name="SlimeGreen3" parent="SlimeGreens" instance=ExtResource("19_onf22")]
-position = Vector2(5, -72)
-
-[node name="SlimeGreen4" parent="SlimeGreens" instance=ExtResource("19_onf22")]
-position = Vector2(-140, -134)
-
-[node name="SlimeGreen5" parent="SlimeGreens" instance=ExtResource("19_onf22")]
-position = Vector2(-365, 6)
-
 [node name="Orbe" parent="." instance=ExtResource("20_c6lnx")]
 position = Vector2(194, 571)
 

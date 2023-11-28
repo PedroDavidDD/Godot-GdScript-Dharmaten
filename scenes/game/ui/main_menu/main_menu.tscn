@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://ln85llv8md7"]
+[gd_scene load_steps=95 format=3 uid="uid://ln85llv8md7"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/main_menu/main_menu.gd" id="1_g1i31"]
 [ext_resource type="Texture2D" uid="uid://c8apilaqosli4" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/additional_sky.png" id="2_66173"]
@@ -40,7 +40,6 @@
 [ext_resource type="Texture2D" uid="uid://bqcbpn2cey2eg" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/16.png" id="31_76hrj"]
 [ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="32_sxqtv"]
 [ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="33_14dux"]
-[ext_resource type="Texture2D" uid="uid://io10vk5i5opy" path="res://scenes/game/ui/main_menu/muro de piedra2.png" id="35_3ok71"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u6xb"]
 animations = [{
@@ -984,6 +983,7 @@ theme_override_font_sizes/font_size = 24
 text = "Controles"
 
 [node name="GameControls" type="CanvasLayer" parent="Main"]
+visible = false
 
 [node name="Background" type="ColorRect" parent="Main/GameControls"]
 anchors_preset = 15
@@ -1006,11 +1006,6 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Main/GameControls/Background/Background"]
-position = Vector2(2.00003, 16)
-scale = Vector2(0.376, 0.35545)
-texture = ExtResource("35_3ok71")
 
 [node name="TopLeft" type="TextureRect" parent="Main/GameControls/Background/Background"]
 visible = false
@@ -1112,10 +1107,9 @@ offset_bottom = 94.0
 
 [node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row1"]
 layout_mode = 0
-offset_left = -330.0
-offset_top = 1.0
-offset_right = -88.0
-offset_bottom = 26.0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
 theme_override_fonts/font = ExtResource("27_eb3si")
 theme_override_font_sizes/font_size = 22
 text = "Movimiento:"
@@ -1140,10 +1134,9 @@ offset_bottom = 183.0
 
 [node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row3"]
 layout_mode = 0
-offset_left = -331.0
-offset_top = -2.0
-offset_right = -89.0
-offset_bottom = 23.0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
 theme_override_fonts/font = ExtResource("27_eb3si")
 theme_override_font_sizes/font_size = 22
 text = "Ataque:"
@@ -1166,10 +1159,9 @@ offset_bottom = 263.0
 
 [node name="Title" type="Label" parent="Main/GameControls/Background/Texts/Row6"]
 layout_mode = 0
-offset_left = -328.0
-offset_top = -3.0
-offset_right = -86.0
-offset_bottom = 22.0
+offset_left = -400.0
+offset_right = -158.0
+offset_bottom = 25.0
 theme_override_fonts/font = ExtResource("27_eb3si")
 theme_override_font_sizes/font_size = 22
 text = "Menú:"

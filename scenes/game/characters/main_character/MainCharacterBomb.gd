@@ -11,6 +11,7 @@ var _move_script: Node2D
 
 
 func _ready():
+	HealthDashboard.add_bomb(2)
 	_move_script = get_parent().get_node("MainCharacterMovement")
 
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=42 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
 [ext_resource type="Texture2D" uid="uid://cl5b1weh62et3" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/1.png" id="2_q6wv6"]
@@ -6,10 +6,103 @@
 [ext_resource type="Texture2D" uid="uid://c51psidx5cxry" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/3.png" id="3_c11lr"]
 [ext_resource type="Texture2D" uid="uid://t2qsw1ribmcp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/4.png" id="4_r3fbm"]
 [ext_resource type="Texture2D" uid="uid://ci24y5vdyxq0j" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/1.png" id="5_ygykx"]
+[ext_resource type="Texture2D" uid="uid://cm142hc3tlhe6" path="res://assets/sprites/pirate_bomb/7_objects/1_bomb/1-bomb off/1.png" id="6_0stdc"]
+[ext_resource type="Texture2D" uid="uid://bmn2hx61jlm7n" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/gold_coin/01.png" id="6_tqefr"]
+[ext_resource type="Texture2D" uid="uid://qegg5d225ej6" path="res://assets/atlases/text.png" id="7_kitrq"]
+[ext_resource type="Texture2D" uid="uid://cwxu4q044qobj" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/silver_coin/01.png" id="8_sfwhs"]
+[ext_resource type="Texture2D" uid="uid://d3bljsqlyvvf1" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/blue_diamond/01.png" id="9_culmi"]
+[ext_resource type="Texture2D" uid="uid://dag1d05f4evdq" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/green_diamond/01.png" id="10_fhwqc"]
+[ext_resource type="Texture2D" uid="uid://xiw4qwa52ual" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/red_diamond/01.png" id="11_7u8si"]
+[ext_resource type="Texture2D" uid="uid://cmlgr3i0h1klc" path="res://assets/sprites/treasure_hunters/the_crusty_crew/sprites/crabby/01_idle/idle_01.png" id="13_uppaq"]
+[ext_resource type="Texture2D" uid="uid://bh50bsc31vx8q" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/1.png" id="14_a1a50"]
+[ext_resource type="Texture2D" uid="uid://t0l007ytcfir" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/idle/key_white.png" id="16_yjwxp"]
 [ext_resource type="Texture2D" uid="uid://se5qxhvskbfa" path="res://assets/sprites/Objects/elements/flame.png" id="17_mp1ff"]
 [ext_resource type="Texture2D" uid="uid://b7drs1kuhkybp" path="res://assets/sprites/Objects/elements/mark.png" id="17_qct4s"]
 [ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
 [ext_resource type="Texture2D" uid="uid://dutce1a8j47nq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_Bar.png" id="18_j8clb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jphx6"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 4, 10, 11)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iwcxu"]
+load_path = "res://.godot/imported/text.png-c60f3c71437097c445e5745800ab64ed.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nallr"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qadic"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25xk4"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2byhb"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 4, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ytba"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8c5t"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw7ap"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tym67"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr0tu"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsmss"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1fmy"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twlol"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n10ep"]
+atlas = ExtResource("7_kitrq")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nk5k"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm3ur"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed70e"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm658"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7m60"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anbyg"]
+atlas = SubResource("CompressedTexture2D_iwcxu")
+region = Rect2(104, 44, 10, 11)
 
 [node name="health_dashboard" type="CanvasLayer"]
 script = ExtResource("1_rufnl")
@@ -60,6 +153,487 @@ max_value = 10.0
 value = 10.0
 nine_patch_stretch = true
 texture_progress = ExtResource("5_ygykx")
+
+[node name="Bomb" type="Control" parent="LifeBar"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 68.0
+offset_right = 40.0
+offset_bottom = 108.0
+
+[node name="Coin" type="TextureRect" parent="LifeBar/Bomb"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -43.0
+offset_right = 79.0
+offset_bottom = 65.0
+texture = ExtResource("6_0stdc")
+
+[node name="X" type="TextureRect" parent="LifeBar/Bomb"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_jphx6")
+
+[node name="Number1" type="TextureRect" parent="LifeBar/Bomb"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 9.0
+offset_right = 150.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_nallr")
+
+[node name="Number2" type="TextureRect" parent="LifeBar/Bomb"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 192.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_qadic")
+
+[node name="Number3" type="TextureRect" parent="LifeBar/Bomb"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 9.0
+offset_right = 234.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_25xk4")
+
+[node name="PointGroup" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="GoldCoin" type="Control" parent="PointGroup"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -320.0
+offset_top = 8.0
+offset_right = -280.0
+offset_bottom = 48.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Coin" type="TextureRect" parent="PointGroup/GoldCoin"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6_tqefr")
+
+[node name="X" type="TextureRect" parent="PointGroup/GoldCoin"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_2byhb")
+
+[node name="Number1" type="TextureRect" parent="PointGroup/GoldCoin"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 9.0
+offset_right = 150.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_0ytba")
+
+[node name="Number2" type="TextureRect" parent="PointGroup/GoldCoin"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 192.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_r8c5t")
+
+[node name="Number3" type="TextureRect" parent="PointGroup/GoldCoin"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 9.0
+offset_right = 234.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_pw7ap")
+
+[node name="SilverCoin" type="Control" parent="PointGroup"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -320.0
+offset_top = 38.0
+offset_right = -280.0
+offset_bottom = 78.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Coin" type="TextureRect" parent="PointGroup/SilverCoin"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_sfwhs")
+
+[node name="X" type="TextureRect" parent="PointGroup/SilverCoin"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_2byhb")
+
+[node name="Number1" type="TextureRect" parent="PointGroup/SilverCoin"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 9.0
+offset_right = 150.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_tym67")
+
+[node name="Number2" type="TextureRect" parent="PointGroup/SilverCoin"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 192.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_vr0tu")
+
+[node name="Number3" type="TextureRect" parent="PointGroup/SilverCoin"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 9.0
+offset_right = 234.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_lsmss")
+
+[node name="BlueDiamond" type="Control" parent="PointGroup"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = 8.0
+offset_right = -100.0
+offset_bottom = 48.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Coin" type="TextureRect" parent="PointGroup/BlueDiamond"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 36.0
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("9_culmi")
+
+[node name="X" type="TextureRect" parent="PointGroup/BlueDiamond"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_2byhb")
+
+[node name="Number1" type="TextureRect" parent="PointGroup/BlueDiamond"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 9.0
+offset_right = 150.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_o1fmy")
+
+[node name="Number2" type="TextureRect" parent="PointGroup/BlueDiamond"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 192.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_twlol")
+
+[node name="Number3" type="TextureRect" parent="PointGroup/BlueDiamond"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 9.0
+offset_right = 234.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_n10ep")
+
+[node name="GreenDiamond" type="Control" parent="PointGroup"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = 38.0
+offset_right = -100.0
+offset_bottom = 78.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Coin" type="TextureRect" parent="PointGroup/GreenDiamond"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 36.0
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("10_fhwqc")
+
+[node name="X" type="TextureRect" parent="PointGroup/GreenDiamond"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_2byhb")
+
+[node name="Number1" type="TextureRect" parent="PointGroup/GreenDiamond"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 9.0
+offset_right = 150.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_4nk5k")
+
+[node name="Number2" type="TextureRect" parent="PointGroup/GreenDiamond"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 192.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_tm3ur")
+
+[node name="Number3" type="TextureRect" parent="PointGroup/GreenDiamond"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 9.0
+offset_right = 234.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_ed70e")
+
+[node name="RedDiamond" type="Control" parent="PointGroup"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = 68.0
+offset_right = -100.0
+offset_bottom = 108.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Coin" type="TextureRect" parent="PointGroup/RedDiamond"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 36.0
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_7u8si")
+
+[node name="X" type="TextureRect" parent="PointGroup/RedDiamond"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_2byhb")
+
+[node name="Number1" type="TextureRect" parent="PointGroup/RedDiamond"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 9.0
+offset_right = 150.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_rm658")
+
+[node name="Number2" type="TextureRect" parent="PointGroup/RedDiamond"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 192.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_x7m60")
+
+[node name="Number3" type="TextureRect" parent="PointGroup/RedDiamond"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 9.0
+offset_right = 234.0
+offset_bottom = 49.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_anbyg")
+
+[node name="EnemyGroup" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="EnemyGroup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = 166.0
+offset_right = -20.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crabby" type="Control" parent="EnemyGroup/Panel"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureReactCrabby" type="TextureRect" parent="EnemyGroup/Panel/Crabby"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -21.5
+offset_right = 36.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("13_uppaq")
+
+[node name="LabelCrabby" type="Label" parent="EnemyGroup/Panel/Crabby"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -10.0
+offset_right = 133.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.945098, 0.4, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keys" type="Control" parent="EnemyGroup/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureReactKey" type="TextureRect" parent="EnemyGroup/Panel/Keys"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -21.5
+offset_right = 36.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("14_a1a50")
+
+[node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -10.0
+offset_right = 133.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.945098, 0.4, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keys_door_scene" type="Control" parent="EnemyGroup/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 27.0
+offset_right = 40.0
+offset_bottom = 67.0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureReactKey" type="TextureRect" parent="EnemyGroup/Panel/Keys_door_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -21.5
+offset_right = 36.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("16_yjwxp")
+
+[node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys_door_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -10.0
+offset_right = 133.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.945098, 0.4, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Skills" type="Control" parent="."]
 layout_mode = 3
