@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dag1d05f4evdq" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/green_diamond/01.png" id="10_fhwqc"]
 [ext_resource type="Texture2D" uid="uid://xiw4qwa52ual" path="res://assets/sprites/treasure_hunters/pirate_treasure/sprites/red_diamond/01.png" id="11_7u8si"]
 [ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="14_lva2v"]
-[ext_resource type="Texture2D" uid="uid://bhbbl50de1861" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa item.png" id="15_g8ngi"]
-[ext_resource type="Texture2D" uid="uid://ds4liwhndrddn" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa item2.png" id="16_y8cwn"]
+[ext_resource type="Texture2D" uid="uid://6r1xqhu5na37" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo.png" id="15_7xry1"]
+[ext_resource type="Texture2D" uid="uid://bdkpg0v64750g" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo 2.png" id="16_4tu1t"]
 [ext_resource type="Texture2D" uid="uid://se5qxhvskbfa" path="res://assets/sprites/Objects/elements/flame.png" id="17_mp1ff"]
 [ext_resource type="Texture2D" uid="uid://b7drs1kuhkybp" path="res://assets/sprites/Objects/elements/mark.png" id="17_qct4s"]
 [ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
@@ -563,14 +563,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -21.5
-offset_right = 36.0
-offset_bottom = 21.5
+offset_left = -10.0
+offset_top = -15.7143
+offset_right = 34.0
+offset_bottom = 23.2857
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("15_g8ngi")
+texture = ExtResource("15_7xry1")
 expand_mode = 1
 
 [node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys"]
@@ -611,14 +611,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -21.5
-offset_right = 36.0
-offset_bottom = 21.5
+offset_left = -11.0
+offset_top = -16.0
+offset_right = 33.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("16_y8cwn")
+texture = ExtResource("16_4tu1t")
 expand_mode = 1
 
 [node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys_door_scene"]
@@ -708,6 +708,31 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_j8clb")
 
+[node name="Right2" type="TextureRect" parent="ExpBar/ContainerBar"]
+offset_left = -15.0
+offset_top = -53.0
+offset_right = 91.0
+offset_bottom = 18.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_r3fbm")
+flip_h = true
+
+[node name="Right" type="TextureRect" parent="ExpBar/ContainerBar"]
+offset_left = 801.0
+offset_top = -53.0
+offset_right = 910.0
+offset_bottom = 18.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_r3fbm")
+
+[node name="Center" type="TextureRect" parent="ExpBar/ContainerBar"]
+offset_left = 152.0
+offset_top = -53.0
+offset_right = 478.0
+offset_bottom = 18.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_c11lr")
+
 [node name="Bar" type="TextureProgressBar" parent="ExpBar"]
 layout_mode = 1
 anchors_preset = 8
@@ -715,10 +740,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -495.5
-offset_top = -16.0
-offset_right = 495.5
-offset_bottom = 16.0
+offset_left = -490.0
+offset_top = -11.0
+offset_right = 491.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 10.0
