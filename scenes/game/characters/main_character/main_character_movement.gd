@@ -42,9 +42,16 @@ var btnDown = Input.is_action_pressed("abajo")
 var btnLeft = Input.is_action_pressed("izquierda")
 var btnRight = Input.is_action_pressed("derecha")
 
-# Elementos 
-var type_element = ["flame", "water", "darkness"]
+# Variables sobre las habilidades elementales
+var elemental_skills_enabled = {
+	"flame": true,
+	"water": false,
+	"darkness": false,
+}
 var type_element_value = 0
+var selected_elemental_skill_key = elemental_skills_enabled.keys()[type_element_value]
+var status_icon = "disabled"
+var selected_elemental_skill_key_status
 
 func _process(_delta):
 	_move(_delta)
@@ -83,26 +90,41 @@ func _move(delta):
 		velocity = fast_velocity  
 	
 	# Cambiar estado: K
-	if Input.is_action_just_pressed("change_element"):
-		if type_element_value == (type_element.size() - 1):
-			type_element_value = 0
-		else:
-			type_element_value += 1
-		HealthDashboard.update_element_icon(type_element[type_element_value])
+	if (elemental_skills_enabled[selected_elemental_skill_key]):
+		status_icon = "enabled"
+	else:
+		status_icon = "disabled"
+	HealthDashboard.update_element_icon( selected_elemental_skill_key, status_icon )
 	
+	if Input.is_action_just_pressed("change_element"):
+		cycle_element_value()
 	# Cuando se presiona la tecla J, atacamos
 	if Input.is_action_just_pressed("attack"):
-		var nearest_slime_green = find_nearest_slime_green_player()
-		if nearest_slime_green:
-			create_magic_bullet(nearest_slime_green, type_element[type_element_value])
+		use_elemental_skill()
+	
+	selected_elemental_skill_key_status = selected_elemental_skill_key+"_"+ status_icon
 	
 	_set_animation()
 	# Activar colisiones y movimiento: move_and_collide
 	collision = player.move_and_collide(direction * velocity * delta)
+	
+func use_elemental_skill():
+	var nearest_slime_green = find_nearest_slime_green_player()
+	if nearest_slime_green && (elemental_skills_enabled[selected_elemental_skill_key]):
+		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key_status)
+	else: 
+		print("desbloquea habilidad: "+str(selected_elemental_skill_key))
+
+func cycle_element_value():
+	if type_element_value == (elemental_skills_enabled.size() - 1):
+		type_element_value = 0
+	else:
+		type_element_value += 1
+	selected_elemental_skill_key = elemental_skills_enabled.keys()[type_element_value]
 
 # Controla la animación según el movimiento del personaje
 func _set_animation():
-	# Si esta atacando no interrumpimos la animació	
+	# Si esta atacando no interrumpimos la animación
 	if attacking:
 		return
 	# Personaje murio

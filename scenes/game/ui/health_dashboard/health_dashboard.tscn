@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="2_wagvh"]
 [ext_resource type="Texture2D" uid="uid://nlvtt8klj4b6" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_06/BarV6_Bar.png" id="3_p2nby"]
 [ext_resource type="Texture2D" uid="uid://hjp52daa3t2y" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_06/BarV6_ProgressBar.png" id="4_hmd4u"]
-[ext_resource type="Texture2D" uid="uid://se5qxhvskbfa" path="res://assets/sprites/Objects/elements/flame.png" id="17_mp1ff"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Objects/elements/flame.png" id="17_mp1ff"]
 [ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
 [ext_resource type="Texture2D" uid="uid://dutce1a8j47nq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_Bar.png" id="18_j8clb"]
 

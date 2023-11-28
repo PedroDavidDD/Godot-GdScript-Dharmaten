@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://clbokiaiasfcd"]
+[gd_scene load_steps=11 format=3 uid="uid://clbokiaiasfcd"]
 
 [ext_resource type="Script" path="res://scenes/game/objects/balls/ball.gd" id="1_wq2fq"]
 [ext_resource type="Texture2D" uid="uid://dcdmpyxok86ts" path="res://assets/sprites/Objects/elements/elements.png" id="2_aodhh"]
-[ext_resource type="Texture2D" uid="uid://bfl3e80f08k6" path="res://assets/sprites/Objects/elements/enabled/darkness.png" id="3_j4jmx"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Objects/elements/darkness.png" id="2_vnjhl"]
+[ext_resource type="Texture2D" uid="uid://ccmh685h8h24g" path="res://assets/sprites/Objects/elements/disabled/darkness.png" id="3_ch8ma"]
+[ext_resource type="Texture2D" uid="uid://pklmfpsjmudi" path="res://assets/sprites/Objects/elements/disabled/flame.png" id="5_sybyx"]
+[ext_resource type="Texture2D" uid="uid://cdj5b7h2uhxi2" path="res://assets/sprites/Objects/elements/disabled/water.png" id="6_1vjt1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1hjl"]
 atlas = ExtResource("2_aodhh")
@@ -16,7 +19,15 @@ region = Rect2(0, 0, 197, 197)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_j4jmx")
+"texture": ExtResource("3_ch8ma")
+}],
+"loop": false,
+"name": &"darkness_disabled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vnjhl")
 }],
 "loop": false,
 "name": &"darkness_enabled",
@@ -32,10 +43,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_sybyx")
+}],
+"loop": false,
+"name": &"flame_disabled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_u1hjl")
 }],
 "loop": false,
 "name": &"flame_enabled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1vjt1")
+}],
+"loop": false,
+"name": &"water_disabled",
 "speed": 5.0
 }, {
 "frames": [{
