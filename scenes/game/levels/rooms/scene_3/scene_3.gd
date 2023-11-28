@@ -1,23 +1,21 @@
 extends Node2D
-## Script de escena principal.
-##
-## Tiene variables y funciones relacionados con la escena, por ejemplo cambios hacia otras escenas
-## Cambio de escenas: https://docs.google.com/document/d/1eIBtgr8wln1pT0aZ4c-YWk_pqngyBg4HDsgdYLAXv28/edit?usp=sharing
-## Uso de señales: https://docs.google.com/document/d/1vFSOuJkBy7xr5jksgCBNaTpqJHE_K87ZNafB5ZJ_I0M/edit?usp=sharing
-
-
-# Area para siguiente nivel
-@onready var _area_next_level = $Areas/AreaNextLevel
-
-
-# Función de inicialización
+var player = []
+var enemy = load("res://scenes/game/enemy/Slime/slime_green.tscn")
+var wave = 0
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	# Escuchamos cuando el personaje entre al área de contacto
-	_area_next_level.body_entered.connect(_load_nex_level)
+	player = get_tree().get_nodes_in_group("player")[0]
+	
+	if GameManager.level_start:
+		GameManager.last_position = player.global_position
+	player.global_position = GameManager.last_position
 
-
-# Cargamos el siguiente nivel (la siguiente escena)
-func _load_nex_level(body):
-	if body.is_in_group("player"):
-		var scene = "res://scenes/game/levels/rooms/scene_2/scene_4.tscn"
-		#SceneTransition.change_scene(scene) # Por el momento no usaremos este cambio de nivel
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	var inst=enemy.instantiate()
+	
+	if (get_tree().get_nodes_in_group("enemy").size() == 0 and wave <=15):
+			wave +=1
+			add_child(inst)
+			inst.position = Vector2(0,0)
+			print(wave)
