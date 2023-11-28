@@ -67,9 +67,19 @@ func add_life(value: int):
 # Agrega experiencia
 func add_exp(value: int):
 	exp += value
+	
 #	Subir de nivel
 	if expBar.value >= expBar.max_value:
 		expBar.max_value *= 2
+	# Activar habilidades al subir ciertos niveles
+	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
+	if (expBar.value <= 10):
+		global_dict["flame"] = true
+	elif (expBar.value <= 30):
+		global_dict["water"] = true
+	elif (expBar.value > 40):
+		global_dict["darkness"] = true
+	
 	_set_exp_progress(exp)
 
 

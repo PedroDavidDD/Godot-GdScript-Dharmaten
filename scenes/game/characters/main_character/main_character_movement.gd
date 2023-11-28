@@ -112,8 +112,8 @@ func use_elemental_skill():
 	var nearest_slime_green = find_nearest_slime_green_player()
 	if nearest_slime_green && (elemental_skills_enabled[selected_elemental_skill_key]):
 		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key_status)
-	else: 
-		print("desbloquea habilidad: "+str(selected_elemental_skill_key))
+#	else: 
+#		print("necesitas desbloquear la habilidad: "+str(selected_elemental_skill_key))
 
 func cycle_element_value():
 	if type_element_value == (elemental_skills_enabled.size() - 1):
