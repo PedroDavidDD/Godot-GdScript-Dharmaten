@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crm1ysmcfkr3s"
-path="res://.godot/imported/darkness.png-2602b78b5fa7696bb0ec30c0e5c68831.ctex"
+uid="uid://cdj5b7h2uhxi2"
+path="res://.godot/imported/water.png-b804445720c0b588b86b745b505d9e7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Objects/elements/darkness.png"
-dest_files=["res://.godot/imported/darkness.png-2602b78b5fa7696bb0ec30c0e5c68831.ctex"]
+source_file="res://assets/sprites/Objects/elements/disabled/water.png"
+dest_files=["res://.godot/imported/water.png-b804445720c0b588b86b745b505d9e7b.ctex"]
 
 [params]
 

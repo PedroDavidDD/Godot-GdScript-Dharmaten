@@ -71,10 +71,6 @@ func _process(delta):
 	# Iniciamos el movimiento
 	move_and_slide()
 	
-
-			
-	
-
 func _on_area_2d_body_entered(body):
 #	contrl + k
 	if body.is_in_group("player"):

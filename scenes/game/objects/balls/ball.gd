@@ -10,7 +10,7 @@ var enemy_player: CharacterBody2D = null
 var copy_enemy_player: Vector2 = Vector2.ZERO
 
 # Elementos 
-var type_element: String = "flame"
+var type_element: String = "flame_enabled"
 var list_damage_type_element = {
 	"flame": 1,
 	"water": 1,
@@ -24,6 +24,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	animation_sprite.play(type_element)
+	print(type_element)
 	
 	choose_damage()
 	
@@ -42,7 +43,7 @@ func _on_area_2d_body_entered(body):
 
 func choose_damage():
 	if type_element:
-		damage_bullet = list_damage_type_element[type_element]
+		damage_bullet = list_damage_type_element[type_element.split("_")[0]]
 	else:
 		damage_bullet = 0
 
