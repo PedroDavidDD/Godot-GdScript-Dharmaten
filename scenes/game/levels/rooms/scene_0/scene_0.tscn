@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=9 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
 [ext_resource type="PackedScene" uid="uid://ca3ueo0yewjov" path="res://scenes/game/characters/main_character/main_character.tscn" id="2_2vh60"]
 [ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/game/camera/camera.tscn" id="3_ftrd5"]
+[ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="7_4o80c"]
+[ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="8_4vts3"]
 [ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="19_onf22"]
 [ext_resource type="PackedScene" uid="uid://ejy38yyf3cxa" path="res://scenes/game/enemy/Orbe/orbe.tscn" id="20_c6lnx"]
 
@@ -69,3 +71,16 @@ position = Vector2(193, 550)
 
 [node name="Orbe4" parent="." instance=ExtResource("20_c6lnx")]
 position = Vector2(235, 554)
+
+[node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("7_4o80c")]
+position = Vector2(866, 346)
+scale = Vector2(0.8, 0.8)
+_path_to_scene = "res://scenes/game/levels/rooms/scene_2/scene_2.tscn"
+
+[node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("8_4vts3")]
+position = Vector2(-477.574, -272.045)
+scale = Vector2(0.427632, 0.528919)
+
+[node name="Key" parent="DoorChangeScene" groups=["key"] instance=ExtResource("8_4vts3")]
+position = Vector2(-288.75, -157.5)
+scale = Vector2(0.653936, 0.727268)
