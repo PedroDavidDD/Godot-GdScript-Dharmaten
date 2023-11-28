@@ -19,7 +19,6 @@ func _process(_delta):
 func _on_spawn_timer_timeout():
 	wave +=1
 	var random_number = rng.randi_range(1,4)
-	print (random_number)
 	var inst=enemy.instantiate()
 	
 	if (random_number == 1):
@@ -30,6 +29,4 @@ func _on_spawn_timer_timeout():
 		inst.position = $SpawnLocation3.position
 	else:
 		inst.position = $SpawnLocation4.position	
-	
 	add_child(inst)
-	print(inst.position)
