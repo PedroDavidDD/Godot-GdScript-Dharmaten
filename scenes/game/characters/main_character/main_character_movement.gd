@@ -130,6 +130,9 @@ func _set_animation():
 	# Personaje murio
 	if _died:
 		main_animation.play(_movements.DEAD_HIT)
+		HealthDashboard.restart()
+		get_tree().change_scene_to_file("res://scenes/game/levels/rooms/scene_0/scene_0.tscn")
+		
 		return
 	elif _current_movement == _movements.ATTACK:
 		# Atacamos
@@ -176,8 +179,9 @@ func hit(value: int):
 		pass
 
 func die():
-	# Seteamos la variable de morir averdadero
+	# Seteamos la variable de morir a verdadero
 	_died = true
+	
 
 # Función para encontrar el slimeGreen más cercano al jugador
 func find_nearest_slime_green_player():
