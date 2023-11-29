@@ -75,7 +75,7 @@ position = Vector2(-615, -192.5)
 scale = Vector2(0.653936, 0.727268)
 
 [node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
-position = Vector2(586.25, -192.5)
+position = Vector2(602.5, -186.25)
 scale = Vector2(0.653936, 0.727268)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
