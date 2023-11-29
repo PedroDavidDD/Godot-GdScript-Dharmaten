@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=10 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://wqk83768mm4c" path="res://scenes/game/enemy/Portal/spawn_location.tscn" id="5_34krj"]
 [ext_resource type="PackedScene" uid="uid://ccg0urahf82qq" path="res://scenes/game/enemy/Golem/golem.tscn" id="6_evm1o"]
 [ext_resource type="PackedScene" uid="uid://cjgnfihgxomm3" path="res://scenes/game/enemy/Skull/skull.tscn" id="7_3toxd"]
+[ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="8_y5wb8"]
+[ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
 
 [node name="scene_0" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -70,5 +72,18 @@ position = Vector2(733, 293)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("7_3toxd")]
 position = Vector2(817, 294)
+
+[node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_y5wb8")]
+position = Vector2(845, 376)
+scale = Vector2(0.8, 0.8)
+_path_to_scene = "res://scenes/game/levels/rooms/scene_2/scene_2.tscn"
+
+[node name="Key" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
+position = Vector2(-615, -192.5)
+scale = Vector2(0.653936, 0.727268)
+
+[node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
+position = Vector2(586.25, -192.5)
+scale = Vector2(0.653936, 0.727268)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

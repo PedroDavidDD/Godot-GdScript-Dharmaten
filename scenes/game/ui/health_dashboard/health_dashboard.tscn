@@ -234,6 +234,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TopRight5" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 265.0
 offset_top = 121.0
 offset_right = 382.0
@@ -244,6 +245,7 @@ flip_h = true
 flip_v = true
 
 [node name="TopRight4" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 265.0
 offset_top = 132.0
 offset_right = 387.0
@@ -253,6 +255,7 @@ texture = ExtResource("11_3p3lt")
 flip_v = true
 
 [node name="TopRight3" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -57.0
 offset_top = 105.0
 offset_right = 44.0
@@ -262,6 +265,7 @@ texture = ExtResource("11_3p3lt")
 flip_h = true
 
 [node name="TopRight2" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -57.0
 offset_top = 132.0
 offset_right = 71.0
@@ -270,6 +274,7 @@ rotation = 4.71239
 texture = ExtResource("11_3p3lt")
 
 [node name="TopLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -46.0
 offset_right = 134.0
@@ -277,6 +282,7 @@ offset_bottom = 23.0
 texture = ExtResource("12_fv8r3")
 
 [node name="TopRight" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 134.0
 offset_top = -46.0
 offset_right = 293.0
@@ -284,6 +290,7 @@ offset_bottom = 23.0
 texture = ExtResource("11_3p3lt")
 
 [node name="MiddleLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 23.0
 offset_right = 134.0
@@ -291,6 +298,7 @@ offset_bottom = 108.0
 texture = ExtResource("13_ib5t6")
 
 [node name="MiddleRight" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 134.0
 offset_top = 23.0
 offset_right = 293.0
@@ -298,6 +306,7 @@ offset_bottom = 108.0
 texture = ExtResource("14_h04s3")
 
 [node name="BottomLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 108.0
 offset_right = 134.0
@@ -305,6 +314,7 @@ offset_bottom = 195.0
 texture = ExtResource("15_ri0rr")
 
 [node name="BottomRight" type="TextureRect" parent="EnemyGroup/Panel"]
+layout_mode = 0
 offset_left = 134.0
 offset_top = 108.0
 offset_right = 293.0
