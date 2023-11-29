@@ -131,7 +131,8 @@ func _set_animation():
 	if _died:
 		main_animation.play(_movements.DEAD_HIT)
 		HealthDashboard.restart()
-		get_tree().change_scene_to_file("res://scenes/game/levels/rooms/scene_0/scene_0.tscn")
+#		get_tree().change_scene_to_file("res://scenes/game/levels/rooms/scene_0/scene_0.tscn")
+		get_tree().reload_current_scene()
 		
 		return
 	elif _current_movement == _movements.ATTACK:
