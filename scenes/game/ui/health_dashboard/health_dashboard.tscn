@@ -1,13 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=20 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
-[ext_resource type="PackedScene" path="res://scenes/pausemenu.tscn" id="2_wagvh"]
+[ext_resource type="PackedScene" uid="uid://xeeunhrkvcx6" path="res://scenes/pausemenu.tscn" id="2_wagvh"]
 [ext_resource type="Texture2D" uid="uid://nlvtt8klj4b6" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_06/BarV6_Bar.png" id="3_p2nby"]
 [ext_resource type="Texture2D" uid="uid://hjp52daa3t2y" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_06/BarV6_ProgressBar.png" id="4_hmd4u"]
 [ext_resource type="Texture2D" uid="uid://cl5b1weh62et3" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/1.png" id="4_udrfk"]
 [ext_resource type="Texture2D" uid="uid://c51psidx5cxry" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/3.png" id="5_arjxj"]
 [ext_resource type="Texture2D" uid="uid://t2qsw1ribmcp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/4.png" id="6_nmmdo"]
 [ext_resource type="Texture2D" uid="uid://brwx3lkdp4684" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/inventory/16.png" id="8_mfdc1"]
+[ext_resource type="Texture2D" uid="uid://b0x5mxa2tsy1u" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/14.png" id="11_3p3lt"]
+[ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="11_pnikn"]
+[ext_resource type="Texture2D" uid="uid://c1565oiq4iveu" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/13.png" id="12_fv8r3"]
+[ext_resource type="Texture2D" uid="uid://6r1xqhu5na37" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo.png" id="12_r8p5b"]
+[ext_resource type="Texture2D" uid="uid://bdkpg0v64750g" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo 2.png" id="13_eirox"]
+[ext_resource type="Texture2D" uid="uid://c8ashne3hoseq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/15.png" id="13_ib5t6"]
+[ext_resource type="Texture2D" uid="uid://bqcbpn2cey2eg" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/16.png" id="14_h04s3"]
+[ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="15_ri0rr"]
+[ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="16_02sur"]
 [ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
 [ext_resource type="Texture2D" uid="uid://dutce1a8j47nq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_Bar.png" id="18_j8clb"]
 
@@ -73,6 +82,10 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
+offset_left = -473.0
+offset_top = -1.0
+offset_right = -473.0
+offset_bottom = -1.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 
@@ -186,6 +199,252 @@ offset_left = -31.5
 offset_top = -74.0
 offset_right = 31.5
 offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.945098, 0.4, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyGroup" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 3.0
+offset_right = -20.0
+offset_bottom = 3.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="EnemyGroup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = 28.0
+offset_right = -52.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRight5" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 265.0
+offset_top = 121.0
+offset_right = 382.0
+offset_bottom = 190.0
+rotation = 4.71239
+texture = ExtResource("11_3p3lt")
+flip_h = true
+flip_v = true
+
+[node name="TopRight4" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 265.0
+offset_top = 132.0
+offset_right = 387.0
+offset_bottom = 201.0
+rotation = 4.71239
+texture = ExtResource("11_3p3lt")
+flip_v = true
+
+[node name="TopRight3" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -57.0
+offset_top = 105.0
+offset_right = 44.0
+offset_bottom = 174.0
+rotation = 4.71239
+texture = ExtResource("11_3p3lt")
+flip_h = true
+
+[node name="TopRight2" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -57.0
+offset_top = 132.0
+offset_right = 71.0
+offset_bottom = 201.0
+rotation = 4.71239
+texture = ExtResource("11_3p3lt")
+
+[node name="TopLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -16.0
+offset_top = -46.0
+offset_right = 134.0
+offset_bottom = 23.0
+texture = ExtResource("12_fv8r3")
+
+[node name="TopRight" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 134.0
+offset_top = -46.0
+offset_right = 293.0
+offset_bottom = 23.0
+texture = ExtResource("11_3p3lt")
+
+[node name="MiddleLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -16.0
+offset_top = 23.0
+offset_right = 134.0
+offset_bottom = 108.0
+texture = ExtResource("13_ib5t6")
+
+[node name="MiddleRight" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 134.0
+offset_top = 23.0
+offset_right = 293.0
+offset_bottom = 108.0
+texture = ExtResource("14_h04s3")
+
+[node name="BottomLeft" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = -16.0
+offset_top = 108.0
+offset_right = 134.0
+offset_bottom = 195.0
+texture = ExtResource("15_ri0rr")
+
+[node name="BottomRight" type="TextureRect" parent="EnemyGroup/Panel"]
+offset_left = 134.0
+offset_top = 108.0
+offset_right = 293.0
+offset_bottom = 195.0
+texture = ExtResource("16_02sur")
+
+[node name="Crabby" type="Control" parent="EnemyGroup/Panel"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureReactCrabby" type="TextureRect" parent="EnemyGroup/Panel/Crabby"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 97.1428
+offset_top = -5.71429
+offset_right = 138.143
+offset_bottom = 29.2857
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_pnikn")
+expand_mode = 1
+
+[node name="LabelCrabby" type="Label" parent="EnemyGroup/Panel/Crabby"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 188.571
+offset_top = -5.71428
+offset_right = 251.571
+offset_bottom = 46.2857
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.945098, 0.4, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keys" type="Control" parent="EnemyGroup/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -18.5
+offset_right = 38.0
+offset_bottom = 21.5
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureReactKey" type="TextureRect" parent="EnemyGroup/Panel/Keys"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 95.7142
+offset_top = -20.0
+offset_right = 139.714
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("12_r8p5b")
+expand_mode = 1
+
+[node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 197.143
+offset_top = -15.7143
+offset_right = 260.143
+offset_bottom = 36.2857
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.945098, 0.4, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keys_door_scene" type="Control" parent="EnemyGroup/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 27.0
+offset_right = 40.0
+offset_bottom = 67.0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureReactKey" type="TextureRect" parent="EnemyGroup/Panel/Keys_door_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 97.1428
+offset_top = -21.4286
+offset_right = 141.143
+offset_bottom = 18.5714
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("13_eirox")
+expand_mode = 1
+
+[node name="LabelKey" type="Label" parent="EnemyGroup/Panel/Keys_door_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 194.286
+offset_top = -15.7143
+offset_right = 257.286
+offset_bottom = 36.2857
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
