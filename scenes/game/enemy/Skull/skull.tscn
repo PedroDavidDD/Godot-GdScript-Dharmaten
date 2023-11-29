@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjgnfihgxomm3"]
+[gd_scene load_steps=20 format=3 uid="uid://cjgnfihgxomm3"]
 
 [ext_resource type="Texture2D" uid="uid://d13ky6ct20src" path="res://assets/sprites/enemies/Pixel_Enemy_Platformer/Bones_SingleSkull_Full.png" id="1_o4n8c"]
+[ext_resource type="Script" path="res://scenes/game/enemy/Skull/skull.gd" id="1_sdw3a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6f2t"]
 radius = 4.0
@@ -120,6 +121,7 @@ animations = [{
 radius = 8.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_sdw3a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c6f2t")

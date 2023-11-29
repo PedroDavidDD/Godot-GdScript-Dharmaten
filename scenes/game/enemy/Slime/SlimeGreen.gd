@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var main_animation: AnimatedSprite2D # Referencia al sprite del personaje
 
 @onready var _animation := $EnemyAnimation
-@onready var _raycast_terrain := $Area2D/RayCastTerrain
 @onready var audio_player:= $AudioStreamPlayer2D # Reproductor de audios
 
 var animation = {

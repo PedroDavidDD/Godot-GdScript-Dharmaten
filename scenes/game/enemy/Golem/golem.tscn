@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccg0urahf82qq"]
+[gd_scene load_steps=17 format=3 uid="uid://ccg0urahf82qq"]
 
 [ext_resource type="Texture2D" uid="uid://ce1aqopvwcso5" path="res://assets/sprites/enemies/Pixel_Enemy_Platformer/Golem_Full.png" id="1_m2215"]
+[ext_resource type="Script" path="res://scenes/game/enemy/Golem/golem.gd" id="1_rohyq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_los5d"]
 radius = 12.0
@@ -99,6 +100,7 @@ animations = [{
 radius = 19.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_rohyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_los5d")
