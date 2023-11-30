@@ -14,7 +14,7 @@ var fast_velocity = 150
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
-	RUN = "run",
+	FLY = "run",
 	HIT = "hit",
 	DEAD_HIT = "dead_hit",
 	ATTACK = "attack_2",
@@ -53,6 +53,10 @@ var selected_elemental_skill_key = elemental_skills_enabled.keys()[type_element_
 var status_icon = "disabled"
 var selected_elemental_skill_key_status
 
+# Cooldown del disparo
+var nextBulletTime:float;
+@export var cooldownBullet:float = 1;
+
 func _process(_delta):
 	_move(_delta)
 
@@ -81,28 +85,36 @@ func _move(delta):
 		elif btnRight:
 			direction.x += 1
 			turn_side = "right"
-		_current_movement = _movements.RUN
+		_current_movement = _movements.FLY
 	else:
 		_current_movement = _movements.IDLE
 	
-	# Movimiento normal o rápido al presionar la tecla shif
+	# Correr rápido al presionar la tecla Shift
 	if Input.is_key_pressed(KEY_SHIFT):
 		velocity = fast_velocity  
 	
-	# Cambiar estado: K
+	
+	# Cuando se presiona la tecla K, cambiamos de habilidad
 	if (elemental_skills_enabled[selected_elemental_skill_key]):
 		status_icon = "enabled"
 	else:
 		status_icon = "disabled"
 	HealthDashboard.update_element_icon( selected_elemental_skill_key, status_icon )
 	
+	# Seleccionar habilidad
 	if Input.is_action_just_pressed("change_element"):
 		cycle_element_value()
-	# Cuando se presiona la tecla J, atacamos
-	if Input.is_action_just_pressed("attack"):
-		use_elemental_skill()
 	
 	selected_elemental_skill_key_status = selected_elemental_skill_key+"_"+ status_icon
+	
+	# Cuando se presiona la tecla J, atacamos
+	if (nextBulletTime <= 0):
+		if Input.is_action_just_pressed("attack"):
+			use_elemental_skill()
+			nextBulletTime = cooldownBullet;
+	else:
+		nextBulletTime -= delta
+	
 	
 	_set_animation()
 	# Activar colisiones y movimiento: move_and_collide
@@ -141,14 +153,14 @@ func _set_animation():
 		main_animation.play(_movements.ATTACK)
 		#weapon.get_node("AnimatedSprite2D").play("default")
 		_play_sound(_hit_sound)
-	elif _current_movement == _movements.RUN:
+	elif _current_movement == _movements.FLY:
 		if btnRight:
 			# Movimiento hacia la derecha (animación "correr" no volteada)
 			main_animation.flip_h = false
 		elif btnLeft:
 			# Movimiento hacia la izquierda (animación "correr" volteada)
 			main_animation.flip_h = true
-		main_animation.play(_movements.RUN)
+		main_animation.play(_movements.FLY)
 	else:
 		# Movimiento por defecto (animación de "reposo")
 		main_animation.play(_movements.IDLE)
