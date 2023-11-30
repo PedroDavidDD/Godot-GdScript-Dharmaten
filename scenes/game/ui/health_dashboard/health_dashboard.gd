@@ -47,8 +47,11 @@ func add_exp(value: int):
 	check_skill_activation()
 
 func check_level_up():
+#	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
 	if expBar.value >= expBar.max_value:
-		expBar.max_value *= 2
+		expBar.max_value += 10
+#		print("subi de nivel"+str(global_dict))
+		isAlertLevelUP = true
 	
 	_set_exp_progress(exp)
 
@@ -58,8 +61,6 @@ func check_skill_activation():
 	for i in range(global_dict.size()):
 		if expBar.value <= level_thresholds[i]:
 			global_dict[global_dict.keys()[i]] = true
-			print("subi de nivel"+str(global_dict.keys()[i]))
-			isAlertLevelUP = true
 			return
 
 func generate_level_thresholds(size: int, exp_per_level: int) -> Array:
