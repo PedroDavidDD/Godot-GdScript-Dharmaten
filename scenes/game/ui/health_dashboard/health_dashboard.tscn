@@ -31,7 +31,6 @@ visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 
 [node name="PAUSEMENU" parent="." instance=ExtResource("2_wagvh")]
 process_mode = 3

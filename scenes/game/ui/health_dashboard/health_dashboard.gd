@@ -23,13 +23,16 @@ var enemies = {
 @onready var textureReactSkill = $Skills/ContainerSkill/TextureReactSkill
 @onready var textureReactSkillDisabled = $Skills/ContainerSkill/TextureRectDisabled
 
+@onready var alert_level_up = $AlertLevelUP
+@onready var timer_alert_level_up = $Timer
 var isAlertLevelUP = false
+
 # Función de inicialización
 func _ready():
 	self.visible = false
 
 func _process(delta):
-	$AlertLevelUP.visible = isAlertLevelUP
+	alert_level_up.visible = isAlertLevelUP
 
 # Agrega vida del personaje principal, según el valor proporcionado
 func add_life(value: int):
@@ -50,10 +53,12 @@ func check_level_up():
 #	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
 	if expBar.value >= expBar.max_value:
 		expBar.max_value += 10
-#		print("subi de nivel"+str(global_dict))
 		isAlertLevelUP = true
-	
+		iniciarTimer_alert_level_up()
 	_set_exp_progress(exp)
+
+func iniciarTimer_alert_level_up():
+	timer_alert_level_up.start()
 
 func check_skill_activation():
 	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled

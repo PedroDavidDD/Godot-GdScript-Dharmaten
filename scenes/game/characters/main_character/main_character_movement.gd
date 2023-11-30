@@ -55,7 +55,7 @@ var status_icon = "disabled"
 
 # Cooldown del disparo
 var nextBulletTime:float;
-@export var cooldownBullet:float = 1;
+@export var cooldownBullet:float = 0.5;
 
 func _process(_delta):
 	_move(_delta)
