@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dipkjjm3ovl8f"
-path="res://.godot/imported/darkness.png-b1bce8801ebea21dbe27bf2ee80bd8ee.ctex"
+uid="uid://dvp6qfjassnry"
+path="res://.godot/imported/flame_water_1.png-ccfd0cd3ce196f60f1ed3f7320641f23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Objects/elements/disabled/darkness.png"
-dest_files=["res://.godot/imported/darkness.png-b1bce8801ebea21dbe27bf2ee80bd8ee.ctex"]
+source_file="res://assets/sprites/Objects/elements/enabled/flame_water_1.png"
+dest_files=["res://.godot/imported/flame_water_1.png-ccfd0cd3ce196f60f1ed3f7320641f23.ctex"]
 
 [params]
 

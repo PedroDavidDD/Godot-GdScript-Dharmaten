@@ -21,10 +21,15 @@ var enemies = {
 @onready var expBar = $ExpBar/Bar
 @onready var label_expBar = $ExpBar/LabelBar
 @onready var textureReactSkill = $Skills/ContainerSkill/TextureReactSkill
+@onready var textureReactSkillDisabled = $Skills/ContainerSkill/TextureRectDisabled
 
+var isAlertLevelUP = false
 # Función de inicialización
 func _ready():
 	self.visible = false
+
+func _process(delta):
+	$AlertLevelUP.visible = isAlertLevelUP
 
 # Agrega vida del personaje principal, según el valor proporcionado
 func add_life(value: int):
@@ -35,22 +40,33 @@ func add_life(value: int):
 
 # Agrega experiencia
 func add_exp(value: int):
-	exp += value
-	
+	exp += value	
 #	Subir de nivel
+	check_level_up()
+#	Activar habilidades al subir ciertos niveles
+	check_skill_activation()
+
+func check_level_up():
 	if expBar.value >= expBar.max_value:
 		expBar.max_value *= 2
-	# Activar habilidades al subir ciertos niveles
-	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
-	if (expBar.value <= 10):
-		global_dict["flame"] = true
-	elif (expBar.value <= 30):
-		global_dict["water"] = true
-	elif (expBar.value > 40):
-		global_dict["darkness"] = true
 	
 	_set_exp_progress(exp)
 
+func check_skill_activation():
+	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
+	var level_thresholds = generate_level_thresholds(global_dict.size(), 10)
+	for i in range(global_dict.size()):
+		if expBar.value <= level_thresholds[i]:
+			global_dict[global_dict.keys()[i]] = true
+			print("subi de nivel"+str(global_dict.keys()[i]))
+			isAlertLevelUP = true
+			return
+
+func generate_level_thresholds(size: int, exp_per_level: int) -> Array:
+	var level_thresholds = [] # Niveles de experiencia para cada habilidad
+	for i in range(size):
+		level_thresholds.append(exp_per_level * (i + 1))
+	return level_thresholds
 
 # Quita vida del personaje principal, según el valor proporcionado
 func remove_life(value: int):
@@ -79,5 +95,14 @@ func _set_exp_progress(value: int):
 
 # Cambiar el Icon de la habilidad elemental actual en el marco
 func update_element_icon(type: String, status: String ):
-	var texture_to_set =  load("res://assets/sprites/Objects/elements/"+ status + "/" + type +".png")
+	if status == "disabled":
+		textureReactSkillDisabled.visible = true
+	else:
+		textureReactSkillDisabled.visible = false
+	
+	var texture_to_set =  load("res://assets/sprites/Objects/elements/enabled/" + type +".png")
 	textureReactSkill.texture = texture_to_set
+
+
+func _on_timer_timeout():
+	isAlertLevelUP = false

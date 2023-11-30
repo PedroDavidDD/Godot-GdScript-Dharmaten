@@ -9,12 +9,13 @@ var is_ball_moving: bool = true
 var enemy_player: CharacterBody2D = null
 var copy_enemy_player: Vector2 = Vector2.ZERO
 
-# Elementos 
+# Elementos de la magia
 var type_element: String = "flame_enabled"
 var list_damage_type_element = {
-	"flame": 1,
+	"flame": 2,
 	"water": 1,
-	"darkness": 1,
+	"darkness": 3,
+	"flame_water": 2,
 }
 var damage_bullet = 0
 
@@ -24,7 +25,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	animation_sprite.play(type_element)
-	print(type_element)
+#	print(type_element)
 	
 	choose_damage()
 	
@@ -43,7 +44,7 @@ func _on_area_2d_body_entered(body):
 
 func choose_damage():
 	if type_element:
-		damage_bullet = list_damage_type_element[type_element.split("_")[0]]
+		damage_bullet = list_damage_type_element[type_element.split("-")[0]]
 	else:
 		damage_bullet = 0
 

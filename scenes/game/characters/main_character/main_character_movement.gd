@@ -47,11 +47,11 @@ var elemental_skills_enabled = {
 	"flame": true,
 	"water": false,
 	"darkness": false,
+	"flame_water": true,
 }
 var type_element_value = 0
 var selected_elemental_skill_key = elemental_skills_enabled.keys()[type_element_value]
 var status_icon = "disabled"
-var selected_elemental_skill_key_status
 
 # Cooldown del disparo
 var nextBulletTime:float;
@@ -104,9 +104,7 @@ func _move(delta):
 	# Seleccionar habilidad
 	if Input.is_action_just_pressed("change_element"):
 		cycle_element_value()
-	
-	selected_elemental_skill_key_status = selected_elemental_skill_key+"_"+ status_icon
-	
+		
 	# Cuando se presiona la tecla J, atacamos
 	if (nextBulletTime <= 0):
 		if Input.is_action_just_pressed("attack"):
@@ -123,7 +121,7 @@ func _move(delta):
 func use_elemental_skill():
 	var nearest_slime_green = find_nearest_slime_green_player()
 	if nearest_slime_green && (elemental_skills_enabled[selected_elemental_skill_key]):
-		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key_status)
+		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key)
 #	else: 
 #		print("necesitas desbloquear la habilidad: "+str(selected_elemental_skill_key))
 
@@ -183,7 +181,6 @@ func hit(value: int):
 	attacking = false
 	HealthDashboard.remove_life(value)
 	_play_sound(_male_hurt_sound)
-	#main_animation.play("HIT")
 	
 	# Bajamos vida y validamos si el personaje ha perdido
 	if HealthDashboard.life == 0:
@@ -196,7 +193,7 @@ func die():
 	_died = true
 	
 
-# Función para encontrar el slimeGreen más cercano al jugador
+# Función para encontrar el slimeGreen más cercano al player
 func find_nearest_slime_green_player():
 	var player_position = player.global_position
 	var slimes = get_tree().get_nodes_in_group("slimeGreen")

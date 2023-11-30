@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://clbokiaiasfcd"]
+[gd_scene load_steps=10 format=3 uid="uid://clbokiaiasfcd"]
 
 [ext_resource type="Script" path="res://scenes/game/objects/balls/ball.gd" id="1_wq2fq"]
 [ext_resource type="Texture2D" uid="uid://dcdmpyxok86ts" path="res://assets/sprites/Objects/elements/elements.png" id="2_aodhh"]
 [ext_resource type="Texture2D" uid="uid://bfl3e80f08k6" path="res://assets/sprites/Objects/elements/enabled/darkness.png" id="3_j4jmx"]
+[ext_resource type="Texture2D" uid="uid://cy24nt1mb46cp" path="res://assets/sprites/Objects/elements/enabled/flame_water_0.png" id="4_h21yg"]
+[ext_resource type="Texture2D" uid="uid://dvp6qfjassnry" path="res://assets/sprites/Objects/elements/enabled/flame_water_1.png" id="5_s387n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1hjl"]
 atlas = ExtResource("2_aodhh")
@@ -19,7 +21,7 @@ animations = [{
 "texture": ExtResource("3_j4jmx")
 }],
 "loop": false,
-"name": &"darkness_enabled",
+"name": &"darkness",
 "speed": 5.0
 }, {
 "frames": [{
@@ -35,37 +37,50 @@ animations = [{
 "texture": SubResource("AtlasTexture_u1hjl")
 }],
 "loop": false,
-"name": &"flame_enabled",
+"name": &"flame",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_h21yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s387n")
+}],
+"loop": true,
+"name": &"flame_water",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6sr1e")
 }],
 "loop": false,
-"name": &"water_enabled",
+"name": &"water",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0nky"]
-size = Vector2(122, 179)
+size = Vector2(122, 115)
 
 [node name="Ball" type="Node2D" groups=["ballGroup"]]
 script = ExtResource("1_wq2fq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.57079
 sprite_frames = SubResource("SpriteFrames_6urgt")
-animation = &"darkness_enabled"
+animation = &"darkness"
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 10.5)
+position = Vector2(3, -4.5)
 shape = SubResource("RectangleShape2D_i0nky")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(3.5, 11)
-scale = Vector2(6.15, 9)
+position = Vector2(3.5, -4.5)
+scale = Vector2(6.15, 5.65)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
