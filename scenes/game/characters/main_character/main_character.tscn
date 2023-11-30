@@ -685,6 +685,11 @@ position = Vector2(0, 6)
 
 [node name="ShootPointer" type="Marker2D" parent="ContainerMagic"]
 
+[node name="bulletTime" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="MainCharacterMovement" method="_on_audio_stream_player_2d_finished"]
+[connection signal="timeout" from="bulletTime" to="MainCharacterMovement" method="_on_bullet_time_timeout"]

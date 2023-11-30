@@ -24,6 +24,7 @@ var _died = false # Define si esta vovo o muerto
 var attacking = false # Define si esta atacando
 var _is_playing: String = "" # Define si se esta reproducionedo el sonido
 var turn_side: String = "right" # Define si se esta reproducionedo el sonido
+var can_shoot = true #Define si puede disparar
 
 # Precargamos los sonidos de saltar
 var _run_sound = preload("res://assets/sounds/running.mp3")
@@ -91,14 +92,44 @@ func _move(delta):
 		HealthDashboard.update_element_icon(type_element[type_element_value])
 	
 	# Cuando se presiona la tecla J, atacamos
+<<<<<<< Updated upstream
 	if Input.is_action_just_pressed("attack"):
 		var nearest_slime_green = find_nearest_slime_green_player()
 		if nearest_slime_green:
 			create_magic_bullet(nearest_slime_green, type_element[type_element_value])
+=======
+	if Input.is_action_pressed("attack") and can_shoot:
+		use_elemental_skill()
+		
+	
+	selected_elemental_skill_key_status = selected_elemental_skill_key+"_"+ status_icon
+>>>>>>> Stashed changes
 	
 	_set_animation()
 	# Activar colisiones y movimiento: move_and_collide
 	collision = player.move_and_collide(direction * velocity * delta)
+<<<<<<< Updated upstream
+=======
+	
+func use_elemental_skill():
+	var nearest_slime_green = find_nearest_slime_green_player()
+	if nearest_slime_green && (elemental_skills_enabled[selected_elemental_skill_key]):
+		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key_status)
+		if selected_elemental_skill_key_status == "water_enabled":
+			var player_position = player.global_position
+			var ball_behind = player_position #modificar aquí
+			create_magic_bullet_at_position(ball_behind, selected_elemental_skill_key_status)
+	can_shoot=false	
+#	else: 
+#		print("necesitas desbloquear la habilidad: "+str(selected_elemental_skill_key))
+
+func cycle_element_value():
+	if type_element_value == (elemental_skills_enabled.size() - 1):
+		type_element_value = 0
+	else:
+		type_element_value += 1
+	selected_elemental_skill_key = elemental_skills_enabled.keys()[type_element_value]
+>>>>>>> Stashed changes
 
 # Controla la animación según el movimiento del personaje
 func _set_animation():
@@ -190,6 +221,20 @@ func create_magic_bullet(enemy_player: CharacterBody2D, type_element: String):
 	magic_bullet.type_element = type_element
 	magic_bullet.global_position = containerMagic.get_node("ShootPointer").global_position
 	get_tree().call_group("scene_0", "add_child", magic_bullet)
+	
+func create_magic_bullet_at_position(position: Vector2, type_element:String):
+	var magic_bullet = magicBullet.instantiate()
+	if player.scale.x < 0:
+		magic_bullet.scale = Vector2(-0.05, 0.05)
+	else:
+		magic_bullet.scale = Vector2(0.05, 0.05)
+	magic_bullet.type_element = type_element
+	magic_bullet.global_position = position
+	get_tree().call_group("scene_0", "add_child", magic_bullet)	
 
 func _on_animation_frame_changed():
 	pass
+
+
+func _on_bullet_time_timeout():
+	can_shoot = true # Replace with function body.

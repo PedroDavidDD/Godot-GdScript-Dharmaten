@@ -14,7 +14,7 @@ var type_element: String = "flame"
 var list_damage_type_element = {
 	"flame": 1,
 	"water": 1,
-	"darkness": 1,
+	"darkness": 2,
 }
 var damage_bullet = 0
 
@@ -23,8 +23,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+<<<<<<< Updated upstream
 	animation_sprite.play(type_element)
 	
+=======
+	animation_sprite.play(type_element)	
+>>>>>>> Stashed changes
 	choose_damage()
 	
 	if is_ball_moving:
