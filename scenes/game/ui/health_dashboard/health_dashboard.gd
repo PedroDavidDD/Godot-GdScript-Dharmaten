@@ -84,6 +84,13 @@ func restart():
 	expBar.max_value = 10
 	_set_life_progress(10)
 	_set_exp_progress(0)
+	reset_orbes_on_the_floor()
+
+func reset_orbes_on_the_floor():
+	var global_orbes = get_tree().get_nodes_in_group("group_orbe")
+	if global_orbes:
+		for i in global_orbes:
+			i.queue_free()
 
 # Actualiza la barra de progreso de la vida
 func _set_life_progress(value: int):
