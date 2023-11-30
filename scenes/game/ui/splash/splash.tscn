@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/game/ui/splash/splash.gd" id="1_roa58"]
 [ext_resource type="Texture2D" uid="uid://k1yb8hn46r0n" path="res://assets/sprites/logo.png" id="2_p17l1"]
 [ext_resource type="Texture2D" uid="uid://b24wey0khy116" path="res://assets/sprites/logo-Endless.png" id="3_g3n3v"]
+[ext_resource type="AudioStream" uid="uid://bvubp1g5jvqpl" path="res://scenes/intro1.mp3" id="5_dpquc"]
 [ext_resource type="Texture2D" uid="uid://ds7qyecx7xgo5" path="res://scenes/logo de chaos studios.png" id="5_tk7ga"]
-[ext_resource type="AudioStream" uid="uid://r4d6xbmeo6og" path="res://scenes/music-menu.mp3" id="5_vam4f"]
 
 [sub_resource type="Animation" id="Animation_6pate"]
 resource_name = "do_splash"
@@ -105,7 +105,7 @@ libraries = {
 }
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_vam4f")
+stream = ExtResource("5_dpquc")
 autoplay = true
 bus = &"Ambient"
 
