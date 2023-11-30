@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/game/ui/splash/splash.gd" id="1_roa58"]
 [ext_resource type="Texture2D" uid="uid://k1yb8hn46r0n" path="res://assets/sprites/logo.png" id="2_p17l1"]
 [ext_resource type="Texture2D" uid="uid://b24wey0khy116" path="res://assets/sprites/logo-Endless.png" id="3_g3n3v"]
-[ext_resource type="Texture2D" uid="uid://c5pdxxbplprpe" path="res://assets/sprites/pixelfrog.png" id="4_r4eep"]
+[ext_resource type="Texture2D" uid="uid://ds7qyecx7xgo5" path="res://scenes/logo de chaos studios.png" id="5_tk7ga"]
 [ext_resource type="AudioStream" uid="uid://r4d6xbmeo6og" path="res://scenes/music-menu.mp3" id="5_vam4f"]
 
 [sub_resource type="Animation" id="Animation_6pate"]
@@ -85,15 +85,9 @@ texture = ExtResource("3_g3n3v")
 
 [node name="PixelFrog" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(576, 315)
-texture = ExtResource("4_r4eep")
-
-[node name="Label" type="Label" parent="PixelFrog"]
-offset_left = -179.0
-offset_top = 34.0
-offset_right = 175.0
-offset_bottom = 60.0
-text = "Gracias a por su Asset Pack: Treasure Hunters"
+position = Vector2(569.25, 330.5)
+scale = Vector2(0.455566, 0.40332)
+texture = ExtResource("5_tk7ga")
 
 [node name="AnimationPlayerGP360" type="AnimationPlayer" parent="."]
 libraries = {

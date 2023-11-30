@@ -38,7 +38,6 @@ func _go_title_screen():
 	# Pasamos a la escena de Menú principal
 	SceneTransition.change_scene(_path_map_scene)
 
-
 func _on_animation_player_endless_animation_finished(anim_name):
 	# Mostramos el logo de GP360
 	AnimationPlayerGP360.play("do_splash")
@@ -47,3 +46,5 @@ func _on_animation_player_endless_animation_finished(anim_name):
 func _on_animation_pixel_frog_animation_finished(anim_name):
 	# Llamamos el la funcion de cambio de escena
 	_go_title_screen()
+
+
