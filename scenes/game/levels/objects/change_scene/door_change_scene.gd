@@ -80,7 +80,6 @@ func _load_next_level(body):
 				if keys_accepted == door_keys.size():
 					is_open_door = true
 					if _path_to_scene != "":
-						HealthDashboard.reset_orbes_on_the_floor()
 						SceneTransition.change_scene(_path_to_scene)
 			else:
 				print("Consigue llaves")
