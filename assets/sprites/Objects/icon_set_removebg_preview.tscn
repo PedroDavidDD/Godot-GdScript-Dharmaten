@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://g8qg1kpqq5eh"]
+[gd_scene load_steps=8 format=3 uid="uid://g8qg1kpqq5eh"]
 
 [ext_resource type="Texture2D" uid="uid://b0hodjearyyww" path="res://IconSet-removebg-preview.png" id="1_ovb5c"]
 [ext_resource type="Script" path="res://assets/sprites/Objects/key.gd" id="2_jt6nt"]
 [ext_resource type="Texture2D" uid="uid://6r1xqhu5na37" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo.png" id="3_hglbn"]
+[ext_resource type="Texture2D" uid="uid://twfx124pae3c" path="res://scenes/luz azul 4.png" id="3_r4ph6"]
 [ext_resource type="Texture2D" uid="uid://bqvfg4ldrae2w" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa_light.png" id="4_63er7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t27tm"]
@@ -19,6 +20,11 @@ hframes = 16
 vframes = 15
 frame = 147
 script = ExtResource("2_jt6nt")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-4.18255, 4.13361)
+scale = Vector2(0.0915925, 0.0701827)
+texture = ExtResource("3_r4ph6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.117188, 0.695311)

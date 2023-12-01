@@ -44,7 +44,15 @@ layer_3/tile_data = PackedInt32Array()
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_2vh60")]
 z_index = 5
-position = Vector2(492, 190)
+position = Vector2(469, 181)
+
+[node name="DayStateSystem" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="DayStateSystem"]
+color = Color(0.694118, 0.694118, 0.694118, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="DayStateSystem"]
+visible = false
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_ftrd5")]
 limit_top = -44
@@ -110,10 +118,5 @@ position = Vector2(1424, 355)
 
 [node name="SlimeGreen8" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(0, 433)
-
-[node name="DayStateSystem" type="Node2D" parent="."]
-
-[node name="CanvasModulate" type="CanvasModulate" parent="DayStateSystem"]
-color = Color(0.431373, 0.431373, 0.431373, 1)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

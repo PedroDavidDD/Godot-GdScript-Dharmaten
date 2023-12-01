@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brhmupxo2xjim"]
+[gd_scene load_steps=5 format=3 uid="uid://brhmupxo2xjim"]
 
 [ext_resource type="Script" path="res://scenes/game/levels/objects/change_scene/door_change_scene.gd" id="1_o73yr"]
 [ext_resource type="Texture2D" uid="uid://dfbpgdjg45jrk" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/grieta azul.png" id="2_ah2k4"]
+[ext_resource type="Texture2D" uid="uid://twfx124pae3c" path="res://scenes/luz azul 4.png" id="3_xk7jw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pukn"]
 size = Vector2(37, 45)
@@ -92,5 +93,13 @@ bbcode_enabled = true
 text = "[center]0[/center]
 "
 autowrap_mode = 2
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 0.713726, 0.709804)
+self_modulate = Color(1, 1, 0.72549, 0.584314)
+position = Vector2(-1.00001, 21.5)
+scale = Vector2(0.133333, 0.1275)
+color = Color(1, 1, 1, 0.588235)
+texture = ExtResource("3_xk7jw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
