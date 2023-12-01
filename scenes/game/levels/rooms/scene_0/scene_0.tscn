@@ -193,4 +193,12 @@ position = Vector2(1445, 117)
 [node name="SlimeGreen5" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(116, 145)
 
+[node name="DayStateSystem" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="DayStateSystem"]
+color = Color(0.694118, 0.694118, 0.694118, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="DayStateSystem"]
+visible = false
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
