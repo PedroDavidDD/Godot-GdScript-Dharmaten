@@ -173,10 +173,6 @@ _path_to_scene = "res://scenes/game/levels/rooms/scene_1/scene_1.tscn"
 position = Vector2(-615, -192.5)
 scale = Vector2(0.653936, 0.727268)
 
-[node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
-position = Vector2(602.5, -186.25)
-scale = Vector2(0.653936, 0.727268)
-
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ac32f")
 autoplay = true

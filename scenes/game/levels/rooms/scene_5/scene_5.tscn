@@ -72,24 +72,12 @@ position = Vector2(1274, 249)
 scale = Vector2(0.8, 0.8)
 _path_to_scene = "res://scenes/game/levels/rooms/scene_6/scene_6.tscn"
 
-[node name="Key" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
-position = Vector2(-621.25, -297.5)
-scale = Vector2(0.653936, 0.727268)
-
-[node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
-position = Vector2(282.5, 256.25)
-scale = Vector2(0.653936, 0.727268)
-
 [node name="Key3" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
 position = Vector2(-1552.5, -106.25)
 scale = Vector2(0.653936, 0.727268)
 
 [node name="Key5" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
 position = Vector2(81.25, -246.25)
-scale = Vector2(0.653936, 0.727268)
-
-[node name="Key6" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
-position = Vector2(-387.5, 136.25)
 scale = Vector2(0.653936, 0.727268)
 
 [node name="Key7" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]

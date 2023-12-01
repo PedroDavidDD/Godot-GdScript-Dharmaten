@@ -76,16 +76,12 @@ _path_to_scene = "res://scenes/game/levels/rooms/scene_3/scene_3.tscn"
 position = Vector2(-687.5, 532.5)
 scale = Vector2(0.653936, 0.727268)
 
-[node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
-position = Vector2(428.75, 331.25)
-scale = Vector2(0.653936, 0.727268)
-
 [node name="Key3" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
 position = Vector2(-1255, 190)
 scale = Vector2(0.653936, 0.727268)
 
 [node name="Key4" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
-position = Vector2(-353.75, -171.25)
+position = Vector2(301.25, 182.5)
 scale = Vector2(0.653936, 0.727268)
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
