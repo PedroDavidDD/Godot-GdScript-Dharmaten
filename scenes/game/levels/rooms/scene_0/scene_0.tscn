@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=10 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wqk83768mm4c" path="res://scenes/game/enemy/Portal/spawn_location.tscn" id="5_34krj"]
 [ext_resource type="AudioStream" uid="uid://dsbkstdva8u8w" path="res://scenes/music nivel 1.mp3" id="8_ac32f"]
 [ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="8_y5wb8"]
+[ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="9_hnmc0"]
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
 
 [node name="scene_0" type="Node2D" groups=["scene_0"]]
@@ -83,5 +84,8 @@ scale = Vector2(0.653936, 0.727268)
 stream = ExtResource("8_ac32f")
 autoplay = true
 bus = &"Ambient"
+
+[node name="SlimeGreen" parent="." instance=ExtResource("9_hnmc0")]
+position = Vector2(707, 441)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
