@@ -4,12 +4,15 @@ var idKey = "C" + str(randi() % 100)  # Genera un número aleatorio entre 0 y 99
 
 @onready var textKey = $Control/Panel/TextKey
 @onready var inv = $"/root/InventoryCanvas"
+@onready var rune_light = $PointLight2D
+
+@export var change_rune_light = false
 
 func _ready():
 	textKey.text = str(idKey)
 
 func _process(delta):
-	pass
+	rune_light.visible = change_rune_light
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):

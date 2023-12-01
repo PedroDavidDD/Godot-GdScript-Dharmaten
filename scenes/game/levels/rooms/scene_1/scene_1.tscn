@@ -75,10 +75,12 @@ _path_to_scene = "res://scenes/game/levels/rooms/scene_2/scene_2.tscn"
 [node name="Key" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
 position = Vector2(573.75, 492.5)
 scale = Vector2(0.653936, 0.727268)
+change_rune_light = true
 
 [node name="Key3" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_jrsoy")]
 position = Vector2(-406.25, 251.25)
 scale = Vector2(0.653936, 0.727268)
+change_rune_light = true
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ac32f")
@@ -108,5 +110,10 @@ position = Vector2(1424, 355)
 
 [node name="SlimeGreen8" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(0, 433)
+
+[node name="DayStateSystem" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="DayStateSystem"]
+color = Color(0.431373, 0.431373, 0.431373, 1)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
