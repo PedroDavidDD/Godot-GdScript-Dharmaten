@@ -46,7 +46,7 @@ var elemental_skills_enabled = {
 	"flame": true,
 	"water": false,
 	"darkness": false,
-	"flame_water": true,
+	"flame_water": false,
 }
 var type_element_value = 0
 var selected_elemental_skill_key = elemental_skills_enabled.keys()[type_element_value]

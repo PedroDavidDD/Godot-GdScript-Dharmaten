@@ -33,6 +33,9 @@ func _ready():
 
 func _process(delta):
 	alert_level_up.visible = isAlertLevelUP
+	
+#	Activar habilidades al subir ciertos niveles
+	check_skill_activation()
 
 # Agrega vida del personaje principal, según el valor proporcionado
 func add_life(value: int):
@@ -46,8 +49,6 @@ func add_exp(value: int):
 	exp += value	
 #	Subir de nivel
 	check_level_up()
-#	Activar habilidades al subir ciertos niveles
-	check_skill_activation()
 
 func check_level_up():
 	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
@@ -58,22 +59,28 @@ func check_level_up():
 			iniciarTimer_alert_level_up()
 	_set_exp_progress(exp)
 
-	# Devuelve true si false está presente en los valores
+	# Devuelve true si 'false' está presente en los valores del diccionario de skills
 func check_false_value_in_dict(dict):
 	var values = dict.values()
 	return values.has(false)
 
-func iniciarTimer_alert_level_up():
+func iniciarTimer_alert_level_up(): 
 	isAlertLevelUP = true
 	timer_alert_level_up.start()
 
 func check_skill_activation():
-	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
-	var level_thresholds = generate_level_thresholds(global_dict.size(), 10)
-	for i in range(global_dict.size()):
-		if expBar.value <= level_thresholds[i]:
-			global_dict[global_dict.keys()[i]] = true
-			return
+	var global_dict = get_tree().get_nodes_in_group("player")
+	if global_dict:
+		global_dict = global_dict[0].get_node("MainCharacterMovement").elemental_skills_enabled
+		var level_thresholds = generate_level_thresholds(global_dict.size(), 10)
+		for i in range(global_dict.size()):
+			if expBar.value <= level_thresholds[i]:
+				print(str(expBar.value) +"<- Value - level_umbral:"+ str(level_thresholds[i]))
+				print(str(expBar.value) +"<- Value - Max:"+ str(expBar.max_value))
+				global_dict[global_dict.keys()[i]] = true
+				return
+			else:
+				global_dict[global_dict.keys()[i]] = true
 
 func generate_level_thresholds(size: int, exp_per_level: int) -> Array:
 	var level_thresholds = [] # Niveles de experiencia para cada habilidad
