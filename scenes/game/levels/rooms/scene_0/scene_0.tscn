@@ -141,7 +141,7 @@ text = "[Cambiar]"
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_2vh60")]
 z_index = 5
-position = Vector2(779, 292)
+position = Vector2(833, 299)
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_ftrd5")]
 limit_top = -44
