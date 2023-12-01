@@ -50,14 +50,21 @@ func add_exp(value: int):
 	check_skill_activation()
 
 func check_level_up():
-#	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
+	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
 	if expBar.value >= expBar.max_value:
 		expBar.max_value += 10
-		isAlertLevelUP = true
-		iniciarTimer_alert_level_up()
+		
+		if check_false_value_in_dict(global_dict):
+			iniciarTimer_alert_level_up()
 	_set_exp_progress(exp)
 
+	# Devuelve true si false está presente en los valores
+func check_false_value_in_dict(dict):
+	var values = dict.values()
+	return values.has(false)
+
 func iniciarTimer_alert_level_up():
+	isAlertLevelUP = true
 	timer_alert_level_up.start()
 
 func check_skill_activation():

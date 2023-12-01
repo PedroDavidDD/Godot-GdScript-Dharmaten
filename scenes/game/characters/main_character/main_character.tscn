@@ -647,6 +647,7 @@ animations = [{
 
 [node name="MainCharacter" type="CharacterBody2D" groups=["player"]]
 disable_mode = 1
+collision_mask = 9
 
 [node name="MainCharacterMovement" type="Node2D" parent="."]
 script = ExtResource("7_fm4k8")

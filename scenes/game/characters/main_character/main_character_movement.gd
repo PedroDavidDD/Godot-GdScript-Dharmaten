@@ -21,7 +21,6 @@ var _movements = {
 }
 var _current_movement = _movements.IDLE # Variable de movimiento
 var _died = false # Define si esta vovo o muerto
-var attacking = false # Define si esta atacando
 var _is_playing: String = "" # Define si se esta reproducionedo el sonido
 var turn_side: String = "right" # Define si se esta reproducionedo el sonido
 
@@ -109,6 +108,7 @@ func _move(delta):
 	if (nextBulletTime <= 0):
 		if Input.is_action_just_pressed("attack"):
 			use_elemental_skill()
+			_current_movement = _movements.ATTACK
 			nextBulletTime = cooldownBullet;
 	else:
 		nextBulletTime -= delta
@@ -134,23 +134,21 @@ func cycle_element_value():
 
 # Controla la animación según el movimiento del personaje
 func _set_animation():
-	# Si esta atacando no interrumpimos la animación
-	if attacking:
-		return
 	# Personaje murio
 	if _died:
 		main_animation.play(_movements.DEAD_HIT)
 		HealthDashboard.restart()
 #		get_tree().change_scene_to_file("res://scenes/game/levels/rooms/scene_0/scene_0.tscn")
 		get_tree().reload_current_scene()
-		
 		return
 	elif _current_movement == _movements.ATTACK:
 		# Atacamos
-		attacking = true
 		main_animation.play(_movements.ATTACK)
-		#weapon.get_node("AnimatedSprite2D").play("default")
+		
+		play_type_bullet_sound()
+		
 		_play_sound(_hit_sound)
+		
 	elif _current_movement == _movements.FLY:
 		if btnRight:
 			# Movimiento hacia la derecha (animación "correr" no volteada)
@@ -166,6 +164,12 @@ func _set_animation():
 		audio_player.stop()
 		_is_playing = ""
 
+func play_type_bullet_sound(): 
+	if (elemental_skills_enabled[selected_elemental_skill_key]):
+		_hit_sound = ResourceLoader.load("res://assets/sounds/"+ selected_elemental_skill_key +".mp3")
+	else:
+		_hit_sound = preload("res://assets/sounds/lock.mp3")
+
 func _play_sound(sound):
 	# Pausamos el sonido
 	audio_player.stop()
@@ -178,7 +182,6 @@ func _play_sound(sound):
 func hit(value: int):
 	if _died:
 		return
-	attacking = false
 	HealthDashboard.remove_life(value)
 	_play_sound(_male_hurt_sound)
 	

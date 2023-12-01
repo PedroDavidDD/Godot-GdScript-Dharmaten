@@ -36,7 +36,7 @@ var _died = false
 var wave = 0
 
 var _orbe = preload("res://scenes/game/enemy/Orbe/orbe.tscn")
-var _male_hurt_sound = preload("res://assets/sounds/male_hurt.mp3")
+var _male_hurt_sound = preload("res://assets/sounds/slime_death.mp3")
 
 var slime_life = 2
 
