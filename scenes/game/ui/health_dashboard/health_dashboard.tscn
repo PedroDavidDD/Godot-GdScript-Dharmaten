@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c51psidx5cxry" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/3.png" id="5_arjxj"]
 [ext_resource type="Texture2D" uid="uid://t2qsw1ribmcp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/big_bars/4.png" id="6_nmmdo"]
 [ext_resource type="Texture2D" uid="uid://brwx3lkdp4684" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/inventory/16.png" id="8_mfdc1"]
-[ext_resource type="Texture2D" uid="uid://se5qxhvskbfa" path="res://assets/sprites/Objects/elements/enabled/flame.png" id="9_t34ra"]
+[ext_resource type="Texture2D" uid="uid://bc30bl6hjhdu6" path="res://assets/sprites/Objects/elements/enabled/flame.png" id="9_t34ra"]
 [ext_resource type="Texture2D" uid="uid://bqhticqi0v1py" path="res://assets/sprites/Objects/elements/icon_disabled.png" id="10_qhhdo"]
 [ext_resource type="Texture2D" uid="uid://b0x5mxa2tsy1u" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/14.png" id="11_3p3lt"]
 [ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="11_pnikn"]

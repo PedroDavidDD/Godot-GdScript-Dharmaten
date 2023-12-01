@@ -1,18 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://clbokiaiasfcd"]
+[gd_scene load_steps=9 format=3 uid="uid://clbokiaiasfcd"]
 
 [ext_resource type="Script" path="res://scenes/game/objects/balls/ball.gd" id="1_wq2fq"]
-[ext_resource type="Texture2D" uid="uid://dcdmpyxok86ts" path="res://assets/sprites/Objects/elements/elements.png" id="2_aodhh"]
+[ext_resource type="Texture2D" uid="uid://bc30bl6hjhdu6" path="res://assets/sprites/Objects/elements/enabled/flame.png" id="3_30xho"]
 [ext_resource type="Texture2D" uid="uid://bfl3e80f08k6" path="res://assets/sprites/Objects/elements/enabled/darkness.png" id="3_j4jmx"]
 [ext_resource type="Texture2D" uid="uid://cy24nt1mb46cp" path="res://assets/sprites/Objects/elements/enabled/flame_water_0.png" id="4_h21yg"]
 [ext_resource type="Texture2D" uid="uid://dvp6qfjassnry" path="res://assets/sprites/Objects/elements/enabled/flame_water_1.png" id="5_s387n"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1hjl"]
-atlas = ExtResource("2_aodhh")
-region = Rect2(176, 0, 176, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6sr1e"]
-atlas = ExtResource("2_aodhh")
-region = Rect2(0, 0, 197, 197)
+[ext_resource type="Texture2D" uid="uid://kk1dj0yeqsl2" path="res://assets/sprites/Objects/elements/enabled/water.png" id="6_ykw37"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6urgt"]
 animations = [{
@@ -34,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u1hjl")
+"texture": ExtResource("3_30xho")
 }],
 "loop": false,
 "name": &"flame",
@@ -53,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6sr1e")
+"texture": ExtResource("6_ykw37")
 }],
 "loop": false,
 "name": &"water",
@@ -69,8 +62,7 @@ script = ExtResource("1_wq2fq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.57079
 sprite_frames = SubResource("SpriteFrames_6urgt")
-animation = &"darkness"
-frame_progress = 1.0
+animation = &"water"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 8
