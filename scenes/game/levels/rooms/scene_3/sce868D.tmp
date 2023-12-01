@@ -1,0 +1,354 @@
+[gd_scene load_steps=25 format=3 uid="uid://b6dju53aaci78"]
+
+[ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
+[ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
+[ext_resource type="PackedScene" uid="uid://ca3ueo0yewjov" path="res://scenes/game/characters/main_character/main_character.tscn" id="2_2vh60"]
+[ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/game/camera/camera.tscn" id="3_ftrd5"]
+[ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="4_lb554"]
+[ext_resource type="Texture2D" uid="uid://cg6wkkuni8aq8" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/bg_image.png" id="5_c0f45"]
+[ext_resource type="PackedScene" uid="uid://bo37g7mv4j6pn" path="res://scenes/game/enemy/crabby.tscn" id="6_thrns"]
+[ext_resource type="PackedScene" uid="uid://b5qjvfbte4svk" path="res://scenes/game/levels/objects/pickable_object/pickable_object.tscn" id="7_x5wxv"]
+[ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="8_kyclf"]
+[ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_lr7et"]
+[ext_resource type="Texture2D" uid="uid://maf7s1c6fyyp" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/objects/chest/chest_close_04.png" id="10_cyhjx"]
+[ext_resource type="PackedScene" uid="uid://nu73qsr241ic" path="res://scenes/Interactable/checkpoint.tscn" id="12_fd0gc"]
+[ext_resource type="Texture2D" uid="uid://baf8gssaduqa8" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_171.png" id="12_qoj07"]
+[ext_resource type="Texture2D" uid="uid://bwk07tfm6hssd" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_172.png" id="13_7o2vi"]
+[ext_resource type="Texture2D" uid="uid://blmll1nmw5qvc" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_173.png" id="14_7kqys"]
+[ext_resource type="Texture2D" uid="uid://bpa54jtijwlot" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_174.png" id="15_lsr4t"]
+[ext_resource type="Texture2D" uid="uid://boeei43mmm20n" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_203.png" id="16_pa832"]
+[ext_resource type="Texture2D" uid="uid://dgfvd7gwfxjey" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_137.png" id="17_p1yip"]
+[ext_resource type="Texture2D" uid="uid://ccg3xgw2g8lih" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_134.png" id="18_yer3f"]
+[ext_resource type="PackedScene" uid="uid://x2oowp3ldqvs" path="res://assets/sprites/Objects/cloud_hidden.tscn" id="19_dcsx2"]
+[ext_resource type="Texture2D" uid="uid://6pipywim3ap" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_127.png" id="19_o8y28"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6x0hx"]
+load_path = "res://.godot/imported/small_cloud_1.png-40532304be8a8e58b358963bfcb15f67.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrq5g"]
+load_path = "res://.godot/imported/small_cloud_1.png-40532304be8a8e58b358963bfcb15f67.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r4e10"]
+load_path = "res://.godot/imported/small_cloud_3.png-2824e524f4818e08cf60700642ab74ab.ctex"
+
+[node name="scene_0" type="Node2D"]
+script = ExtResource("1_lrpxo")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-6, 2)
+tile_set = ExtResource("1_1gmux")
+format = 2
+layer_0/name = "Background"
+layer_0/tile_data = PackedInt32Array(327698, 327680, 6, 393234, 327680, 7, 458770, 327680, 8, 524306, 524288, 1, 655378, 327680, 7, 720914, 327680, 8, 786450, 327680, 6, 851986, 327680, 7, 917522, 327680, 8, 983058, 327680, 9, 524307, 524288, 1, 589843, 524288, 2, 589842, 524288, 2)
+layer_1/name = "Barcos"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 2
+layer_1/tile_data = PackedInt32Array(1114117, 0, 5, 1114118, 65536, 5, 1114119, 131072, 5, 1114120, 196608, 5, 1114121, 262144, 5, 1114122, 327680, 5, 1114123, 0, 5, 1114124, 65536, 5, 1114125, 131072, 5, 1114126, 196608, 5, 1114127, 262144, 5, 1114128, 327680, 5, 1114130, 65536, 5, 1114131, 131072, 5, 1114132, 196608, 5, 1114133, 262144, 5, 1114129, 0, 5, 1114134, 262144, 5, 1114135, 262144, 5, 1114136, 262144, 5, 1114137, 262144, 5, 1114138, 262144, 5, 1114139, 262144, 5, 1114140, 262144, 5, 1114141, 3, 0, 1114142, 65539, 0, 1114116, 65536, 5, 1048607, 65539, 1, 1048606, 3, 0, 1048578, 131072, 0, 1048579, 196608, 0, 1048580, 262144, 0, 1048581, 327680, 0, 1048582, 0, 0, 1048583, 65536, 0, 1048584, 131072, 0, 1048585, 196608, 0, 1048586, 262144, 0, 1048587, 327680, 0, 1048588, 0, 0, 1048589, 65536, 0, 1048590, 131072, 0, 1048591, 65536, 7, 1048592, 131072, 7, 1048593, 327680, 0, 1048594, 0, 0, 1048595, 65536, 0, 1048596, 131072, 0, 1048597, 196608, 0, 1048598, 262144, 0, 1048599, 327680, 0, 1048600, 0, 0, 1048601, 65536, 0, 1048602, 131072, 0, 1048603, 196608, 0, 1048604, 262144, 0, 1048605, 327680, 0, 1114115, 0, 5, 1114114, 65536, 5, 1114113, 0, 5, 1048577, 65536, 7, 1048576, 65536, 8, 983070, 262144, 0, 983071, 3, 1, 983040, 65536, 0, 983041, 131072, 0, 393216, 0, 0, 458752, 0, 4, 524288, 0, 1, 589824, 0, 2, 655360, 0, 3, 720896, 0, 4, 786432, 0, 1, 851968, 0, 2, 917504, 0, 3, 393223, 327680, 0, 458759, 327680, 2, 524295, 327680, 3, 589831, 327680, 4, 786439, 327680, 3, 851975, 327680, 4, 786438, 327680, 0, 524294, 327680, 0, 524290, 262144, 0, 524291, 327680, 0, 524292, 196608, 0, 524293, 262144, 0, 524289, 196608, 0, 786433, 196608, 0, 786434, 262144, 0, 786435, 327680, 0, 786436, 196608, 0, 786437, 262144, 0, 917515, 196608, 0, 786440, 196608, 0, 655370, 196608, 0, 524296, 196608, 0, 262153, 196608, 0, 262157, 196608, 0, 262162, 65536, 0, 262161, 0, 0, 262163, 196608, 0, 983072, 65539, 1, 917535, 3, 0, 917536, 65539, 0, 917537, 65539, 0, 983073, 65539, 1, 1048608, 65539, 1, 1114143, 65539, 1, 1114144, 65539, 1, 1179677, 3, 1, 1245213, 3, 2, 1179678, 65539, 1, 1245214, 65539, 2, 1179680, 65539, 1, 1245216, 65539, 2, 1245217, 65539, 2, 1179679, 65539, 1, 1245215, 65539, 2, 983074, 65539, 1, 983075, 65539, 0, 983076, 65539, 0, 983077, 65539, 0, 983078, 65539, 0, 983079, 65539, 0, 917543, 65539, 1, 917544, 65539, 1, 852008, 65539, 1, 786472, 65539, 1, 720936, 65539, 1, 655400, 65539, 1, 524328, 65539, 1, 524327, 65539, 1, 524326, 65539, 1, 524325, 65539, 1, 458789, 65539, 1, 458788, 65539, 1, 458787, 65539, 1, 458786, 3, 1, 917538, 131075, 0, 852007, 65539, 1, 786471, 65539, 1, 720935, 65539, 1, 720934, 65539, 1, 655398, 65539, 1, 589862, 65539, 1, 589863, 65539, 1, 655399, 65539, 1, 917542, 65539, 1, 917541, 65539, 1, 852005, 65539, 1, 786469, 65539, 1, 786470, 65539, 1, 852006, 65539, 1, 917539, 65539, 1, 917540, 65539, 1, 589859, 65539, 1, 655395, 65539, 1, 720931, 65539, 1, 786467, 65539, 1, 852003, 65539, 1, 589860, 65539, 1, 655396, 65539, 1, 720932, 65539, 1, 786468, 65539, 1, 852004, 65539, 1, 589861, 65539, 1, 655397, 65539, 1, 720933, 65539, 1, 524322, 3, 1, 524323, 65539, 1, 524324, 65539, 1, 589858, 3, 1, 655394, 3, 1, 720930, 3, 1, 1048609, 65539, 1, 1114145, 65539, 1, 1179681, 65539, 1, 1048610, 65539, 1, 1114146, 65539, 1, 1179682, 65539, 1, 1048611, 65539, 1, 1114147, 65539, 1, 1179683, 65539, 1, 1048612, 65539, 1, 1114148, 65539, 1, 1179684, 65539, 1, 1048613, 65539, 1, 1114149, 65539, 1, 1179685, 65539, 1, 1048614, 65539, 1, 1114150, 65539, 1, 1179686, 65539, 1, 1048615, 65539, 1, 1114151, 65539, 1, 1179687, 65539, 1, 1245218, 65539, 2, 1245219, 65539, 2, 1245220, 65539, 2, 1245221, 65539, 2, 1245222, 65539, 2, 1245223, 65539, 2, 589864, 65539, 1, 983080, 65539, 1, 1048616, 65539, 1, 1114152, 65539, 1, 1179688, 65539, 1, 1245224, 65539, 1, 589865, 65539, 1, 655401, 65539, 1, 720937, 65539, 1, 786473, 65539, 1, 852009, 65539, 1, 917545, 65539, 1, 983081, 65539, 1, 1048617, 65539, 1, 1114153, 65539, 1, 1179689, 65539, 1, 1245225, 65539, 1, 589866, 65539, 1, 655402, 65539, 1, 720938, 65539, 1, 786474, 65539, 1, 852010, 65539, 1, 917546, 65539, 1, 983082, 65539, 1, 1048618, 65539, 1, 1114154, 65539, 1, 1179690, 65539, 1, 1245226, 65539, 1, 589867, 65539, 1, 655403, 65539, 1, 720939, 65539, 1, 786475, 65539, 1, 852011, 65539, 1, 917547, 65539, 1, 983083, 65539, 1, 1048619, 65539, 1, 1114155, 65539, 1, 1179691, 65539, 1, 1245227, 65539, 1, 589868, 65539, 1, 655404, 65539, 1, 720940, 65539, 1, 786476, 65539, 1, 852012, 65539, 1, 917548, 65539, 1, 983084, 65539, 1, 1048620, 65539, 1, 1114156, 65539, 1, 1179692, 65539, 1, 1245228, 65539, 1, 589869, 65539, 1, 655405, 65539, 1, 720941, 65539, 1, 786477, 65539, 1, 852013, 65539, 1, 917549, 65539, 1, 983085, 65539, 1, 1048621, 65539, 1, 1114157, 65539, 1, 1179693, 65539, 1, 1245229, 65539, 1, 589870, 65539, 1, 655406, 65539, 1, 720942, 65539, 1, 786478, 65539, 1, 852014, 65539, 1, 917550, 65539, 1, 983086, 65539, 1, 1048622, 65539, 1, 1114158, 65539, 1, 1179694, 65539, 1, 1245230, 65539, 1, 589871, 65539, 1, 655407, 65539, 1, 720943, 65539, 1, 786479, 65539, 1, 852015, 65539, 1, 917551, 65539, 1, 983087, 65539, 1, 1048623, 65539, 1, 1114159, 65539, 1, 1179695, 65539, 1, 1245231, 65539, 1, 589872, 65539, 1, 655408, 65539, 1, 720944, 65539, 1, 786480, 65539, 1, 852016, 65539, 1, 917552, 65539, 1, 983088, 65539, 1, 1048624, 65539, 1, 1114160, 65539, 1, 1179696, 65539, 1, 1245232, 65539, 1, 524329, 65539, 1, 524330, 65539, 1, 524331, 65539, 1, 524332, 65539, 1, 524333, 65539, 1, 524334, 65539, 1, 524335, 65539, 1, 524336, 65539, 1, 524337, 65539, 1, 589873, 65539, 1, 655409, 65539, 1, 720945, 65539, 1, 786481, 65539, 1, 852017, 65539, 1, 917553, 65539, 1, 983089, 65539, 1, 1048625, 65539, 1, 1114161, 65539, 1, 1179697, 65539, 1, 1245233, 65539, 1, 524338, 65539, 1, 589874, 65539, 1, 655410, 65539, 1, 720946, 65539, 1, 786482, 65539, 1, 852018, 65539, 1, 917554, 65539, 1, 983090, 65539, 1, 1048626, 65539, 1, 1114162, 65539, 1, 1179698, 65539, 1, 1245234, 65539, 1, 393250, 3, 1, 393251, 65539, 1, 393252, 65539, 1, 327714, 3, 1, 327715, 65539, 1, 327716, 65539, 1, 262178, 3, 0, 262179, 65539, 0, 262180, 65539, 0, 262183, 65539, 0, 327719, 65539, 1, 262184, 131075, 0, 327720, 131075, 1, 393255, 65539, 1, 458791, 65539, 1, 393256, 131075, 1, 458792, 131075, 1, 262182, 65539, 0, 327718, 65539, 1, 262181, 65539, 0, 327717, 65539, 1, 393253, 65539, 1, 393254, 65539, 1, 458790, 65539, 1, 983055, 65536, 0, 983056, 131072, 0, 1114110, 65536, 8, 1114111, 65536, 8, 1048574, 0, 0, 1048575, 65536, 0, 983057, 196608, 0, 917522, 327680, 4, 983058, 327680, 5, 786450, 327680, 2, 851986, 327680, 3, 655378, 0, 2, 720914, 327680, 1, 327698, 327680, 1, 393234, 327680, 2, 458770, 327680, 3, 327699, 327680, 1, 393235, 327680, 2, 458771, 327680, 3, 655379, 327680, 2, 720915, 327680, 1, 786451, 327680, 2, 851987, 327680, 3, 917523, 327680, 4, 983059, 327680, 5, 458775, 0, 0, 458776, 65536, 0, 458779, 262144, 0, 458780, 327680, 0, 262164, 327680, 0, 786458, 196608, 0, 720919, 196608, 0)
+layer_2/name = "Capa_objs"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+
+[node name="MainCharacter" parent="." instance=ExtResource("2_2vh60")]
+z_index = 5
+position = Vector2(119, 466)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_ftrd5")]
+character = NodePath("../MainCharacter")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 290.0
+offset_top = 359.0
+offset_right = 602.0
+offset_bottom = 386.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_lb554")
+theme_override_font_sizes/font_size = 24
+text = "Continuará..."
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Bg" type="Sprite2D" parent="ParallaxBackground"]
+z_index = -1
+position = Vector2(541, 210)
+scale = Vector2(4.011, 6.744)
+texture = ExtResource("5_c0f45")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1150, 0)
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(171, 83.004)
+scale = Vector2(4, 2.667)
+texture = SubResource("CompressedTexture2D_6x0hx")
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(547, 119.004)
+scale = Vector2(4, 2.667)
+texture = SubResource("CompressedTexture2D_6x0hx")
+
+[node name="Cloud3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(949, 39.004)
+scale = Vector2(4, 2.667)
+texture = SubResource("CompressedTexture2D_6x0hx")
+
+[node name="Cloud4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2(1211, 123.004)
+scale = Vector2(4, 2.667)
+texture = SubResource("CompressedTexture2D_6x0hx")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(883, 197)
+scale = Vector2(6, 4)
+texture = SubResource("CompressedTexture2D_qrq5g")
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(367, 245)
+scale = Vector2(6, 4)
+texture = SubResource("CompressedTexture2D_qrq5g")
+
+[node name="Cloud3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1013, 311)
+scale = Vector2(6, 4)
+texture = SubResource("CompressedTexture2D_qrq5g")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1200, 0)
+
+[node name="Cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+visible = false
+position = Vector2(249, 373)
+scale = Vector2(4, 4.324)
+texture = SubResource("CompressedTexture2D_r4e10")
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(725, 303)
+scale = Vector2(4, 4.324)
+texture = SubResource("CompressedTexture2D_r4e10")
+
+[node name="Crabby" parent="." groups=["enemy"] instance=ExtResource("6_thrns")]
+position = Vector2(190, 235)
+animation = "run"
+moving_direction = "right"
+
+[node name="Crabby2" parent="." groups=["enemy"] instance=ExtResource("6_thrns")]
+position = Vector2(846, 487)
+animation = "run"
+moving_direction = "right"
+
+[node name="Collectibles" type="Node2D" parent="."]
+
+[node name="PickableObject" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(317, 500)
+animation = "gold_coin"
+
+[node name="PickableObject28" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(600, 292)
+animation = "blue_diamond"
+
+[node name="PickableObject2" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(317, 466)
+animation = "gold_coin"
+
+[node name="PickableObject12" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(317, 430)
+animation = "gold_coin"
+
+[node name="PickableObject3" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(595, 113)
+animation = "gold_coin"
+
+[node name="PickableObject5" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(502, 93)
+animation = "gold_coin"
+
+[node name="PickableObject6" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(369, 95)
+animation = "gold_coin"
+
+[node name="PickableObject7" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(627, 112)
+animation = "gold_coin"
+
+[node name="PickableObject8" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(626, 80)
+animation = "gold_coin"
+
+[node name="PickableObject9" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(594, 76)
+animation = "gold_coin"
+
+[node name="PickableObject10" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(560, 76)
+animation = "gold_coin"
+
+[node name="PickableObject15" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(829, 261)
+animation = "gold_coin"
+
+[node name="PickableObject16" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(839, 233)
+animation = "gold_coin"
+
+[node name="PickableObject21" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(823, 208)
+animation = "gold_coin"
+
+[node name="PickableObject17" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(841, 286)
+animation = "gold_coin"
+
+[node name="PickableObject22" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(828, 311)
+animation = "gold_coin"
+
+[node name="PickableObject23" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(845, 339)
+animation = "gold_coin"
+
+[node name="PickableObject18" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(829, 366)
+animation = "gold_coin"
+
+[node name="PickableObject20" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(747, 340)
+animation = "gold_coin"
+
+[node name="PickableObject19" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(764, 131)
+animation = "gold_coin"
+
+[node name="PickableObject11" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(561, 113)
+animation = "gold_coin"
+
+[node name="PickableObject14" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(595, 46)
+animation = "gold_coin"
+
+[node name="PickableObject4" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(172, 367)
+animation = "gold_coin"
+
+[node name="PickableObject13" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(113, 368)
+animation = "gold_coin"
+
+[node name="PickableObject24" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(76, 174)
+animation = "green_diamond"
+
+[node name="PickableObject25" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(105, 238)
+animation = "gold_coin"
+
+[node name="PickableObject26" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(47, 239)
+animation = "gold_coin"
+
+[node name="PickableObject27" parent="Collectibles" instance=ExtResource("7_x5wxv")]
+position = Vector2(76, 207)
+animation = "gold_coin"
+
+[node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_kyclf")]
+position = Vector2(1101, 409)
+scale = Vector2(0.8, 0.8)
+_path_to_scene = "res://scenes/game/levels/rooms/scene_1/scene_1.tscn"
+
+[node name="Key" parent="DoorChangeScene" groups=["key"] instance=ExtResource("9_lr7et")]
+position = Vector2(-323.75, -41.25)
+scale = Vector2(0.653936, 0.727268)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Chest" type="Sprite2D" parent="Objects"]
+position = Vector2(76, 238)
+texture = ExtResource("10_cyhjx")
+
+[node name="Chest2" type="Sprite2D" parent="Objects"]
+position = Vector2(581, 111)
+texture = ExtResource("10_cyhjx")
+
+[node name="Checkpoint" parent="Objects" instance=ExtResource("12_fd0gc")]
+position = Vector2(622, 82)
+
+[node name="UI_comandos" type="Node2D" parent="."]
+position = Vector2(55.135, 230)
+scale = Vector2(0.54, 0.54)
+
+[node name="Keyboard171_top" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(159.009, 436)
+texture = ExtResource("12_qoj07")
+
+[node name="Keyboard172_down" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(160, 468)
+texture = ExtResource("13_7o2vi")
+
+[node name="Keyboard173_right" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(198, 466)
+texture = ExtResource("14_7kqys")
+
+[node name="Keyboard174_left" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(122, 468)
+texture = ExtResource("15_lsr4t")
+
+[node name="Keyboard203_space" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(396.046, 435.185)
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("16_pa832")
+
+[node name="Control" type="Control" parent="UI_comandos/Keyboard203_space"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -8.3916
+offset_top = 18.182
+offset_right = 31.6084
+offset_bottom = 58.182
+scale = Vector2(0.715, 0.715)
+
+[node name="Label" type="Label" parent="UI_comandos/Keyboard203_space/Control"]
+layout_mode = 0
+offset_left = -38.9771
+offset_top = -43.5414
+offset_right = 69.0229
+offset_bottom = -17.5414
+text = "[ SPACE ] X 2"
+
+[node name="Keyboard137_bomb" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(1312.71, -90.7407)
+scale = Vector2(1.85185, 1.85185)
+texture = ExtResource("17_p1yip")
+
+[node name="Keyboard134_attack" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(159.009, -125.926)
+scale = Vector2(1.85185, 1.85185)
+texture = ExtResource("18_yer3f")
+
+[node name="Keyboard127_teleport" type="Sprite2D" parent="UI_comandos"]
+position = Vector2(725.676, 81.4815)
+scale = Vector2(1.85185, 1.85185)
+texture = ExtResource("19_o8y28")
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(600, 292)
+
+[node name="Cloud_hidden" parent="Node2D" instance=ExtResource("19_dcsx2")]
+modulate = Color(0.964706, 0.964706, 0.964706, 1)

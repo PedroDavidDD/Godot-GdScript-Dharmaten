@@ -1,23 +1,32 @@
 extends Node2D
-## Script de escena principal.
-##
-## Tiene variables y funciones relacionados con la escena, por ejemplo cambios hacia otras escenas
-## Cambio de escenas: https://docs.google.com/document/d/1eIBtgr8wln1pT0aZ4c-YWk_pqngyBg4HDsgdYLAXv28/edit?usp=sharing
-## Uso de señales: https://docs.google.com/document/d/1vFSOuJkBy7xr5jksgCBNaTpqJHE_K87ZNafB5ZJ_I0M/edit?usp=sharing
-
-
-# Area para siguiente nivel
-@onready var _area_next_level = $Areas/AreaNextLevel
-
-
-# Función de inicialización
+var player = []
+var enemy = load("res://scenes/game/enemy/Slime/slime_green.tscn")
+var wave = 1
+var rng = RandomNumberGenerator.new()
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	# Escuchamos cuando el personaje entre al área de contacto
-	_area_next_level.body_entered.connect(_load_nex_level)
+	player = get_tree().get_nodes_in_group("player")[0]
+	
+	if GameManager.level_start:
+		GameManager.last_position = player.global_position
+	player.global_position = GameManager.last_position
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	pass
 
 
-# Cargamos el siguiente nivel (la siguiente escena)
-func _load_nex_level(body):
-	if body.is_in_group("player"):
-		var scene = "res://scenes/game/levels/rooms/scene_2/scene_4.tscn"
-		#SceneTransition.change_scene(scene) # Por el momento no usaremos este cambio de nivel
+func _on_spawn_timer_timeout():
+	wave +=1
+	var random_number = rng.randi_range(1,4)
+	var inst=enemy.instantiate()
+	
+	if (random_number == 1):
+		inst.position = $SpawnLocation1.position
+	elif (random_number == 2):
+		inst.position = $SpawnLocation2.position
+	elif (random_number == 3):
+		inst.position = $SpawnLocation3.position
+	else:
+		inst.position = $SpawnLocation4.position	
+	add_child(inst)
