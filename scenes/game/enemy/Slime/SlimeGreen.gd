@@ -7,6 +7,9 @@ extends CharacterBody2D
 @onready var _animation := $EnemyAnimation
 @onready var audio_player:= $AudioStreamPlayer2D # Reproductor de audios
 
+@onready var ray_cast_hit = $RayCast2D # Raycast
+@onready var timer_hit = $Timer 
+
 var animation = {
 	IDLE = "idle",
 	RUN = "run",
@@ -29,9 +32,9 @@ var animation = {
 ) var moving_direction: String
 
 # Definición de parametros de física
-var isMoving = true
 var speedSlime = 100
 var player = null
+var playerMove = null
 var _died = false
 var wave = 0
 
@@ -39,13 +42,11 @@ var _orbe = preload("res://scenes/game/enemy/Orbe/orbe.tscn")
 var _male_hurt_sound = preload("res://assets/sounds/slime_death.mp3")
 
 var slime_life = 2
+var canAttack = false
 
 func _ready():
 	if not _current_movement:
 		_current_movement = animation.RUN
-	# Si no hay un personaje, deshabilitamos la función: _physics_process
-	if not slime_character:
-		set_physics_process(false)
 	# animacion
 	_init_state()
 	
@@ -53,32 +54,32 @@ func _ready():
 func _init_state():
 	# Animación de estado inicial
 	_animation.play(_current_movement)
-	
-# _animation.play(animation.RUN)
+
 func _process(delta):
 	
-	player = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement")
+	player = get_tree().get_nodes_in_group("player")[0]
+	playerMove = player.get_node("MainCharacterMovement")
+	# Apuntar el Ray_cast al Player
+	_aim()
+	# Si esta lejos del Player, movimiento
+	slime_to_player(delta)
+	# Si esta cerca, pasó 0.4s y el Player no esta muerto, atacar
+	if _current_movement == animation.ATTACKING && !playerMove._died:
+		check_player_collision()
 	
-	# Si la animación es de correr, aplicamos el movimiento
-	if _current_movement == animation.RUN:
-		slime_to_player(delta)
-	# Atacar si esta cerca del colider
-	elif _current_movement == animation.ATTACKING:
-		isMoving = false
-	
-	#_animation.play(_current_movement)
+	_animation.play(_current_movement)
 	# Iniciamos el movimiento
 	move_and_slide()
-	
+
 func _on_area_2d_body_entered(body):
 #	contrl + k
-	if body.is_in_group("player"):
-		_current_movement = animation.ATTACKING
-		attacking()
+#	if body.is_in_group("player"):
+#		attacking()
+	pass
 
 func attacking():
-	player.hit(1)
-	_current_movement = animation.RUN
+	if canAttack:
+		playerMove.hit(1)
 
 # Recibir daño
 func hit(value: int):
@@ -99,14 +100,14 @@ func hit(value: int):
 
 func _play_sound(sound):
 	# Pausamos el sonido
-	audio_player.stop()
+#	audio_player.stop()
 	# Reproducimos el sonido
 	audio_player.stream = sound
 	audio_player.play()
 
 func die():
 	createOrbe()
-	self.queue_free()  # Liberamos la memoria
+	self.queue_free()
 
 func createOrbe():
 	var shoot_orbe = _orbe.instantiate()
@@ -118,12 +119,29 @@ func createOrbe():
 	get_parent().get_parent().add_child(shoot_orbe)
 
 func slime_to_player(delta):
-	if player and isMoving:
-		var target_position = player.global_position
+	if playerMove:
+		var target_position = playerMove.global_position
 		var distance_threshold = 30
 		var direction = global_position.direction_to(target_position)
 		var move_amount = direction * speedSlime * delta
 		
 		if global_position.distance_to(target_position) > distance_threshold:
 			global_position += move_amount
+			canAttack = false
+			_current_movement = animation.RUN
+		else:
+			canAttack = true
+			_current_movement = animation.ATTACKING
+
+func _aim():
+	ray_cast_hit.target_position =  to_local(player.position)
+
+func check_player_collision():
+	if ray_cast_hit.get_collider() == player and timer_hit.is_stopped():
+		timer_hit.start()
+	elif ray_cast_hit.get_collider() != player and not timer_hit.is_stopped():
+		timer_hit.stop()
+
+func _on_timer_timeout():
+	attacking()
 

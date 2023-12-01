@@ -134,7 +134,7 @@ func cycle_element_value():
 
 # Controla la animación según el movimiento del personaje
 func _set_animation():
-	# Personaje murio
+	# Personaje murio: Reiniciar escena actual
 	if _died:
 		main_animation.play(_movements.DEAD_HIT)
 		HealthDashboard.restart()
