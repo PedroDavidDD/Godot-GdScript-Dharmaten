@@ -69,16 +69,18 @@ func iniciarTimer_alert_level_up():
 	timer_alert_level_up.start()
 
 func check_skill_activation():
-	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
-	var level_thresholds = generate_level_thresholds(global_dict.size(), 10)
-	for i in range(global_dict.size()):
-		if expBar.value <= level_thresholds[i]:
-			print(str(expBar.value) +"<- Value - level_umbral:"+ str(level_thresholds[i]))
-			print(str(expBar.value) +"<- Value - Max:"+ str(expBar.max_value))
-			global_dict[global_dict.keys()[i]] = true
-			return
-		else:
-			global_dict[global_dict.keys()[i]] = true
+	var global_dict = get_tree().get_nodes_in_group("player")
+	if global_dict:
+		global_dict = global_dict[0].get_node("MainCharacterMovement").elemental_skills_enabled
+		var level_thresholds = generate_level_thresholds(global_dict.size(), 10)
+		for i in range(global_dict.size()):
+			if expBar.value <= level_thresholds[i]:
+				print(str(expBar.value) +"<- Value - level_umbral:"+ str(level_thresholds[i]))
+				print(str(expBar.value) +"<- Value - Max:"+ str(expBar.max_value))
+				global_dict[global_dict.keys()[i]] = true
+				return
+			else:
+				global_dict[global_dict.keys()[i]] = true
 
 func generate_level_thresholds(size: int, exp_per_level: int) -> Array:
 	var level_thresholds = [] # Niveles de experiencia para cada habilidad

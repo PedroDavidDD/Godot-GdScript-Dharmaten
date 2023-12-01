@@ -15,7 +15,6 @@ func _ready():
 func _process(_delta):
 	pass
 
-
 func _on_spawn_timer_timeout():
 	wave +=1
 	var random_number = rng.randi_range(1,4)
