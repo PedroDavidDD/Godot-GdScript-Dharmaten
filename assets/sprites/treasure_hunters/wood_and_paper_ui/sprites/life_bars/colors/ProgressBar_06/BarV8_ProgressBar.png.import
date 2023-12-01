@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnf4y6l6oubrp"
-path="res://.godot/imported/BarV8_ProgressBar.png-18d0d2f81f5308a40033109d9cd4f1b3.ctex"
+uid="uid://4tkywmyejgl"
+path="res://.godot/imported/BarV8_ProgressBar.png-7c807aa764c2a03c1df63b8bbdbf3801.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png"
-dest_files=["res://.godot/imported/BarV8_ProgressBar.png-18d0d2f81f5308a40033109d9cd4f1b3.ctex"]
+source_file="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_06/BarV8_ProgressBar.png"
+dest_files=["res://.godot/imported/BarV8_ProgressBar.png-7c807aa764c2a03c1df63b8bbdbf3801.ctex"]
 
 [params]
 
