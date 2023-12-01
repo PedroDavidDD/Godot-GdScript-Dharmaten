@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=19 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://wqk83768mm4c" path="res://scenes/game/enemy/Portal/spawn_location.tscn" id="5_34krj"]
 [ext_resource type="Texture2D" uid="uid://cmapg23ldyiv4" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_24.png" id="5_sgxk8"]
 [ext_resource type="Texture2D" uid="uid://cp3n0uml4b0yk" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_14.png" id="6_1ohi7"]
+[ext_resource type="Texture2D" uid="uid://bv2xv3k3w0d74" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_30.png" id="6_lb8rw"]
 [ext_resource type="Texture2D" uid="uid://d26e1j6o0w3uj" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_25.png" id="7_j4wgj"]
 [ext_resource type="AudioStream" uid="uid://dsbkstdva8u8w" path="res://scenes/music nivel 1.mp3" id="8_ac32f"]
 [ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="8_y5wb8"]
@@ -64,6 +65,11 @@ texture = ExtResource("3_xca6h")
 position = Vector2(844, 242)
 scale = Vector2(0.492187, 0.453125)
 texture = ExtResource("5_1rq6s")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(928, 242)
+scale = Vector2(0.492187, 0.453125)
+texture = ExtResource("6_lb8rw")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 position = Vector2(716, 242)
@@ -120,6 +126,18 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("17_d3mti")
 theme_override_font_sizes/font_size = 18
 text = "[Atacar]"
+
+[node name="Label4" type="Label" parent="."]
+modulate = Color(0.615686, 0.372549, 0.0745098, 1)
+offset_left = 887.0
+offset_top = 253.0
+offset_right = 1031.0
+offset_bottom = 275.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("17_d3mti")
+theme_override_font_sizes/font_size = 18
+text = "[Cambiar]"
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_2vh60")]
 z_index = 5
