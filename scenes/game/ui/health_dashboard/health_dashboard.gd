@@ -75,6 +75,8 @@ func check_skill_activation():
 		var level_thresholds = generate_level_thresholds(global_dict.size(), 10)
 		for i in range(global_dict.size()):
 			if expBar.value <= level_thresholds[i]:
+				print(str(expBar.value) +"<- Value - level_umbral:"+ str(level_thresholds[i]))
+				print(str(expBar.value) +"<- Value - Max:"+ str(expBar.max_value))
 				global_dict[global_dict.keys()[i]] = true
 				return
 			else:
