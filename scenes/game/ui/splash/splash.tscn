@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b1affhr4ts3ew"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/splash/splash.gd" id="1_roa58"]
-[ext_resource type="Texture2D" uid="uid://k1yb8hn46r0n" path="res://assets/sprites/logo.png" id="2_p17l1"]
+[ext_resource type="Texture2D" uid="uid://d4ewm2qokocyb" path="res://scenes/utp3.png" id="2_bo2p4"]
 [ext_resource type="Texture2D" uid="uid://b24wey0khy116" path="res://assets/sprites/logo-Endless.png" id="3_g3n3v"]
 [ext_resource type="AudioStream" uid="uid://bvubp1g5jvqpl" path="res://scenes/intro1.mp3" id="5_dpquc"]
 [ext_resource type="Texture2D" uid="uid://ds7qyecx7xgo5" path="res://scenes/logo de chaos studios.png" id="5_tk7ga"]
@@ -75,7 +75,9 @@ script = ExtResource("1_roa58")
 
 [node name="GP360" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("2_p17l1")
+position = Vector2(419, 238.321)
+scale = Vector2(0.301544, 0.249308)
+texture = ExtResource("2_bo2p4")
 offset = Vector2(576, 312)
 
 [node name="Endless" type="Sprite2D" parent="."]
