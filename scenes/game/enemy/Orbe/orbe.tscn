@@ -1,44 +1,28 @@
-[gd_scene load_steps=13 format=3 uid="uid://ejy38yyf3cxa"]
+[gd_scene load_steps=9 format=3 uid="uid://ejy38yyf3cxa"]
 
 [ext_resource type="Script" path="res://scenes/game/enemy/Orbe/orbe.gd" id="1_gg5qu"]
-[ext_resource type="Texture2D" uid="uid://rhunm5u51v4e" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_0.png" id="2_rwipg"]
 [ext_resource type="Texture2D" uid="uid://dd8ltsdq4w4lm" path="res://scenes/luz roja.png" id="2_wru51"]
-[ext_resource type="Texture2D" uid="uid://bgkxpy542gj6m" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_1.png" id="3_ekriv"]
-[ext_resource type="Texture2D" uid="uid://c3l8nmhdb2bnt" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_2.png" id="4_1fnsd"]
-[ext_resource type="Texture2D" uid="uid://djadew70q6q4d" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_3.png" id="5_176xp"]
-[ext_resource type="Texture2D" uid="uid://cien6ml8ykml0" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_4.png" id="6_spdmf"]
-[ext_resource type="Texture2D" uid="uid://cfyta670ngfsl" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_5.png" id="7_ekynt"]
-[ext_resource type="Texture2D" uid="uid://31fl1bpvibmv" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_6.png" id="8_d5a07"]
+[ext_resource type="Texture2D" uid="uid://dftk7v0odxuki" path="res://assets/sprites/Objects/orbe/Effects/part_light_y-0.png" id="3_7dtin"]
+[ext_resource type="Texture2D" uid="uid://ii5aaetkwvpw" path="res://assets/sprites/Objects/orbe/Effects/part_light_y-1.png" id="4_mn88p"]
+[ext_resource type="Texture2D" uid="uid://c3qho5xl70kte" path="res://assets/sprites/Objects/orbe/Effects/part_light_y-2.png" id="5_4aeti"]
 [ext_resource type="Texture2D" uid="uid://dkxc8otij1xpf" path="res://assets/sprites/Objects/orbe/yellow/blood_orbe.png" id="10_tcwc7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_auwsi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rwipg")
+"texture": ExtResource("3_7dtin")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ekriv")
+"texture": ExtResource("4_mn88p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_1fnsd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_176xp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_spdmf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ekynt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_d5a07")
+"texture": ExtResource("5_4aeti")
 }, {
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": true,
 "name": &"blood_orbe_effect",
 "speed": 10.0
 }, {
@@ -67,7 +51,7 @@ texture = ExtResource("2_wru51")
 position = Vector2(0, -1)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_auwsi")
-animation = &"idle"
+animation = &"blood_orbe_effect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v075j")
