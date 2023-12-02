@@ -27,9 +27,12 @@ var enemies = {
 @onready var timer_alert_level_up = $Timer
 var isAlertLevelUP = false
 
+@export var incre_max_value = 20
+
 # Función de inicialización
 func _ready():
 	self.visible = false
+	expBar.max_value = incre_max_value
 
 func _process(delta):
 	alert_level_up.visible = isAlertLevelUP
@@ -46,14 +49,15 @@ func add_life(value: int):
 
 # Agrega experiencia
 func add_exp(value: int):
-	exp += value	
-#	Subir de nivel
+	exp += value
+#	Subir de nivel cada que aumenta la exp
 	check_level_up()
 
+#	Subir de nivel cada que aumenta la exp
 func check_level_up():
 	var global_dict = get_tree().get_nodes_in_group("player")[0].get_node("MainCharacterMovement").elemental_skills_enabled
 	if expBar.value >= expBar.max_value:
-		expBar.max_value += 10
+		expBar.max_value += incre_max_value
 		
 		if check_false_value_in_dict(global_dict):
 			iniciarTimer_alert_level_up()
@@ -72,7 +76,7 @@ func check_skill_activation():
 	var global_dict = get_tree().get_nodes_in_group("player")
 	if global_dict:
 		global_dict = global_dict[0].get_node("MainCharacterMovement").elemental_skills_enabled
-		var level_thresholds = generate_level_thresholds(global_dict.size(), 10)
+		var level_thresholds = generate_level_thresholds(global_dict.size(), incre_max_value)
 		for i in range(global_dict.size()):
 			if expBar.value <= level_thresholds[i]:
 				global_dict[global_dict.keys()[i]] = true
@@ -81,7 +85,7 @@ func check_skill_activation():
 				global_dict[global_dict.keys()[i]] = true
 
 func generate_level_thresholds(size: int, exp_per_level: int) -> Array:
-	var level_thresholds = [] # Niveles de experiencia para cada habilidad
+	var level_thresholds = [] # Niveles de experiencia para cada habilidad segun la cantidad de skills
 	for i in range(size):
 		level_thresholds.append(exp_per_level * (i + 1))
 	return level_thresholds
@@ -98,7 +102,7 @@ func restart():
 	life = 10
 	exp = 0
 	expBar.value = 0
-	expBar.max_value = 10
+	expBar.max_value = incre_max_value
 	_set_life_progress(10)
 	_set_exp_progress(0)
 	reset_orbes_on_the_floor()
