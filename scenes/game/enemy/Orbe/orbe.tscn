@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ejy38yyf3cxa"]
+[gd_scene load_steps=13 format=3 uid="uid://ejy38yyf3cxa"]
 
 [ext_resource type="Script" path="res://scenes/game/enemy/Orbe/orbe.gd" id="1_gg5qu"]
 [ext_resource type="Texture2D" uid="uid://rhunm5u51v4e" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_0.png" id="2_rwipg"]
+[ext_resource type="Texture2D" uid="uid://dd8ltsdq4w4lm" path="res://scenes/luz roja.png" id="2_wru51"]
 [ext_resource type="Texture2D" uid="uid://bgkxpy542gj6m" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_1.png" id="3_ekriv"]
 [ext_resource type="Texture2D" uid="uid://c3l8nmhdb2bnt" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_2.png" id="4_1fnsd"]
 [ext_resource type="Texture2D" uid="uid://cnw246dndtooq" path="res://assets/sprites/Objects/orbe/blood_orbe.png" id="5_4buju"]
@@ -56,6 +57,11 @@ radius = 7.0
 [node name="Orbe" type="Area2D" groups=["group_orbe"]]
 script = ExtResource("1_gg5qu")
 animation = "blood_orbe"
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-1, -0.5)
+scale = Vector2(0.0366667, 0.0291667)
+texture = ExtResource("2_wru51")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
