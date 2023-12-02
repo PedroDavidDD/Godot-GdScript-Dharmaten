@@ -105,9 +105,41 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(1114140, 2, 0, 655394, 2, 0, 786451, 2, 0, 917504, 2, 1, 851968, 2, 0, 327693, 2, 0, 393229, 2, 1, 851987, 2, 1, 589828, 2, 0, 655364, 2, 1, 1179671, 524288, 6, 1179672, 524288, 6, 1179673, 524288, 6, 1179674, 524288, 6, 1179675, 524288, 6, 1179676, 524288, 6, 1179677, 524288, 6, 1179678, 524288, 6, 1179679, 524288, 6, 1179680, 524288, 6, 1179681, 524288, 6, 1179682, 524288, 6, 1179683, 524288, 6, 1179684, 524288, 6, 1179685, 524288, 6, 1179686, 524288, 6, 1179687, 524288, 6, 1179688, 524288, 6, 1179689, 524288, 6, 1179690, 524288, 6, 1179691, 524288, 6, 1179692, 524288, 6, 1179693, 524288, 6, 1179694, 524288, 6, 1179695, 524288, 6, 1179696, 524288, 6, 1179697, 524288, 6, 1179698, 524288, 6, 1179699, 524288, 6, 1179700, 524288, 6, 1179701, 524288, 6, 1179702, 524288, 6, 1179703, 524288, 6)
 
+<<<<<<< Updated upstream
 [node name="DoorChangeScene" parent="." instance=ExtResource("6_6vihd")]
 z_index = -1
 position = Vector2(1067, 526)
+=======
+[node name="MainCharacter" parent="." instance=ExtResource("2_2vh60")]
+z_index = 5
+position = Vector2(966, 187)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_ftrd5")]
+limit_top = -44
+limit_right = 1575
+limit_bottom = 655
+character = NodePath("../MainCharacter")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.65
+autostart = true
+
+[node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(1, 593)
+
+[node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(0, 14)
+
+[node name="SpawnLocation3" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(1510, 589)
+
+[node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(1519, 15)
+
+[node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_y5wb8")]
+position = Vector2(1051, 172)
+scale = Vector2(0.8, 0.8)
+>>>>>>> Stashed changes
 _path_to_scene = "res://scenes/game/levels/rooms/scene_3/scene_3.tscn"
 
 [node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("11_hfdpn")]

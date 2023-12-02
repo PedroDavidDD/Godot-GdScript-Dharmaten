@@ -365,9 +365,15 @@ limit_right = 1540
 limit_bottom = 560
 character = NodePath("../MainCharacter")
 
+<<<<<<< Updated upstream
 [node name="PowerUp" parent="." instance=ExtResource("22_vr6n4")]
 position = Vector2(866, 336)
 animation = &"green_bottle"
+=======
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+>>>>>>> Stashed changes
 
 [node name="SlimeGreen" parent="." instance=ExtResource("24_pkljj")]
 position = Vector2(707, 441)

@@ -689,7 +689,15 @@ position = Vector2(0, 6)
 wait_time = 0.5
 autostart = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="MainCharacterMovement" method="_on_audio_stream_player_2d_finished"]
+<<<<<<< Updated upstream
 [connection signal="timeout" from="bulletTime" to="MainCharacterMovement" method="_on_bullet_time_timeout"]
+=======
+[connection signal="timeout" from="Timer" to="MainCharacterMovement" method="_on_timer_timeout"]
+>>>>>>> Stashed changes
