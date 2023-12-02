@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj1oxwaqprx1b"
-path="res://.godot/imported/indicador_0.png-6c839b06e692c40f248838d9d901ca98.ctex"
+uid="uid://bvfxhpapdli7g"
+path="res://.godot/imported/water_1.png-ceabaeb86d780ef3b35c9c3f64ddcc0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Objects/book/indicador_0.png"
-dest_files=["res://.godot/imported/indicador_0.png-6c839b06e692c40f248838d9d901ca98.ctex"]
+source_file="res://assets/sprites/Objects/elements/enabled/water_1.png"
+dest_files=["res://.godot/imported/water_1.png-ceabaeb86d780ef3b35c9c3f64ddcc0d.ctex"]
 
 [params]
 
