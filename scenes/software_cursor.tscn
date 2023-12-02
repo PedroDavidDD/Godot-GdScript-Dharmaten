@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg4boh0vyr6aw"]
+
+[ext_resource type="Script" path="res://Software_cursor.gd" id="1_iloi4"]
+[ext_resource type="Texture2D" uid="uid://cprnyd8tnjthn" path="res://scenes/varita mago.png" id="2_42k7j"]
+
+[node name="Software_cursor" type="Node2D"]
+script = ExtResource("1_iloi4")
+
+[node name="cursor" type="Sprite2D" parent="."]
+position = Vector2(-1, 0.999999)
+rotation = 0.120428
+scale = Vector2(0.109375, 0.153125)
+texture = ExtResource("2_42k7j")

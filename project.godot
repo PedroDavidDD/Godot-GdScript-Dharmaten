@@ -30,6 +30,8 @@ GameManager="*res://scenes/game/ui/Core/GameManager.gd"
 [display]
 
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://scenes/varita mago.png"
+mouse_cursor/custom_image_hotspot=Vector2(24, 24)
 
 [editor_plugins]
 

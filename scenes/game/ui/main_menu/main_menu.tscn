@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://ln85llv8md7"]
+[gd_scene load_steps=97 format=3 uid="uid://ln85llv8md7"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/main_menu/main_menu.gd" id="1_g1i31"]
 [ext_resource type="Texture2D" uid="uid://c8apilaqosli4" path="res://assets/sprites/treasure_hunters/palm_tree_island/sprites/background/additional_sky.png" id="2_66173"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="32_sxqtv"]
 [ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="33_14dux"]
 [ext_resource type="Texture2D" uid="uid://io10vk5i5opy" path="res://scenes/game/ui/main_menu/muro de piedra2.png" id="35_3ok71"]
+[ext_resource type="PackedScene" uid="uid://bg4boh0vyr6aw" path="res://scenes/software_cursor.tscn" id="42_fslf8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4u6xb"]
 animations = [{
@@ -983,6 +984,9 @@ theme_override_fonts/font = ExtResource("27_eb3si")
 theme_override_font_sizes/font_size = 24
 text = "Controles"
 
+[node name="Software_cursor" parent="Main/CanvasLayer/Options" instance=ExtResource("42_fslf8")]
+position = Vector2(-1112, -254)
+
 [node name="GameControls" type="CanvasLayer" parent="Main"]
 
 [node name="Background" type="ColorRect" parent="Main/GameControls"]
@@ -1201,6 +1205,8 @@ offset_bottom = 70.0
 theme_override_font_sizes/font_size = 40
 text = "X"
 flat = true
+
+[node name="Software_cursor" parent="Main/GameControls/Background" instance=ExtResource("42_fslf8")]
 
 [node name="Camera2D" type="Camera2D" parent="Main"]
 position = Vector2(579, 325)
