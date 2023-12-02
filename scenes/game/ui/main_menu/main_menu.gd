@@ -162,3 +162,7 @@ func _on_show_controls_pressed():
 # Cerramos la pantalla de controles
 func _on_close_controls_pressed():
 	_game_controls.visible = false
+
+
+func _on_salir_pressed():
+	get_tree().quit()

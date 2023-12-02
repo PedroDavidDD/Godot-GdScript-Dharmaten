@@ -636,6 +636,50 @@ text = "INICIAR"
 flat = true
 icon_alignment = 1
 
+[node name="Button2" type="Control" parent="Main/CanvasLayer/Options/Init"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 480.0
+offset_right = 43.0
+offset_bottom = 520.0
+
+[node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button2"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 45.0
+texture = ExtResource("2_foa6f")
+
+[node name="Center" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button2"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 36.0
+offset_right = 153.0
+offset_bottom = 45.0
+texture = ExtResource("3_10kh6")
+
+[node name="Right" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button2"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 150.0
+offset_right = 190.0
+offset_bottom = 45.0
+texture = ExtResource("4_76ed7")
+
+[node name="Salir" type="Button" parent="Main/CanvasLayer/Options/Init/Button2"]
+modulate = Color(1, 1, 0.72549, 1)
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 42.0
+theme = SubResource("Theme_f6sn6")
+text = "SALIR"
+flat = true
+icon_alignment = 1
+
 [node name="Fullscreen" type="Control" parent="Main/CanvasLayer/Options"]
 anchors_preset = 0
 offset_left = -400.0
@@ -971,9 +1015,9 @@ value = 0.5
 [node name="Controls" type="Control" parent="Main/CanvasLayer/Options"]
 anchors_preset = 0
 offset_left = -400.0
-offset_top = 280.0
+offset_top = 268.0
 offset_right = -360.0
-offset_bottom = 320.0
+offset_bottom = 308.0
 
 [node name="ShowControls" type="Button" parent="Main/CanvasLayer/Options/Controls"]
 modulate = Color(1, 1, 0.72549, 1)
@@ -985,9 +1029,10 @@ theme_override_font_sizes/font_size = 24
 text = "Controles"
 
 [node name="Software_cursor" parent="Main/CanvasLayer/Options" instance=ExtResource("42_fslf8")]
-position = Vector2(-1112, -254)
+position = Vector2(-1112, -266)
 
 [node name="GameControls" type="CanvasLayer" parent="Main"]
+visible = false
 
 [node name="Background" type="ColorRect" parent="Main/GameControls"]
 anchors_preset = 15
@@ -1270,6 +1315,7 @@ libraries = {
 }
 
 [connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button2/Salir" to="." method="_on_salir_pressed"]
 [connection signal="toggled" from="Main/CanvasLayer/Options/Fullscreen/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="value_changed" from="Main/CanvasLayer/Options/Sounds/Sliders/Ambient/Slider/SliderAmbient" to="." method="_on_slider_ambient_value_changed"]
 [connection signal="value_changed" from="Main/CanvasLayer/Options/Sounds/Sliders/Effects/Slider/SliderEffects" to="." method="_on_slider_effects_value_changed"]
