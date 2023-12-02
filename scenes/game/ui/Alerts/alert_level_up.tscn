@@ -1,42 +1,81 @@
-[gd_scene format=3 uid="uid://cc58vft7e5a2y"]
+[gd_scene load_steps=12 format=3 uid="uid://cc58vft7e5a2y"]
 
-[node name="AlertLevelUP" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" path="res://scenes/game/ui/Alerts/alert_level_up.gd" id="1_hncrj"]
+[ext_resource type="Texture2D" uid="uid://drc7iocdyq1x7" path="res://assets/sprites/Objects/book/_8f87a380-28f0-4710-8f8c-8317ac812e7b-removebg-preview.png" id="1_mf6en"]
+[ext_resource type="Texture2D" uid="uid://xi5hjohhxvoa" path="res://assets/sprites/Objects/book/pixil-frame-0 (6).png" id="2_idi38"]
+[ext_resource type="Texture2D" uid="uid://c0r0v1x6ottnw" path="res://assets/sprites/Objects/book/pixil-frame-0 (7).png" id="3_dkl0d"]
+[ext_resource type="Texture2D" uid="uid://h3qq3ulqplq4" path="res://assets/sprites/Objects/book/pixil-frame-0 (8).png" id="4_7hhsv"]
+[ext_resource type="Texture2D" uid="uid://3eemfc2ips4t" path="res://assets/sprites/Objects/book/pixil-frame-0 (9).png" id="5_5h032"]
+[ext_resource type="Texture2D" uid="uid://c7ojkuakvqkna" path="res://assets/sprites/Objects/book/pixil-frame-0 (10).png" id="6_vs7r8"]
+[ext_resource type="Texture2D" uid="uid://dpabcrij1cgfe" path="res://assets/sprites/Objects/book/pixil-frame-0 (11).png" id="7_5o0eg"]
+[ext_resource type="Texture2D" uid="uid://bibofmet8n2c6" path="res://assets/sprites/Objects/book/pixil-frame-0 (12).png" id="8_y76qu"]
+[ext_resource type="Texture2D" uid="uid://bxscd8dhb4641" path="res://assets/sprites/Objects/book/pngtree-yellow-black-arrow-upper-right-png-image_527090-removebg-preview.png" id="10_37xr6"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 165.0
-offset_top = 433.0
-offset_right = -165.0
-offset_bottom = -139.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.392157)
+[sub_resource type="SpriteFrames" id="SpriteFrames_rk6kp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mf6en")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_idi38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dkl0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7hhsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5h032")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vs7r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5o0eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y76qu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_37xr6")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"flecha",
+"speed": 4.0
+}]
 
-[node name="Label" type="Label" parent="ColorRect"]
-modulate = Color(0, 0.941176, 1, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -335.0
-offset_top = -29.0
-offset_right = 335.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Desbloqueaste una nueva habilidad"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+[node name="AlertLevelUP" type="Node2D"]
+script = ExtResource("1_hncrj")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(520, 222)
+scale = Vector2(0.16, 0.16)
+sprite_frames = SubResource("SpriteFrames_rk6kp")
+frame = 7
+frame_progress = 1.0
+
+[node name="flecha" type="AnimatedSprite2D" parent="."]
+position = Vector2(502, 144)
+rotation = -0.808878
+scale = Vector2(0.14524, 0.163949)
+sprite_frames = SubResource("SpriteFrames_rk6kp")
+animation = &"flecha"
+frame_progress = 0.997224
+
+[node name="Label" type="Label" parent="."]
+offset_left = 445.0
+offset_top = 187.0
+offset_right = 566.0
+offset_bottom = 213.0
+text = "¡Desbloqueado!"

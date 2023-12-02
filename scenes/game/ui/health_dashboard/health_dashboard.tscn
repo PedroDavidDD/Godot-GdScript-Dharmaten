@@ -27,6 +27,7 @@ script = ExtResource("1_rufnl")
 
 [node name="AlertLevelUP" parent="." instance=ExtResource("2_ba3gi")]
 visible = false
+position = Vector2(68, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
