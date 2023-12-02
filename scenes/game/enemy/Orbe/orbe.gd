@@ -18,7 +18,7 @@ func _ready():
 		return
 	
 	# Cargamos las texturas de animación según el nombre configurado
-	var _animation1 = "res://assets/sprites/Objects/orbe/"+ animation +".png"
+	var _animation1 = "res://assets/sprites/Objects/orbe/yellow/"+ animation +".png"
 
 	# Aplicamos la textura cargada a la animación
 	_animated_sprite.sprite_frames.set_frame("idle", 0, load(_animation1))

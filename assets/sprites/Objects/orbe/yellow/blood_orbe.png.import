@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm4sumknhsngc"
-path="res://.godot/imported/blood_orbe.png-fa9939f5e4156145f4f8667aa5d2d3b3.ctex"
+uid="uid://dkxc8otij1xpf"
+path="res://.godot/imported/blood_orbe.png-db00fa5f55ffcf7ed30630d5d98cdb69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Objects/orbe/blood_orbe.png"
-dest_files=["res://.godot/imported/blood_orbe.png-fa9939f5e4156145f4f8667aa5d2d3b3.ctex"]
+source_file="res://assets/sprites/Objects/orbe/yellow/blood_orbe.png"
+dest_files=["res://.godot/imported/blood_orbe.png-db00fa5f55ffcf7ed30630d5d98cdb69.ctex"]
 
 [params]
 

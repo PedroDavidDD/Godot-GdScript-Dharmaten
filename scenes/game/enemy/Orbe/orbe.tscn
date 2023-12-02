@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://dd8ltsdq4w4lm" path="res://scenes/luz roja.png" id="2_wru51"]
 [ext_resource type="Texture2D" uid="uid://bgkxpy542gj6m" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_1.png" id="3_ekriv"]
 [ext_resource type="Texture2D" uid="uid://c3l8nmhdb2bnt" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_2.png" id="4_1fnsd"]
-[ext_resource type="Texture2D" uid="uid://cnw246dndtooq" path="res://assets/sprites/Objects/orbe/blood_orbe.png" id="5_4buju"]
 [ext_resource type="Texture2D" uid="uid://djadew70q6q4d" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_3.png" id="5_176xp"]
 [ext_resource type="Texture2D" uid="uid://cien6ml8ykml0" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_4.png" id="6_spdmf"]
 [ext_resource type="Texture2D" uid="uid://cfyta670ngfsl" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_5.png" id="7_ekynt"]
 [ext_resource type="Texture2D" uid="uid://31fl1bpvibmv" path="res://assets/sprites/Objects/orbe/Effects/blood_orbe_6.png" id="8_d5a07"]
+[ext_resource type="Texture2D" uid="uid://dkxc8otij1xpf" path="res://assets/sprites/Objects/orbe/yellow/blood_orbe.png" id="10_tcwc7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_auwsi"]
 animations = [{
@@ -44,9 +44,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_4buju")
+"texture": ExtResource("10_tcwc7")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }]

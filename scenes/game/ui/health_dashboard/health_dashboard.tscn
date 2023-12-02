@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bqhticqi0v1py" path="res://assets/sprites/Objects/elements/icon_disabled.png" id="10_qhhdo"]
 [ext_resource type="Texture2D" uid="uid://b0x5mxa2tsy1u" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/14.png" id="11_3p3lt"]
 [ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="11_pnikn"]
+[ext_resource type="Texture2D" uid="uid://ums5skoyngab" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/Bar_yellow.png" id="12_e1j7y"]
 [ext_resource type="Texture2D" uid="uid://c1565oiq4iveu" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/13.png" id="12_fv8r3"]
 [ext_resource type="Texture2D" uid="uid://6r1xqhu5na37" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo.png" id="12_r8p5b"]
 [ext_resource type="Texture2D" uid="uid://bdkpg0v64750g" path="res://assets/sprites/treasure_hunters/merchant_ship/sprites/chest_key/runa cubo 2.png" id="13_eirox"]
@@ -20,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bqcbpn2cey2eg" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/16.png" id="14_h04s3"]
 [ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="15_ri0rr"]
 [ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="16_02sur"]
-[ext_resource type="Texture2D" uid="uid://dnf4y6l6oubrp" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/life_bars/colors/ProgressBar_08/BarV8_ProgressBar.png" id="18_ed6mp"]
 
 [node name="health_dashboard" type="CanvasLayer"]
 script = ExtResource("1_rufnl")
@@ -194,7 +194,7 @@ grow_vertical = 2
 max_value = 20.0
 rounded = true
 nine_patch_stretch = true
-texture_progress = ExtResource("18_ed6mp")
+texture_progress = ExtResource("12_e1j7y")
 
 [node name="LabelExp" type="Label" parent="ExpBar"]
 layout_mode = 1
