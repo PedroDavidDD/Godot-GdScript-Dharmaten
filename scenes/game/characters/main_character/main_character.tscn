@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://ca3ueo0yewjov"]
+[gd_scene load_steps=100 format=3 uid="uid://ca3ueo0yewjov"]
 
 [ext_resource type="Texture2D" uid="uid://ty7vj41shftk" path="res://assets/sprites/Player/Blue_witch/B_witch_attack.png" id="4_eeya6"]
 [ext_resource type="Script" path="res://scenes/game/characters/main_character/main_character_movement.gd" id="7_fm4k8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dd0s22a4e5xem" path="res://assets/sprites/Player/Blue_witch/B_witch_take_damage.png" id="15_ianji"]
 [ext_resource type="Texture2D" uid="uid://b15lucwn7ygr4" path="res://assets/sprites/Player/Blue_witch/B_witch_idle.png" id="17_606ah"]
 [ext_resource type="Texture2D" uid="uid://ba4ff8fhqnnsa" path="res://assets/sprites/Player/Blue_witch/B_witch_run.png" id="30_6evvu"]
+[ext_resource type="Texture2D" uid="uid://ch41lhl8qg4jv" path="res://scenes/luz.png" id="30_ih7pr"]
 [ext_resource type="Texture2D" uid="uid://c5234cfrkd7i2" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/fall_01.png" id="41_6a4mw"]
 [ext_resource type="Texture2D" uid="uid://chvl4pfhnydl0" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/fall_02.png" id="42_yjra8"]
 [ext_resource type="Texture2D" uid="uid://cqja7i2c4ka4q" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/fall_03.png" id="43_g1ou6"]
@@ -685,6 +686,14 @@ bus = &"Effects"
 position = Vector2(0, 6)
 
 [node name="ShootPointer" type="Marker2D" parent="ContainerMagic"]
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 0.713726, 0.709804)
+self_modulate = Color(1, 1, 0.72549, 0.584314)
+position = Vector2(-4, 2)
+scale = Vector2(0.111667, 0.095)
+color = Color(1, 1, 1, 0.588235)
+texture = ExtResource("30_ih7pr")
 
 [connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
