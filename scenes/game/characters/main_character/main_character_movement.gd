@@ -112,6 +112,7 @@ func _move(delta):
 			_current_movement = _movements.ATTACK
 			nextBulletTime = cooldownBullet;
 			can_shoot=false	
+			print(type_element_value)
 	else:
 		nextBulletTime -= delta
 	
