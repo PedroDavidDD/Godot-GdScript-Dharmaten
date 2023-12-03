@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://dnfuhkcmul0s8"]
+
+[ext_resource type="Script" path="res://scenes/game/enemy/slime2/slime_2.gd" id="1_a7nr2"]
+[ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="2_4ts4m"]
+[ext_resource type="Texture2D" uid="uid://b84j518owy3m5" path="res://scenes/small_enemy_slime-v2.png" id="2_400ds"]
+[ext_resource type="Texture2D" uid="uid://dmqfjd8venbxt" path="res://assets/sprites/pirate_bomb/9_enemy_slime/4_hit/Slime_hit.png" id="3_1witq"]
+[ext_resource type="Texture2D" uid="uid://bay1ar3ukjx7f" path="res://assets/sprites/pirate_bomb/9_enemy_slime/3_jump/slime_jump.png" id="4_r114r"]
+[ext_resource type="Texture2D" uid="uid://bg0yqby5ofmxc" path="res://scenes/small_enemy_slime-v0.png" id="6_18sqx"]
+[ext_resource type="Texture2D" uid="uid://csfk25rhfn1eu" path="res://scenes/small_enemy_slime-v1.png" id="7_tyydj"]
+[ext_resource type="Texture2D" uid="uid://bcrqnwa21uigk" path="res://scenes/small_enemy_slime-v3.png" id="8_elk3b"]
+[ext_resource type="Texture2D" uid="uid://chg7ea4e0wpvg" path="res://scenes/small_enemy_slime-v4.png" id="9_wtlpu"]
+[ext_resource type="Texture2D" uid="uid://c0i7icrgcmfc7" path="res://scenes/small_enemy_slime-v5.png" id="10_mph4k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pg1u"]
+radius = 9.05539
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whymj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_elk3b")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ts4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1witq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4ts4m")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r114r")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_18sqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tyydj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_400ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_elk3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wtlpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mph4k")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0gxn"]
+radius = 16.0312
+
+[node name="slime2" type="CharacterBody2D" groups=["enemy", "slimeGreen"]]
+script = ExtResource("1_a7nr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2pg1u")
+debug_color = Color(0.921569, 0.188235, 0.517647, 0.419608)
+
+[node name="EnemyAnimation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2, -8.5)
+scale = Vector2(0.265625, 0.273437)
+sprite_frames = SubResource("SpriteFrames_whymj")
+animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y0gxn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(33, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

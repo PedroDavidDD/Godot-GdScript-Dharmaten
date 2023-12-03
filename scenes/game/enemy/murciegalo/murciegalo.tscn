@@ -62,7 +62,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jjwnu"]
 radius = 16.0312
 
-[node name="murciegalo" type="CharacterBody2D" groups=["enemy", "slimeGreen"]]
+[node name="murciegalo" type="CharacterBody2D" groups=["enemy", "murcielago", "slimeGreen"]]
 script = ExtResource("1_eo88h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -88,3 +88,6 @@ target_position = Vector2(33, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

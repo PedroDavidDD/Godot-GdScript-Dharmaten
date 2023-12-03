@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=14 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="9_hnmc0"]
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
 [ext_resource type="PackedScene" uid="uid://cydfsn0dx2820" path="res://scenes/game/enemy/murciegalo/murciegalo.tscn" id="10_14jyv"]
+[ext_resource type="PackedScene" uid="uid://dnfuhkcmul0s8" path="res://scenes/game/enemy/slime2/slime_2.tscn" id="11_wmp27"]
+[ext_resource type="PackedScene" uid="uid://dlcyv64si5dsh" path="res://scenes/game/enemy/wild/wild.tscn" id="12_openr"]
+[ext_resource type="PackedScene" uid="uid://cqg7epegh0oog" path="res://scenes/game/enemy/skeleton/skeleton.tscn" id="13_d0ru1"]
 
 [node name="scene_0" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -122,5 +125,14 @@ position = Vector2(0, 433)
 
 [node name="murciegalo" parent="." instance=ExtResource("10_14jyv")]
 position = Vector2(171, 77)
+
+[node name="slime2" parent="." instance=ExtResource("11_wmp27")]
+position = Vector2(133, 164)
+
+[node name="wild" parent="." instance=ExtResource("12_openr")]
+position = Vector2(211, 50)
+
+[node name="skeleton" parent="." instance=ExtResource("13_d0ru1")]
+position = Vector2(271, 44)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
