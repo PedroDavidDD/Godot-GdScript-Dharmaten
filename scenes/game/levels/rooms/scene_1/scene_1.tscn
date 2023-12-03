@@ -99,14 +99,8 @@ stream = ExtResource("8_ac32f")
 autoplay = true
 bus = &"Ambient"
 
-[node name="SlimeGreen" parent="." instance=ExtResource("9_hnmc0")]
-position = Vector2(707, 441)
-
 [node name="SlimeGreen2" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(159, 567)
-
-[node name="SlimeGreen3" parent="." instance=ExtResource("9_hnmc0")]
-position = Vector2(1315, 573)
 
 [node name="SlimeGreen4" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(1312, 144)
@@ -120,19 +114,28 @@ position = Vector2(789, 98)
 [node name="SlimeGreen7" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(1424, 355)
 
-[node name="SlimeGreen8" parent="." instance=ExtResource("9_hnmc0")]
-position = Vector2(0, 433)
-
 [node name="murciegalo" parent="." instance=ExtResource("10_14jyv")]
-position = Vector2(171, 77)
+position = Vector2(-105, 179)
 
 [node name="slime2" parent="." instance=ExtResource("11_wmp27")]
-position = Vector2(133, 164)
+position = Vector2(44, 408)
 
 [node name="wild" parent="." instance=ExtResource("12_openr")]
-position = Vector2(211, 50)
+position = Vector2(-98, 111)
 
 [node name="skeleton" parent="." instance=ExtResource("13_d0ru1")]
-position = Vector2(271, 44)
+position = Vector2(-125, 263)
+
+[node name="slime3" parent="." instance=ExtResource("11_wmp27")]
+position = Vector2(1017, 143)
+
+[node name="slime4" parent="." instance=ExtResource("11_wmp27")]
+position = Vector2(808, 357)
+
+[node name="slime5" parent="." instance=ExtResource("11_wmp27")]
+position = Vector2(721, 551)
+
+[node name="slime6" parent="." instance=ExtResource("11_wmp27")]
+position = Vector2(1315, 557)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
