@@ -49,6 +49,8 @@ func _ready():
 	_toggle_show()
 	# Ocultamos el canvas de los controles
 	_game_controls.visible = false
+	# Ocultamos el mouse
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 # Detecta eventos de teclado y ratón
 func _unhandled_input(event):

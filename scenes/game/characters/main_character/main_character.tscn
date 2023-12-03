@@ -695,6 +695,10 @@ scale = Vector2(0.111667, 0.095)
 color = Color(1, 1, 1, 0.588235)
 texture = ExtResource("30_ih7pr")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
 [connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="MainCharacterMovement" method="_on_audio_stream_player_2d_finished"]
+[connection signal="timeout" from="Timer" to="MainCharacterMovement" method="_on_timer_timeout"]
