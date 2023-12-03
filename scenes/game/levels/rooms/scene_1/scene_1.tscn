@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=11 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="8_y5wb8"]
 [ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="9_hnmc0"]
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
+[ext_resource type="PackedScene" uid="uid://cydfsn0dx2820" path="res://scenes/game/enemy/murciegalo/murciegalo.tscn" id="10_14jyv"]
 
 [node name="scene_0" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -118,5 +119,8 @@ position = Vector2(1424, 355)
 
 [node name="SlimeGreen8" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(0, 433)
+
+[node name="murciegalo" parent="." instance=ExtResource("10_14jyv")]
+position = Vector2(171, 77)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cydfsn0dx2820"]
+[gd_scene load_steps=12 format=3 uid="uid://cydfsn0dx2820"]
 
-[ext_resource type="Texture2D" uid="uid://d3edmkektkmdl" path="res://assets/sprites/pirate_bomb/9_enemy_slime/2_fall/slime_fall.png" id="1_gchcw"]
+[ext_resource type="Script" path="res://scenes/game/enemy/murciegalo/murciegalo.gd" id="1_eo88h"]
 [ext_resource type="Texture2D" uid="uid://ds0y4b8hwyw5y" path="res://assets/sprites/pirate_bomb/9_enemy_slime/1_idle/SlimeBasic_00000.png" id="2_gr1wx"]
+[ext_resource type="Texture2D" uid="uid://dpvmj0fmmq3kv" path="res://scenes/volador enemigo1ve3.png" id="2_jbx83"]
 [ext_resource type="Texture2D" uid="uid://dmqfjd8venbxt" path="res://assets/sprites/pirate_bomb/9_enemy_slime/4_hit/Slime_hit.png" id="3_v0kxd"]
 [ext_resource type="Texture2D" uid="uid://bay1ar3ukjx7f" path="res://assets/sprites/pirate_bomb/9_enemy_slime/3_jump/slime_jump.png" id="4_27nb7"]
 [ext_resource type="Texture2D" uid="uid://ribiixtmhod8" path="res://scenes/volador enemigo1.png" id="5_wchu2"]
+[ext_resource type="Texture2D" uid="uid://ba01b4kr06gtf" path="res://scenes/volador enemigo1ve1.png" id="7_0phke"]
+[ext_resource type="Texture2D" uid="uid://cthqlyw7ayd7q" path="res://scenes/volador enemigo1ve2.png" id="8_uixs8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_80uun"]
 radius = 9.05539
@@ -13,7 +16,7 @@ radius = 9.05539
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gchcw")
+"texture": ExtResource("2_jbx83")
 }],
 "loop": true,
 "name": &"attack",
@@ -44,6 +47,12 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_wchu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0phke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uixs8")
 }],
 "loop": true,
 "name": &"run",
@@ -53,7 +62,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jjwnu"]
 radius = 16.0312
 
-[node name="murciegalo" type="CharacterBody2D"]
+[node name="murciegalo" type="CharacterBody2D" groups=["enemy", "slimeGreen"]]
+script = ExtResource("1_eo88h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_80uun")
@@ -64,8 +74,7 @@ texture_filter = 1
 position = Vector2(-5.96046e-08, -0.999999)
 scale = Vector2(0.0845588, 0.0845588)
 sprite_frames = SubResource("SpriteFrames_w5dbx")
-animation = &"run"
-frame_progress = 0.512939
+animation = &"attack"
 
 [node name="Area2D" type="Area2D" parent="."]
 

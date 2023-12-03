@@ -79,7 +79,6 @@ color = Color(0, 0, 0, 0.517647)
 position = Vector2(159, 199)
 scale = Vector2(7.45833, 7.45833)
 sprite_frames = SubResource("SpriteFrames_m0wwg")
-frame_progress = 0.674502
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_left = 149.0
