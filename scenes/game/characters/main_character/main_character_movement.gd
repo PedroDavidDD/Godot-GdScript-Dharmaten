@@ -11,6 +11,7 @@ extends Node2D
 var collision: KinematicCollision2D
 var velocity = 100 # Velocidad de movimiento en horizontal
 var fast_velocity = 150
+var can_shoot = true
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
@@ -108,10 +109,11 @@ func _move(delta):
 		
 	# Cuando se presiona la tecla J, atacamos
 	if (nextBulletTime <= 0):
-		if Input.is_action_just_pressed("attack"):
+		if Input.is_action_pressed("attack"):
 			use_elemental_skill()
 			_current_movement = _movements.ATTACK
 			nextBulletTime = cooldownBullet;
+			can_shoot=false	
 	else:
 		nextBulletTime -= delta
 	
@@ -124,6 +126,10 @@ func use_elemental_skill():
 	var nearest_slime_green = find_nearest_slime_green_player()
 	if nearest_slime_green && (elemental_skills_enabled[selected_elemental_skill_key]):
 		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key)
+		if selected_elemental_skill_key == "water":
+			var player_position = player.global_position
+			var ball_behind = player_position
+			create_magic_bullet_at_position(ball_behind, selected_elemental_skill_key)
 #	else: 
 #		print("necesitas desbloquear la habilidad: "+str(selected_elemental_skill_key))
 
@@ -231,6 +237,22 @@ func create_magic_bullet(enemy_player: CharacterBody2D, type_element: String):
 	magic_bullet.type_element = type_element
 	magic_bullet.global_position = containerMagic.get_node("ShootPointer").global_position
 	get_tree().call_group("scene_0", "add_child", magic_bullet)
+	
+func create_magic_bullet_at_position(position: Vector2, type_element:String):
+	#Rastro bala agua
+	if selected_elemental_skill_key == "water":
+		var magic_bullet = magicBullet.instantiate()
+		if player.scale.x < 0:
+			magic_bullet.scale = Vector2(-0.05, 0.05)
+		else:
+			magic_bullet.scale = Vector2(0.05, 0.05)
+		magic_bullet.type_element = type_element
+		magic_bullet.global_position = position
+		get_tree().call_group("scene_0", "add_child", magic_bullet)		
 
 func _on_animation_frame_changed():
 	pass
+
+
+func _on_timer_timeout():
+	can_shoot=true
