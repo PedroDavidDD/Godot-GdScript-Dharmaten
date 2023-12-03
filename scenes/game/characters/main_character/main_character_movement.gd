@@ -41,7 +41,6 @@ var btnUp = Input.is_action_pressed("arriba")
 var btnDown = Input.is_action_pressed("abajo")
 var btnLeft = Input.is_action_pressed("izquierda")
 var btnRight = Input.is_action_pressed("derecha")
-var btnfast = Input.is_action_pressed("fast")
 
 # Variables sobre las habilidades elementales
 var elemental_skills_enabled = {
@@ -70,7 +69,6 @@ func _move(delta):
 	btnDown = Input.is_action_pressed("abajo")
 	btnLeft = Input.is_action_pressed("izquierda")
 	btnRight = Input.is_action_pressed("derecha")
-	btnfast = Input.is_action_pressed("fast")
 	
 	direction = direction.normalized()
 	
@@ -92,7 +90,7 @@ func _move(delta):
 		_current_movement = _movements.IDLE
 	
 	# Correr rápido al presionar la tecla Shift
-	if Input.is_action_pressed("fast"):
+	if Input.is_key_pressed(KEY_SHIFT):
 		velocity = fast_velocity  
 	
 	
@@ -114,6 +112,7 @@ func _move(delta):
 			_current_movement = _movements.ATTACK
 			nextBulletTime = cooldownBullet;
 			can_shoot=false	
+			print(type_element_value)
 	else:
 		nextBulletTime -= delta
 	
