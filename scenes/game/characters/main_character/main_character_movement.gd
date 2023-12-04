@@ -45,8 +45,8 @@ var btnfast = Input.is_action_pressed("fast")
 
 # Variables sobre las habilidades elementales
 var elemental_skills_enabled = {
-	"flame": true,
-	"water": false,
+	"water": true,
+	"flame": false,
 	"darkness": false,
 	"flame_water": false,
 	"lightning": false,

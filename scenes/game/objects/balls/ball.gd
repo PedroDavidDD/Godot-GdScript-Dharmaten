@@ -14,10 +14,10 @@ var growth_speed: float = 3.0
 # Elementos de la magia
 var type_element: String = "flame_enabled"
 var list_damage_type_element = {
-	"flame": 1,
+	"flame": 2,
 	"water": 1,
 	"darkness": 3,
-	"flame_water": 1,
+	"flame_water": 3,
 }
 var damage_bullet = 0
 
