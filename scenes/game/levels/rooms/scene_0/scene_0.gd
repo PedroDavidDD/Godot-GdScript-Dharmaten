@@ -29,3 +29,6 @@ func _on_spawn_timer_timeout():
 	else:
 		inst.position = $SpawnLocation4.position	
 	add_child(inst)
+
+
+

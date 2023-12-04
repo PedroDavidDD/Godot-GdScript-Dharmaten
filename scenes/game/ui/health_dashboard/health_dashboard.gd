@@ -26,6 +26,7 @@ var enemies = {
 @onready var alert_level_up = $AlertLevelUP
 @onready var timer_alert_level_up = $Timer
 var isAlertLevelUP = false
+var control_cron = load("res://scenes/game/ui/health_dashboard/cronometro.gd").new()
 
 @export var incre_max_value = 20
 
@@ -151,3 +152,9 @@ func check_cron_vis():
 
 func _on_timer_timeout():
 	isAlertLevelUP = false
+	
+func stop_timer():
+	control_cron.stop()
+
+
+

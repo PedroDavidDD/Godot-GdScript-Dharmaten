@@ -9,7 +9,7 @@ var is_ball_moving: bool = true
 var enemy_player: CharacterBody2D = null
 var copy_enemy_player: Vector2 = Vector2.ZERO
 var elapsed_time: float = 0.2
-var growth_speed: float = 3.0
+var growth_speed: float = 2.0
 
 # Elementos de la magia
 var type_element: String = "flame_enabled"
