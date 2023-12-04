@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=12 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -11,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
 [ext_resource type="PackedScene" uid="uid://cydfsn0dx2820" path="res://scenes/game/enemy/murciegalo/murciegalo.tscn" id="10_14jyv"]
 [ext_resource type="PackedScene" uid="uid://dnfuhkcmul0s8" path="res://scenes/game/enemy/slime2/slime_2.tscn" id="11_wmp27"]
-[ext_resource type="PackedScene" uid="uid://dlcyv64si5dsh" path="res://scenes/game/enemy/wild/wild.tscn" id="12_openr"]
-[ext_resource type="PackedScene" uid="uid://cqg7epegh0oog" path="res://scenes/game/enemy/skeleton/skeleton.tscn" id="13_d0ru1"]
 
 [node name="scene_0" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -65,19 +63,20 @@ limit_bottom = 655
 character = NodePath("../MainCharacter")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.5
 autostart = true
 
 [node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
-position = Vector2(-2149, 1698)
+position = Vector2(7, 590)
 
 [node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
-position = Vector2(0, 14)
+position = Vector2(10, 14)
 
 [node name="SpawnLocation3" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(1510, 589)
 
 [node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
-position = Vector2(3728, -891)
+position = Vector2(1511, 5)
 
 [node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_y5wb8")]
 position = Vector2(386, 162)
@@ -99,32 +98,14 @@ stream = ExtResource("8_ac32f")
 autoplay = true
 bus = &"Ambient"
 
-[node name="SlimeGreen2" parent="." instance=ExtResource("9_hnmc0")]
-position = Vector2(159, 567)
-
-[node name="SlimeGreen4" parent="." instance=ExtResource("9_hnmc0")]
-position = Vector2(1312, 144)
-
 [node name="SlimeGreen5" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(87, 88)
 
 [node name="SlimeGreen6" parent="." instance=ExtResource("9_hnmc0")]
 position = Vector2(789, 98)
 
-[node name="SlimeGreen7" parent="." instance=ExtResource("9_hnmc0")]
-position = Vector2(1424, 355)
-
-[node name="murciegalo" parent="." instance=ExtResource("10_14jyv")]
-position = Vector2(-105, 179)
-
 [node name="slime2" parent="." instance=ExtResource("11_wmp27")]
 position = Vector2(44, 408)
-
-[node name="wild" parent="." instance=ExtResource("12_openr")]
-position = Vector2(-98, 111)
-
-[node name="skeleton" parent="." instance=ExtResource("13_d0ru1")]
-position = Vector2(-125, 263)
 
 [node name="slime3" parent="." instance=ExtResource("11_wmp27")]
 position = Vector2(1017, 143)
@@ -135,7 +116,22 @@ position = Vector2(808, 357)
 [node name="slime5" parent="." instance=ExtResource("11_wmp27")]
 position = Vector2(721, 551)
 
-[node name="slime6" parent="." instance=ExtResource("11_wmp27")]
-position = Vector2(1315, 557)
+[node name="murciegalo2" parent="." instance=ExtResource("10_14jyv")]
+position = Vector2(136, 569)
+
+[node name="murciegalo3" parent="." instance=ExtResource("10_14jyv")]
+position = Vector2(1410, 370)
+
+[node name="murciegalo4" parent="." instance=ExtResource("10_14jyv")]
+position = Vector2(1416, 125)
+
+[node name="murciegalo5" parent="." instance=ExtResource("10_14jyv")]
+position = Vector2(1271, 554)
+
+[node name="SlimeGreen7" parent="." instance=ExtResource("9_hnmc0")]
+position = Vector2(324, 36)
+
+[node name="murciegalo6" parent="." instance=ExtResource("10_14jyv")]
+position = Vector2(999, 470)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
