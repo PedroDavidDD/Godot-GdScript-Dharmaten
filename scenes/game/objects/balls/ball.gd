@@ -8,14 +8,16 @@ var is_ball_moving: bool = true
 
 var enemy_player: CharacterBody2D = null
 var copy_enemy_player: Vector2 = Vector2.ZERO
+var elapsed_time: float = 0.2
+var growth_speed: float = 3.0
 
 # Elementos de la magia
 var type_element: String = "flame_enabled"
 var list_damage_type_element = {
-	"flame": 2,
+	"flame": 1,
 	"water": 1,
 	"darkness": 3,
-	"flame_water": 2,
+	"flame_water": 1,
 }
 var damage_bullet = 0
 
@@ -31,6 +33,8 @@ func _process(delta):
 	
 	if is_ball_moving:
 		slime_to_player(delta)
+		if type_element=="flame_water":
+			grow_over_time(delta)
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
 	die()
@@ -59,6 +63,11 @@ func slime_to_player(delta):
 			global_position += move_amount
 		else: 
 			die()
+			
+func grow_over_time(delta):
+	elapsed_time += delta
+	var growth_factor = growth_speed * elapsed_time
+	scale = Vector2(0.2,0.2) * growth_factor	
 
 func die():
 	self.queue_free()
