@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://byhcfhfoq3jm2"]
+
+[ext_resource type="VideoStream" path="res://assets/videos/clip.ogv" id="1_nqn2w"]
+[ext_resource type="Script" path="res://scenes/game/ui/intro.gd" id="1_tufx8"]
+
+[node name="intro" type="Node2D"]
+script = ExtResource("1_tufx8")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -1.0
+offset_right = 1289.0
+offset_bottom = 720.0
+stream = ExtResource("1_nqn2w")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

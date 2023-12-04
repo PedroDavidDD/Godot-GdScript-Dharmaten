@@ -7,8 +7,8 @@ extends Node2D
 ## Control de sonidos: https://docs.google.com/document/d/1iF9UeO_rtx2qWtMxjB6LienO-kQPx3blTCgJw-aACx4/edit?usp=sharing
 
 
-# Nivel inicial que se cargará al presionar "Iniciar" en el menú principal
-const PATH_LEVEL_1 = "res://scenes/game/levels/rooms/scene_0/scene_0.tscn"
+# Escena inicial que se cargará al presionar "Iniciar" en el menú principal
+const PATH_INTRO = "res://scenes/game/ui/intro.tscn"
 
 
 # Variables para animación de nubes
@@ -85,7 +85,7 @@ func _on_parallax_2_animation_finished(_anim_name):
 # cámaras de los niveles
 func _toggle_show():
 	visible = not visible # Mostramos/Ocultamos el menu
-	HealthDashboard.visible = not visible # Mostramos/Ocultamos el tablero de salud
+#	HealthDashboard.visible = not visible # Mostramos/Ocultamos el tablero de salud
 	# Agregar o remover el nodo principal del menú principal
 	if visible:
 		self.add_child(_main)
@@ -122,7 +122,7 @@ func _on_button_pressed():
 		_toggle_show()
 	else:
 		# Si no hemos iniciado, cargamos nivel 1 y cambiamos título de boton
-		SceneTransition.change_scene(PATH_LEVEL_1)
+		SceneTransition.change_scene(PATH_INTRO)
 		_started = true
 		#_toggle_show()
 
