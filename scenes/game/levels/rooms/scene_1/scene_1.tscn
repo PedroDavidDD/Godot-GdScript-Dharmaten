@@ -70,13 +70,9 @@ autostart = true
 
 [node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 position = Vector2(1, 593)
 =======
 position = Vector2(20, 595)
->>>>>>> Stashed changes
-=======
-position = Vector2(11, 595)
 >>>>>>> Stashed changes
 
 [node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
@@ -87,13 +83,9 @@ position = Vector2(1510, 589)
 
 [node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 position = Vector2(1519, 15)
 =======
 position = Vector2(1524, 3)
->>>>>>> Stashed changes
-=======
-position = Vector2(1512, 10)
 >>>>>>> Stashed changes
 
 [node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_y5wb8")]

@@ -151,6 +151,7 @@ limit_bottom = 573
 character = NodePath("../MainCharacter")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
 
 [node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(1, 593)
