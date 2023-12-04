@@ -683,10 +683,10 @@ icon_alignment = 1
 [node name="Button2" type="Control" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 3.0
-offset_top = 480.0
-offset_right = 43.0
-offset_bottom = 520.0
+offset_left = 209.0
+offset_top = 478.0
+offset_right = 249.0
+offset_bottom = 518.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button2"]
 modulate = Color(0.529412, 0.992157, 1, 1)
@@ -727,10 +727,10 @@ icon_alignment = 1
 [node name="Button4" type="Control" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 206.0
-offset_top = 480.0
-offset_right = 246.0
-offset_bottom = 520.0
+offset_left = 4.0
+offset_top = 476.0
+offset_right = 44.0
+offset_bottom = 516.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button4"]
 modulate = Color(0.529412, 0.992157, 1, 1)
