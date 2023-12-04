@@ -523,50 +523,43 @@ texture = ExtResource("11_rfo8t")
 
 [node name="Letter1" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = -56.0
-offset_right = 26.0
-offset_bottom = -15.0
+offset_right = 28.0
+offset_bottom = 41.0
 texture = SubResource("AtlasTexture_u0nh0")
 
 [node name="Letter2" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = -56.0
-offset_right = 56.0
-offset_bottom = -15.0
+offset_left = 30.0
+offset_right = 58.0
+offset_bottom = 41.0
 texture = SubResource("AtlasTexture_l4uxy")
 
 [node name="Letter3" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
-offset_left = 58.0
-offset_top = -56.0
-offset_right = 86.0
-offset_bottom = -15.0
+offset_left = 60.0
+offset_right = 88.0
+offset_bottom = 41.0
 texture = SubResource("AtlasTexture_fftmn")
 
 [node name="Letter4" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = -56.0
-offset_right = 116.0
-offset_bottom = -15.0
+offset_left = 90.0
+offset_right = 118.0
+offset_bottom = 41.0
 texture = SubResource("AtlasTexture_xq1pu")
 
 [node name="Letter5" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
-offset_left = 118.0
-offset_top = -56.0
-offset_right = 146.0
-offset_bottom = -15.0
+offset_left = 120.0
+offset_right = 148.0
+offset_bottom = 41.0
 texture = SubResource("AtlasTexture_n0yw2")
 
 [node name="Letter6" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 0
-offset_left = 148.0
-offset_top = -56.0
-offset_right = 176.0
-offset_bottom = -15.0
+offset_left = 150.0
+offset_right = 178.0
+offset_bottom = 41.0
 texture = SubResource("AtlasTexture_u8gxc")
 
 [node name="Letter7" type="TextureRect" parent="Main/CanvasLayer/Options/Init"]
@@ -603,10 +596,9 @@ texture = SubResource("AtlasTexture_bh38k")
 
 [node name="Button" type="Control" parent="Main/CanvasLayer/Options/Init"]
 anchors_preset = 0
-offset_left = -3.0
-offset_top = -7.0
-offset_right = 37.0
-offset_bottom = 33.0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 90.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button"]
 modulate = Color(0.529412, 0.992157, 1, 1)
@@ -646,10 +638,10 @@ icon_alignment = 1
 
 [node name="Button3" type="Control" parent="Main/CanvasLayer/Options/Init"]
 anchors_preset = 0
-offset_left = -3.0
-offset_top = 56.0
-offset_right = 37.0
-offset_bottom = 96.0
+offset_left = 203.0
+offset_top = 50.0
+offset_right = 243.0
+offset_bottom = 90.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button3"]
 modulate = Color(0.529412, 0.992157, 1, 1)
@@ -691,9 +683,10 @@ icon_alignment = 1
 [node name="Button2" type="Control" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 491.0
-offset_right = 40.0
-offset_bottom = 531.0
+offset_left = 3.0
+offset_top = 480.0
+offset_right = 43.0
+offset_bottom = 520.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button2"]
 modulate = Color(0.529412, 0.992157, 1, 1)
@@ -734,9 +727,10 @@ icon_alignment = 1
 [node name="Button4" type="Control" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 439.0
-offset_right = 40.0
-offset_bottom = 479.0
+offset_left = 206.0
+offset_top = 480.0
+offset_right = 246.0
+offset_bottom = 520.0
 
 [node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button4"]
 modulate = Color(0.529412, 0.992157, 1, 1)
@@ -777,9 +771,9 @@ icon_alignment = 1
 [node name="Fullscreen" type="Control" parent="Main/CanvasLayer/Options"]
 anchors_preset = 0
 offset_left = -400.0
-offset_top = -35.0
+offset_top = -25.0
 offset_right = -360.0
-offset_bottom = 5.0
+offset_bottom = 15.0
 
 [node name="Letter1" type="TextureRect" parent="Main/CanvasLayer/Options/Fullscreen"]
 layout_mode = 0
@@ -910,10 +904,10 @@ flat = true
 
 [node name="Sounds" type="Control" parent="Main/CanvasLayer/Options"]
 anchors_preset = 0
-offset_left = -401.0
-offset_top = 89.0
-offset_right = -361.0
-offset_bottom = 129.0
+offset_left = -400.0
+offset_top = 125.0
+offset_right = -360.0
+offset_bottom = 165.0
 
 [node name="Letter1" type="TextureRect" parent="Main/CanvasLayer/Options/Sounds"]
 layout_mode = 0
@@ -1108,10 +1102,10 @@ value = 0.5
 
 [node name="Controls" type="Control" parent="Main/CanvasLayer/Options"]
 anchors_preset = 0
-offset_left = -401.0
-offset_top = 232.0
-offset_right = -361.0
-offset_bottom = 272.0
+offset_left = -400.0
+offset_top = 268.0
+offset_right = -360.0
+offset_bottom = 308.0
 
 [node name="ShowControls" type="Button" parent="Main/CanvasLayer/Options/Controls"]
 modulate = Color(1, 1, 0.72549, 1)
@@ -1123,7 +1117,7 @@ theme_override_font_sizes/font_size = 24
 text = "Controles"
 
 [node name="Software_cursor" parent="Main/CanvasLayer/Options" instance=ExtResource("42_fslf8")]
-position = Vector2(-1113, -292)
+position = Vector2(-1112, -266)
 
 [node name="GameControls" type="CanvasLayer" parent="Main"]
 visible = false
