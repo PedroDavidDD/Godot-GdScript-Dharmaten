@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://byhcfhfoq3jm2"]
 
-[ext_resource type="VideoStream" path="res://assets/videos/clip.ogv" id="1_nqn2w"]
 [ext_resource type="Script" path="res://scenes/game/ui/intro.gd" id="1_tufx8"]
+[ext_resource type="VideoStream" path="res://assets/videos/Rick.ogv" id="2_v2fmu"]
 
 [node name="intro" type="Node2D"]
 script = ExtResource("1_tufx8")
@@ -10,7 +10,7 @@ script = ExtResource("1_tufx8")
 offset_left = -1.0
 offset_right = 1289.0
 offset_bottom = 720.0
-stream = ExtResource("1_nqn2w")
+stream = ExtResource("2_v2fmu")
 autoplay = true
 expand = true
 
