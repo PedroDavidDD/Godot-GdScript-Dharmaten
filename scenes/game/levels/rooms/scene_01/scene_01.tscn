@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=19 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="9_hnmc0"]
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="17_d3mti"]
-[ext_resource type="PackedScene" uid="uid://dnfuhkcmul0s8" path="res://scenes/game/enemy/slime2/slime_2.tscn" id="19_1r0tv"]
 
 [node name="scene_1" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -167,6 +166,7 @@ autostart = true
 
 [node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(13, 592)
+position = Vector2(7, 598)
 
 [node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(0, 14)
@@ -176,6 +176,10 @@ position = Vector2(1516, 592)
 
 [node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(1509, 4)
+position = Vector2(1520, 599)
+
+[node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(1521, 20)
 
 [node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_y5wb8")]
 position = Vector2(845, 376)
@@ -213,11 +217,5 @@ color = Color(0.694118, 0.694118, 0.694118, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="DayStateSystem"]
 visible = false
-
-[node name="slime2" parent="." instance=ExtResource("19_1r0tv")]
-position = Vector2(89, 356)
-
-[node name="slime3" parent="." instance=ExtResource("19_1r0tv")]
-position = Vector2(1002, 110)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
