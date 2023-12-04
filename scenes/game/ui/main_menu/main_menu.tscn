@@ -351,7 +351,7 @@ _data = {
 "parallax1": SubResource("Animation_cx42v")
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" groups=["menu"]]
 z_index = 10
 script = ExtResource("1_g1i31")
 
@@ -636,6 +636,50 @@ text = "INICIAR"
 flat = true
 icon_alignment = 1
 
+[node name="Button3" type="Control" parent="Main/CanvasLayer/Options/Init"]
+anchors_preset = 0
+offset_left = 203.0
+offset_top = 50.0
+offset_right = 243.0
+offset_bottom = 90.0
+
+[node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button3"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 45.0
+texture = ExtResource("2_foa6f")
+
+[node name="Center" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button3"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 36.0
+offset_right = 153.0
+offset_bottom = 45.0
+texture = ExtResource("3_10kh6")
+
+[node name="Right" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button3"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 150.0
+offset_right = 190.0
+offset_bottom = 45.0
+texture = ExtResource("4_76ed7")
+
+[node name="inic_surv" type="Button" parent="Main/CanvasLayer/Options/Init/Button3"]
+modulate = Color(1, 1, 0.72549, 1)
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 42.0
+theme = SubResource("Theme_f6sn6")
+theme_override_font_sizes/font_size = 20
+text = "SUPERVIVENCIA"
+flat = true
+icon_alignment = 1
+
 [node name="Button2" type="Control" parent="Main/CanvasLayer/Options/Init"]
 layout_mode = 3
 anchors_preset = 0
@@ -677,6 +721,50 @@ offset_right = 189.0
 offset_bottom = 42.0
 theme = SubResource("Theme_f6sn6")
 text = "SALIR"
+flat = true
+icon_alignment = 1
+
+[node name="Button4" type="Control" parent="Main/CanvasLayer/Options/Init"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 206.0
+offset_top = 480.0
+offset_right = 246.0
+offset_bottom = 520.0
+
+[node name="Left" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button4"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 45.0
+texture = ExtResource("2_foa6f")
+
+[node name="Center" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button4"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 36.0
+offset_right = 153.0
+offset_bottom = 45.0
+texture = ExtResource("3_10kh6")
+
+[node name="Right" type="TextureRect" parent="Main/CanvasLayer/Options/Init/Button4"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 150.0
+offset_right = 190.0
+offset_bottom = 45.0
+texture = ExtResource("4_76ed7")
+
+[node name="Restart" type="Button" parent="Main/CanvasLayer/Options/Init/Button4"]
+modulate = Color(1, 1, 0.72549, 1)
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 42.0
+theme = SubResource("Theme_f6sn6")
+text = "RESTART"
 flat = true
 icon_alignment = 1
 
@@ -1315,7 +1403,9 @@ libraries = {
 }
 
 [connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button3/inic_surv" to="." method="_on_inic_surv_pressed"]
 [connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button2/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button4/Restart" to="." method="_on_restart_pressed"]
 [connection signal="toggled" from="Main/CanvasLayer/Options/Fullscreen/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="value_changed" from="Main/CanvasLayer/Options/Sounds/Sliders/Ambient/Slider/SliderAmbient" to="." method="_on_slider_ambient_value_changed"]
 [connection signal="value_changed" from="Main/CanvasLayer/Options/Sounds/Sliders/Effects/Slider/SliderEffects" to="." method="_on_slider_effects_value_changed"]

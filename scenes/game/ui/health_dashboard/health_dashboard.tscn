@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=23 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
 [ext_resource type="PackedScene" uid="uid://cc58vft7e5a2y" path="res://scenes/game/ui/Alerts/alert_level_up.tscn" id="2_ba3gi"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bqcbpn2cey2eg" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/16.png" id="14_h04s3"]
 [ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="15_ri0rr"]
 [ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="16_02sur"]
+[ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/cronometro.gd" id="22_m1fmt"]
 
 [node name="health_dashboard" type="CanvasLayer"]
 script = ExtResource("1_rufnl")
@@ -494,12 +495,44 @@ text = "0/0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LabelCarga" type="Label" parent="."]
+[node name="cronometro" type="Control" parent="."]
 visible = false
-offset_left = 554.0
-offset_top = 109.0
-offset_right = 599.0
-offset_bottom = 135.0
-text = "Carga"
+layout_mode = 3
+anchors_preset = 0
+offset_left = 952.0
+offset_top = 24.0
+offset_right = 992.0
+offset_bottom = 64.0
+script = ExtResource("22_m1fmt")
+
+[node name="Min" type="Label" parent="cronometro"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 56.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 36
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Sec" type="Label" parent="cronometro"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 3.0
+offset_right = 106.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 36
+text = "00."
+horizontal_alignment = 2
+
+[node name="Msec" type="Label" parent="cronometro"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 3.0
+offset_right = 168.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 36
+text = "000"
+horizontal_alignment = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
