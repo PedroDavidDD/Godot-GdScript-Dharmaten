@@ -683,6 +683,8 @@ collision_mask = 9
 
 [node name="MainCharacterMovement" type="Node2D" parent="."]
 script = ExtResource("7_fm4k8")
+magicBullet = null
+cooldownBullet = null
 
 [node name="MainCharacterCollision" type="Node2D" parent="." node_paths=PackedStringArray("character")]
 script = ExtResource("57_7h47x")
@@ -723,31 +725,30 @@ texture = ExtResource("30_ih7pr")
 wait_time = 0.6
 
 [node name="Lightning" type="Node2D" parent="."]
-visible = false
 position = Vector2(30, 8)
 
-[node name="Effects0" type="AnimatedSprite2D" parent="Lightning"]
+[node name="Effects" type="AnimatedSprite2D" parent="Lightning"]
 modulate = Color(0, 0.466667, 1, 1)
 position = Vector2(-49, -26)
 scale = Vector2(0.169231, 0.0749999)
 sprite_frames = SubResource("SpriteFrames_cwldb")
 animation = &"lightning"
 
-[node name="Effects1" type="AnimatedSprite2D" parent="Lightning"]
+[node name="Effects2" type="AnimatedSprite2D" parent="Lightning"]
 modulate = Color(0, 0.466667, 1, 1)
 position = Vector2(-8, -17)
 scale = Vector2(0.169231, 0.0749999)
 sprite_frames = SubResource("SpriteFrames_cwldb")
 animation = &"lightning"
 
-[node name="Effects2" type="AnimatedSprite2D" parent="Lightning"]
+[node name="Effects3" type="AnimatedSprite2D" parent="Lightning"]
 modulate = Color(0, 0.466667, 1, 1)
 position = Vector2(-47, -4)
 scale = Vector2(0.169231, 0.0749999)
 sprite_frames = SubResource("SpriteFrames_cwldb")
 animation = &"lightning"
 
-[node name="Effects3" type="AnimatedSprite2D" parent="Lightning"]
+[node name="Effects4" type="AnimatedSprite2D" parent="Lightning"]
 modulate = Color(0, 0.466667, 1, 1)
 position = Vector2(-14, 2)
 scale = Vector2(0.169231, 0.0749999)
@@ -767,6 +768,6 @@ disabled = true
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="MainCharacterMovement" method="_on_audio_stream_player_2d_finished"]
 [connection signal="timeout" from="Timer" to="MainCharacterMovement" method="_on_timer_timeout"]
-[connection signal="animation_finished" from="Lightning/Effects0" to="MainCharacterMovement" method="_on_effects_animation_finished"]
-[connection signal="frame_changed" from="Lightning/Effects0" to="MainCharacterMovement" method="_on_effects_frame_changed"]
+[connection signal="animation_finished" from="Lightning/Effects" to="MainCharacterMovement" method="_on_effects_animation_finished"]
+[connection signal="frame_changed" from="Lightning/Effects" to="MainCharacterMovement" method="_on_effects_frame_changed"]
 [connection signal="body_entered" from="Lightning/Area2D" to="MainCharacterMovement" method="_on_area_2d_body_entered"]

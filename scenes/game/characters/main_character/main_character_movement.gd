@@ -49,6 +49,7 @@ var elemental_skills_enabled = {
 	"water": false,
 	"darkness": false,
 	"flame_water": false,
+	"lightning": false,
 }
 var type_element_value = 0
 var selected_elemental_skill_key = elemental_skills_enabled.keys()[type_element_value]
@@ -57,6 +58,9 @@ var status_icon = "disabled"
 # Cooldown del disparo
 var nextBulletTime:float;
 @export var cooldownBullet:float = 0.5;
+# Cooldown del ataque2
+var nextChargedTime:float;
+@export var cooldownCharged:float = 3;
 
 func _process(_delta):
 	_move(_delta)
@@ -111,21 +115,54 @@ func _move(delta):
 	if (nextBulletTime <= 0):
 		if Input.is_action_pressed("attack"):
 			use_elemental_skill()
-			_current_movement = _movements.ATTACK
 			nextBulletTime = cooldownBullet;
-			can_shoot=false	
+			can_shoot=false
 	else:
 		nextBulletTime -= delta
+		
+	# Cuando se presiona la tecla L, atacamos en area
+	if (nextChargedTime <= 0):
+		if Input.is_action_pressed("attack2"):
+			lightning()
+			nextChargedTime = cooldownCharged;
+	else:
+		nextChargedTime -= delta
 	
 	
 	_set_animation()
 	# Activar colisiones y movimiento: move_and_collide
 	collision = player.move_and_collide(direction * velocity * delta)
-	
+
+func lightning():
+	if elemental_skills_enabled[selected_elemental_skill_key]:
+		if selected_elemental_skill_key == "lightning":
+			_current_movement = _movements.ATTACK
+			$"../Lightning".visible = true 
+			for i in range(4):
+				var nombre_nodo = "Effects" + str(i)
+				var nodo_hijo = get_node("../Lightning/" + nombre_nodo)
+				if nodo_hijo:
+					nodo_hijo.play("lightning")
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.hit(2)
+		body.queue_free()
+
+func _on_effects_frame_changed():
+	$"../Lightning/Area2D/CS_1".disabled  = false
+
+func _on_effects_animation_finished():
+	$"../Lightning/Area2D/CS_1".disabled  = true
+	$"../Lightning".visible = false 
+
 func use_elemental_skill():
 	var nearest_slime_green = find_nearest_slime_green_player()
 	if nearest_slime_green && (elemental_skills_enabled[selected_elemental_skill_key]):
-		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key)
+		if selected_elemental_skill_key == "lightning":
+			return
+		create_magic_bullet(nearest_slime_green, selected_elemental_skill_key)			
+		_current_movement = _movements.ATTACK
 		if selected_elemental_skill_key == "water":
 			var player_position = player.global_position
 			var ball_behind = player_position
@@ -256,3 +293,14 @@ func _on_animation_frame_changed():
 
 func _on_timer_timeout():
 	can_shoot=true
+
+
+
+
+
+
+
+
+
+
+
