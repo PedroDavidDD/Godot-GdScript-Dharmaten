@@ -53,6 +53,7 @@ limit_bottom = 655
 character = NodePath("../MainCharacter")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+<<<<<<< Updated upstream
 wait_time = 0.6
 autostart = true
 
@@ -61,6 +62,13 @@ autostart = true
 position = Vector2(1, 593)
 =======
 position = Vector2(15, 593)
+>>>>>>> Stashed changes
+=======
+wait_time = 0.7
+autostart = true
+
+[node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
+position = Vector2(20, 599)
 >>>>>>> Stashed changes
 
 [node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
