@@ -65,15 +65,10 @@ limit_bottom = 655
 character = NodePath("../MainCharacter")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 0.8
 autostart = true
 
 [node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
-<<<<<<< Updated upstream
-position = Vector2(1, 593)
-=======
-position = Vector2(20, 595)
->>>>>>> Stashed changes
+position = Vector2(-2149, 1698)
 
 [node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(0, 14)
@@ -82,11 +77,7 @@ position = Vector2(0, 14)
 position = Vector2(1510, 589)
 
 [node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
-<<<<<<< Updated upstream
-position = Vector2(1519, 15)
-=======
-position = Vector2(1524, 3)
->>>>>>> Stashed changes
+position = Vector2(3728, -891)
 
 [node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_y5wb8")]
 position = Vector2(386, 162)

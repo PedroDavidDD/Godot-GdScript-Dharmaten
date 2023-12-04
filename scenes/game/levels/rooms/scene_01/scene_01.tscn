@@ -166,16 +166,16 @@ character = NodePath("../MainCharacter")
 autostart = true
 
 [node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
-position = Vector2(13, 592)
+position = Vector2(-2308, 1916)
 
 [node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(0, 14)
 
 [node name="SpawnLocation3" parent="." instance=ExtResource("5_34krj")]
-position = Vector2(1516, 592)
+position = Vector2(4267, 2080)
 
 [node name="SpawnLocation4" parent="." instance=ExtResource("5_34krj")]
-position = Vector2(1509, 4)
+position = Vector2(4348, -852)
 
 [node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("8_y5wb8")]
 position = Vector2(845, 376)
