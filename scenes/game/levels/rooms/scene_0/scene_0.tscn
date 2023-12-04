@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cmapg23ldyiv4" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_24.png" id="5_sgxk8"]
 [ext_resource type="Texture2D" uid="uid://cp3n0uml4b0yk" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_14.png" id="6_1ohi7"]
 [ext_resource type="Texture2D" uid="uid://bv2xv3k3w0d74" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_30.png" id="6_lb8rw"]
-[ext_resource type="Texture2D" uid="uid://bu03y4ptjimyv" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_31.png" id="7_4d1c2"]
 [ext_resource type="Texture2D" uid="uid://d26e1j6o0w3uj" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_25.png" id="7_j4wgj"]
+[ext_resource type="Texture2D" uid="uid://85pqkxnrp5js" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_162.png" id="7_xvr00"]
 [ext_resource type="AudioStream" uid="uid://dsbkstdva8u8w" path="res://scenes/music nivel 1.mp3" id="8_ac32f"]
 [ext_resource type="Texture2D" uid="uid://dl2rdjnxaqa05" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/ui/Individual keyboard Icons/keyboard_123.png" id="8_rxdy5"]
 [ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="8_y5wb8"]
@@ -76,7 +76,7 @@ texture = ExtResource("6_lb8rw")
 [node name="Sprite2D9" type="Sprite2D" parent="."]
 position = Vector2(564, 418)
 scale = Vector2(0.492187, 0.453125)
-texture = ExtResource("7_4d1c2")
+texture = ExtResource("7_xvr00")
 
 [node name="Sprite2D10" type="Sprite2D" parent="."]
 position = Vector2(689, 325)
@@ -149,7 +149,7 @@ scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("17_d3mti")
 theme_override_font_sizes/font_size = 18
-text = "[Carga]"
+text = "[Menú]"
 
 [node name="Label4" type="Label" parent="."]
 modulate = Color(0.615686, 0.372549, 0.0745098, 1)

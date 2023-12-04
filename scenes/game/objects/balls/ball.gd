@@ -17,7 +17,7 @@ var list_damage_type_element = {
 	"flame": 2,
 	"water": 1,
 	"darkness": 3,
-	"flame_water": 3,
+	"flame_water": 4,
 }
 var damage_bullet = 0
 

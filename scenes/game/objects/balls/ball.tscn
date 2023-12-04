@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://scenes/game/objects/balls/ball.gd" id="1_wq2fq"]
 [ext_resource type="Texture2D" uid="uid://bc30bl6hjhdu6" path="res://assets/sprites/Objects/elements/enabled/flame.png" id="3_30xho"]
-[ext_resource type="Texture2D" path="res://assets/sprites/Objects/elements/enabled/lightning_0.png" id="3_dij1p"]
+[ext_resource type="Texture2D" uid="uid://doxa5mmcu4if3" path="res://assets/sprites/Objects/elements/enabled/lightning_0.png" id="3_dij1p"]
 [ext_resource type="Texture2D" uid="uid://bfl3e80f08k6" path="res://assets/sprites/Objects/elements/enabled/darkness.png" id="3_j4jmx"]
 [ext_resource type="Texture2D" uid="uid://cy24nt1mb46cp" path="res://assets/sprites/Objects/elements/enabled/flame_water_0.png" id="4_h21yg"]
-[ext_resource type="Texture2D" path="res://assets/sprites/Objects/elements/enabled/lightning_1.png" id="4_ogip1"]
+[ext_resource type="Texture2D" uid="uid://cqykc1u2ygfka" path="res://assets/sprites/Objects/elements/enabled/lightning_1.png" id="4_ogip1"]
 [ext_resource type="Texture2D" uid="uid://dvp6qfjassnry" path="res://assets/sprites/Objects/elements/enabled/flame_water_1.png" id="5_s387n"]
-[ext_resource type="Texture2D" path="res://assets/sprites/Objects/elements/enabled/lightning_2.png" id="5_uubp1"]
-[ext_resource type="Texture2D" path="res://assets/sprites/Objects/elements/enabled/lightning_3.png" id="6_hivd8"]
+[ext_resource type="Texture2D" uid="uid://bglu2jy862jr3" path="res://assets/sprites/Objects/elements/enabled/lightning_2.png" id="5_uubp1"]
+[ext_resource type="Texture2D" uid="uid://302loai4x1dp" path="res://assets/sprites/Objects/elements/enabled/lightning_3.png" id="6_hivd8"]
 [ext_resource type="Texture2D" uid="uid://kk1dj0yeqsl2" path="res://assets/sprites/Objects/elements/enabled/water.png" id="6_ykw37"]
-[ext_resource type="Texture2D" path="res://assets/sprites/Objects/elements/enabled/lightning_4.png" id="7_4jxfw"]
+[ext_resource type="Texture2D" uid="uid://c5a44cjyyq678" path="res://assets/sprites/Objects/elements/enabled/lightning_4.png" id="7_4jxfw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6urgt"]
 animations = [{

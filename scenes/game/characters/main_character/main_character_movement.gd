@@ -110,23 +110,23 @@ func _move(delta):
 	# Seleccionar habilidad
 	if Input.is_action_just_pressed("change_element"):
 		cycle_element_value()
-		
-	# Cuando se presiona la tecla J, atacamos
-	if (nextBulletTime <= 0):
-		if Input.is_action_pressed("attack"):
-			use_elemental_skill()
-			nextBulletTime = cooldownBullet;
-			can_shoot=false
+	
+	if elemental_skills_enabled[selected_elemental_skill_key] && selected_elemental_skill_key == "lightning":
+		# Cuando se presiona la tecla J, atacamos			
+		if (nextChargedTime <= 0):
+			if Input.is_action_pressed("attack"):
+				lightning()
+				nextChargedTime = cooldownCharged;
+		else:
+			nextChargedTime -= delta
 	else:
-		nextBulletTime -= delta
-		
-	# Cuando se presiona la tecla L, atacamos en area
-	if (nextChargedTime <= 0):
-		if Input.is_action_pressed("attack2"):
-			lightning()
-			nextChargedTime = cooldownCharged;
-	else:
-		nextChargedTime -= delta
+		if (nextBulletTime <= 0):
+			if Input.is_action_pressed("attack"):
+				use_elemental_skill()
+				nextBulletTime = cooldownBullet;
+				can_shoot=false
+		else:
+			nextBulletTime -= delta
 	
 	
 	_set_animation()
@@ -146,7 +146,7 @@ func lightning():
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("enemy"):
-		body.hit(2)
+		body.hit(5)
 		body.queue_free()
 
 func _on_effects_frame_changed():
