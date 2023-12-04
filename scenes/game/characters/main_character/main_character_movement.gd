@@ -12,11 +12,11 @@ var collision: KinematicCollision2D
 var velocity = 100 # Velocidad de movimiento en horizontal
 var fast_velocity = 150
 var can_shoot = true
-var control_cronometro= load("res://scenes/game/ui/health_dashboard/health_dashboard.gd").new()
+var stop_cronometer = false
 var cron_reset= false
-
 var check 
 
+var resume_cron = load("res://scenes/game/ui/health_dashboard/cronometro.gd").new()
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
@@ -187,6 +187,10 @@ func _set_animation():
 	# Personaje murio: Reiniciar escena actual
 	if _died:
 		main_animation.play(_movements.DEAD_HIT)
+		check = get_tree().get_nodes_in_group("menu")
+		check = check[0].survival 
+		if check:
+			await get_tree().create_timer(3).timeout
 		HealthDashboard.restart()
 #		get_tree().change_scene_to_file("res://scenes/game/levels/rooms/scene_0/scene_0.tscn")
 		get_tree().reload_current_scene()
@@ -237,22 +241,18 @@ func hit(value: int):
 	
 	# Bajamos vida y validamos si el personaje ha perdido
 	if HealthDashboard.life == 0:
-		control_cronometro.stop_timer()
+		stop_cronometer = true
 		die()
-		check = get_tree().get_nodes_in_group("menu")
-		check = check[0].survival 
-		if check:
-			print("buenas tardes")
-		else:
-			print("buenas noches")
+		await get_tree().create_timer(3).timeout
+		stop_cronometer = false
+		cron_reset = true
+		
 	else:
 		pass
 
 func die():
 	# Seteamos la variable de morir a verdadero
 	_died = true
-	cron_reset = true
-	
 
 # Función para encontrar el slimeGreen más cercano al player
 func find_nearest_slime_green_player():
