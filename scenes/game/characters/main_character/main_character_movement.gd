@@ -12,6 +12,11 @@ var collision: KinematicCollision2D
 var velocity = 100 # Velocidad de movimiento en horizontal
 var fast_velocity = 150
 var can_shoot = true
+var control_cronometro= load("res://scenes/game/ui/health_dashboard/health_dashboard.gd").new()
+var cron_reset= false
+
+var check 
+
 # Mapa de movimientos del personaje
 var _movements = {
 	IDLE = "default",
@@ -195,13 +200,21 @@ func hit(value: int):
 	
 	# Bajamos vida y validamos si el personaje ha perdido
 	if HealthDashboard.life == 0:
+		control_cronometro.stop_timer()
 		die()
+		check = get_tree().get_nodes_in_group("menu")
+		check = check[0].survival 
+		if check:
+			print("buenas tardes")
+		else:
+			print("buenas noches")
 	else:
 		pass
 
 func die():
 	# Seteamos la variable de morir a verdadero
 	_died = true
+	cron_reset = true
 	
 
 # Función para encontrar el slimeGreen más cercano al player

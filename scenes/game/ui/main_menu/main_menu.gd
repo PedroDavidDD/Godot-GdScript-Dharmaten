@@ -17,7 +17,8 @@ var _parallax_1_normal = true
 var _parallax_2_normal = false
 var _started = false # Indica si ya iniciamos el juego (entramos al primer nivel)
 var cron_vis = false
-
+var survival = false
+var reset_cron = load("res://scenes/game/ui/health_dashboard/cronometro.gd").new()
 # Referencias a nodos de la escena
 @onready var _anim_water = $Main/World/Background/AnimWater
 @onready var _anim_ship = $Main/World/Ship/Ship
@@ -126,6 +127,8 @@ func _on_button_pressed():
 		# Si no hemos iniciado, cargamos nivel 1 y cambiamos título de boton
 		SceneTransition.change_scene(PATH_INTRO)
 		_started = true
+		survival = false
+		HealthDashboard.restart()
 		#_toggle_show()
 
 
@@ -158,6 +161,7 @@ func restart():
 	_button.text = "INICIAR"
 	HealthDashboard.visible = false
 	cron_vis = false
+	
 
 
 # Mostramos/Ocultamos la pantalla de controles
@@ -179,12 +183,15 @@ func _on_inic_surv_pressed():
 		# Si ya tenemos iniciado el juego, solo ocultamos el menú
 		_toggle_show()
 	else:
+		HealthDashboard.restart()
 		HealthDashboard.visible = true
 		SceneTransition.change_scene(PATH_SURV)
 		_started = true
 		cron_vis = true
+		survival = true
 		
 
 
 func _on_restart_pressed():
 	restart()
+	

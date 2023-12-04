@@ -496,7 +496,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="cronometro" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 952.0
