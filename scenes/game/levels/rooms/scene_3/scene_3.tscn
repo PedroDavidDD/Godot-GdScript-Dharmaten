@@ -54,7 +54,6 @@ character = NodePath("../MainCharacter")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.5
-wait_time = 0.6
 autostart = true
 
 [node name="SpawnLocation1" parent="." instance=ExtResource("5_34krj")]
