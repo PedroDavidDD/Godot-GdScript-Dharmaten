@@ -18,7 +18,7 @@ var _parallax_2_normal = false
 var _started = false # Indica si ya iniciamos el juego (entramos al primer nivel)
 var cron_vis = false
 var survival = false
-var reset_cron = load("res://scenes/game/ui/health_dashboard/cronometro.gd").new()
+var reset
 # Referencias a nodos de la escena
 @onready var _anim_water = $Main/World/Background/AnimWater
 @onready var _anim_ship = $Main/World/Ship/Ship

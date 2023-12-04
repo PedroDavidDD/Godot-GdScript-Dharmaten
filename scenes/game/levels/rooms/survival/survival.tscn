@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs2xihmcumlq7"]
+[gd_scene load_steps=12 format=3 uid="uid://cs2xihmcumlq7"]
 
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_4n33n"]
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="2_j8a1e"]
 [ext_resource type="PackedScene" uid="uid://ca3ueo0yewjov" path="res://scenes/game/characters/main_character/main_character.tscn" id="3_3r2vx"]
 [ext_resource type="PackedScene" uid="uid://8rbt5lmdrp0s" path="res://scenes/game/camera/camera.tscn" id="4_0prnu"]
 [ext_resource type="PackedScene" uid="uid://wqk83768mm4c" path="res://scenes/game/enemy/Portal/spawn_location.tscn" id="5_mru2o"]
-[ext_resource type="PackedScene" uid="uid://brhmupxo2xjim" path="res://scenes/game/levels/objects/change_scene/door_change_scene.tscn" id="6_2mwfd"]
-[ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="7_i77vy"]
 [ext_resource type="AudioStream" uid="uid://dsbkstdva8u8w" path="res://scenes/music nivel 1.mp3" id="8_mysjf"]
 [ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="9_kx5dc"]
 [ext_resource type="PackedScene" uid="uid://cqg7epegh0oog" path="res://scenes/game/enemy/skeleton/skeleton.tscn" id="10_qkori"]
@@ -72,27 +70,6 @@ position = Vector2(1510, 922)
 
 [node name="SpawnLocation4" parent="." instance=ExtResource("5_mru2o")]
 position = Vector2(1519, 15)
-
-[node name="DoorChangeScene" parent="." groups=["doorChangeScene"] instance=ExtResource("6_2mwfd")]
-position = Vector2(583, 539)
-scale = Vector2(0.8, 0.8)
-_path_to_scene = "res://scenes/game/levels/rooms/scene_4/scene_4.tscn"
-
-[node name="Key" parent="DoorChangeScene" groups=["key"] instance=ExtResource("7_i77vy")]
-position = Vector2(-638.75, -170)
-scale = Vector2(0.653936, 0.727268)
-
-[node name="Key3" parent="DoorChangeScene" groups=["key"] instance=ExtResource("7_i77vy")]
-position = Vector2(806.25, 22.4999)
-scale = Vector2(0.653936, 0.727268)
-
-[node name="Key4" parent="DoorChangeScene" groups=["key"] instance=ExtResource("7_i77vy")]
-position = Vector2(745, -607.5)
-scale = Vector2(0.653936, 0.727268)
-
-[node name="Key2" parent="DoorChangeScene" groups=["key"] instance=ExtResource("7_i77vy")]
-position = Vector2(-43.75, 407.5)
-scale = Vector2(0.653936, 0.727268)
 
 [node name="AmbientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_mysjf")
