@@ -535,4 +535,12 @@ theme_override_font_sizes/font_size = 36
 text = "000"
 horizontal_alignment = 2
 
+[node name="LabelCarga" type="Label" parent="."]
+visible = false
+offset_left = 553.0
+offset_top = 112.0
+offset_right = 598.0
+offset_bottom = 138.0
+text = "Carga"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
