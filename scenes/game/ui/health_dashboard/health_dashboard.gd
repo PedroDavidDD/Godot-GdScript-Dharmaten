@@ -132,7 +132,7 @@ func update_element_icon(type: String, status: String ):
 	var texture_to_set =  load("res://assets/sprites/Objects/elements/enabled/" + type +".png")
 	textureReactSkill.texture = texture_to_set
 	if type == "lightning":
-		$Skills/ContainerSkill/Sprite2D.self_modulate = Color("#ff0000")
+		$Skills/ContainerSkill/Sprite2D.self_modulate = Color("#ffffff")
 		$LabelCarga.visible = true
 	else:
 		$Skills/ContainerSkill/Sprite2D.self_modulate = Color("#ffffff")
