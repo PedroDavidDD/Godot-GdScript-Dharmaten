@@ -9,12 +9,14 @@ extends Node2D
 
 # Escena inicial que se cargará al presionar "Iniciar" en el menú principal
 const PATH_INTRO = "res://scenes/game/ui/intro.tscn"
+const PATH_SURV = "res://scenes/game/levels/rooms/survival/survival.tscn"
 
 
 # Variables para animación de nubes
 var _parallax_1_normal = true
 var _parallax_2_normal = false
 var _started = false # Indica si ya iniciamos el juego (entramos al primer nivel)
+var cron_vis = false
 
 # Referencias a nodos de la escena
 @onready var _anim_water = $Main/World/Background/AnimWater
@@ -104,7 +106,7 @@ func _toggle_show():
 			camera.enabled = not visible
 	# Si ya hemos iniciado, cambiamos el texto del botón a "Continuar"
 	if _started:
-		_button.text = "Continuar"
+		_button.text = "CONTINUAR"
 
 
 # Evento de nodo "CheckButton" para hacer pantalla completa o en modo ventana
@@ -153,7 +155,9 @@ func show_menu(_show: bool):
 func restart():
 	#_toggle_show()
 	_started = false
-	_button.text = "Iniciar"
+	_button.text = "INICIAR"
+	HealthDashboard.visible = false
+	cron_vis = false
 
 
 # Mostramos/Ocultamos la pantalla de controles
@@ -168,3 +172,19 @@ func _on_close_controls_pressed():
 
 func _on_salir_pressed():
 	get_tree().quit()
+
+
+func _on_inic_surv_pressed():
+	if _started:
+		# Si ya tenemos iniciado el juego, solo ocultamos el menú
+		_toggle_show()
+	else:
+		HealthDashboard.visible = true
+		SceneTransition.change_scene(PATH_SURV)
+		_started = true
+		cron_vis = true
+		
+
+
+func _on_restart_pressed():
+	restart()

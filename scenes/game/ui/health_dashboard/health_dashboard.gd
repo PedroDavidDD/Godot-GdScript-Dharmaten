@@ -39,6 +39,7 @@ func _process(delta):
 	
 #	Activar habilidades al subir ciertos niveles
 	check_skill_activation()
+	check_cron_vis()
 
 # Agrega vida del personaje principal, según el valor proporcionado
 func add_life(value: int):
@@ -132,6 +133,15 @@ func update_element_icon(type: String, status: String ):
 	var texture_to_set =  load("res://assets/sprites/Objects/elements/enabled/" + type +".png")
 	textureReactSkill.texture = texture_to_set
 
+func check_cron_vis():
+	var check = get_tree().get_nodes_in_group("menu")
+	check = check[0].cron_vis
+	if check == true:
+		$cronometro.visible = true
+		$EnemyGroup.visible = false
+	else:
+		$cronometro.visible = false
+		$EnemyGroup.visible = true
 
 func _on_timer_timeout():
 	isAlertLevelUP = false
