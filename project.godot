@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Platformer 2d"
+config/name="Dharmaten: The Wizard of Chaos"
 run/main_scene="res://scenes/game/ui/splash/splash.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
