@@ -1,17 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://byhcfhfoq3jm2"]
+[gd_scene load_steps=7 format=3 uid="uid://byhcfhfoq3jm2"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/intro.gd" id="1_tufx8"]
-[ext_resource type="VideoStream" path="res://assets/videos/Rick.ogv" id="2_v2fmu"]
+[ext_resource type="VideoStream" path="res://assets/videos/clip-intro.ogv" id="2_0cioa"]
+[ext_resource type="Texture2D" uid="uid://c8gbrqkb3q2ei" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/yellow_button/2.png" id="3_gaeqy"]
+[ext_resource type="Texture2D" uid="uid://boj2dfl141v17" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/yellow_button/3.png" id="4_rt0sn"]
+[ext_resource type="Texture2D" uid="uid://b4y4paxn2nw2y" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/yellow_button/4.png" id="5_xsyhw"]
+
+[sub_resource type="Theme" id="Theme_who6f"]
+default_font_size = 24
 
 [node name="intro" type="Node2D"]
 script = ExtResource("1_tufx8")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_left = -1.0
-offset_right = 1289.0
-offset_bottom = 720.0
-stream = ExtResource("2_v2fmu")
+offset_right = 1158.0
+offset_bottom = 657.0
+stream = ExtResource("2_0cioa")
 autoplay = true
 expand = true
 
+[node name="Button2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 943.0
+offset_top = 590.0
+offset_right = 983.0
+offset_bottom = 630.0
+
+[node name="Left" type="TextureRect" parent="Button2"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 45.0
+texture = ExtResource("3_gaeqy")
+
+[node name="Center" type="TextureRect" parent="Button2"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 36.0
+offset_right = 153.0
+offset_bottom = 45.0
+texture = ExtResource("4_rt0sn")
+
+[node name="Right" type="TextureRect" parent="Button2"]
+modulate = Color(0.529412, 0.992157, 1, 1)
+self_modulate = Color(0.184314, 0.772549, 1, 1)
+layout_mode = 0
+offset_left = 150.0
+offset_right = 190.0
+offset_bottom = 45.0
+texture = ExtResource("5_xsyhw")
+
+[node name="Button" type="Button" parent="Button2"]
+modulate = Color(1, 1, 0.72549, 1)
+layout_mode = 0
+offset_right = 189.0
+offset_bottom = 42.0
+theme = SubResource("Theme_who6f")
+text = "OMITIR"
+flat = true
+icon_alignment = 1
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Button2/Button" to="." method="_on_button_pressed"]

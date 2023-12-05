@@ -14,3 +14,8 @@ func _process(delta):
 func _on_video_stream_player_finished():
 	HealthDashboard.visible = true
 	SceneTransition.change_scene(PATH_LEVEL_1)
+
+
+func _on_button_pressed():
+	HealthDashboard.visible = true
+	SceneTransition.change_scene(PATH_LEVEL_1)

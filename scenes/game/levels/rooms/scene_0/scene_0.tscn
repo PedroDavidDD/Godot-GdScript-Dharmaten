@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=27 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -20,6 +20,12 @@
 [ext_resource type="PackedScene" uid="uid://cakk10ffh2nby" path="res://scenes/game/enemy/Slime/slime_green.tscn" id="9_hnmc0"]
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="17_d3mti"]
+[ext_resource type="AudioStream" uid="uid://bq2065ytkxixp" path="res://scenes/voz.mp3" id="21_x7mpc"]
+[ext_resource type="Texture2D" uid="uid://bpsgnd5s8b28o" path="res://scenes/mando flechas.png" id="22_fly78"]
+[ext_resource type="Texture2D" uid="uid://116j1b2w6rqb" path="res://scenes/mandos circulo.png" id="23_tmr47"]
+[ext_resource type="Texture2D" uid="uid://cad28tkknu8yh" path="res://scenes/mandos x.png" id="24_xw67q"]
+[ext_resource type="Texture2D" uid="uid://duso44v60nhqg" path="res://scenes/mandos triangulo.png" id="25_rgx73"]
+[ext_resource type="Texture2D" uid="uid://bhjhynjsnivym" path="res://scenes/mandos cuadrado.png" id="25_sn3ln"]
 
 [node name="scene_1" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -192,7 +198,7 @@ character = NodePath("../MainCharacter")
 position = Vector2(1, 593)
 
 [node name="SpawnLocation2" parent="." instance=ExtResource("5_34krj")]
-position = Vector2(0, 14)
+position = Vector2(-1, 78)
 
 [node name="SpawnLocation3" parent="." instance=ExtResource("5_34krj")]
 position = Vector2(1510, 589)
@@ -236,5 +242,41 @@ color = Color(0.694118, 0.694118, 0.694118, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="DayStateSystem"]
 visible = false
+
+[node name="AmbientSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_x7mpc")
+autoplay = true
+bus = &"Ambient"
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(563, 276)
+scale = Vector2(0.390909, 0.37)
+texture = ExtResource("22_fly78")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(628, 305)
+scale = Vector2(0.4375, 0.432692)
+texture = ExtResource("23_tmr47")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(689, 305)
+scale = Vector2(0.4375, 0.432692)
+texture = ExtResource("24_xw67q")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(564, 393)
+scale = Vector2(0.4375, 0.432692)
+texture = ExtResource("23_tmr47")
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+position = Vector2(647, 428)
+scale = Vector2(0.4375, 0.432692)
+texture = ExtResource("25_sn3ln")
+
+[node name="Sprite2D16" type="Sprite2D" parent="."]
+position = Vector2(563, 491)
+scale = Vector2(0.4375, 0.432692)
+texture = ExtResource("25_rgx73")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
