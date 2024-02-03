@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=21 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://g8qg1kpqq5eh" path="res://assets/sprites/Objects/icon_set_removebg_preview.tscn" id="9_jrsoy"]
 [ext_resource type="FontFile" uid="uid://dregmkvncw55k" path="res://assets/fonts/press_Sstart_2p/PressStart2P-Regular.ttf" id="17_d3mti"]
 [ext_resource type="PackedScene" uid="uid://dnfuhkcmul0s8" path="res://scenes/game/enemy/slime2/slime_2.tscn" id="19_1r0tv"]
+[ext_resource type="PackedScene" uid="uid://bbdmu0jrh4l4o" path="res://scenes/game/ui/health_dashboard/health_dashboard.tscn" id="20_kp0d2"]
 
 [node name="scene_1" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -220,4 +221,7 @@ position = Vector2(880, 564)
 [node name="slime5" parent="." instance=ExtResource("19_1r0tv")]
 position = Vector2(1113, 146)
 
+[node name="health_dashboard" parent="." instance=ExtResource("20_kp0d2")]
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="enviar_joystick" from="health_dashboard" to="MainCharacter" method="recibir_joystick"]

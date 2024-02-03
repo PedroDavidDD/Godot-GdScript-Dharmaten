@@ -7,6 +7,9 @@ extends Node2D
 
 @onready var containerMagic := $"../ContainerMagic"
 @export var magicBullet = preload("res://scenes/game/objects/balls/ball.tscn")
+# movil
+var joystick : Joystick
+var direccion = Vector2()
 
 var collision: KinematicCollision2D
 var velocity = 100 # Velocidad de movimiento en horizontal
@@ -81,7 +84,12 @@ func _move(delta):
 	btnRight = Input.is_action_pressed("derecha")
 	btnfast = Input.is_action_pressed("fast")
 	
-	direction = direction.normalized()
+	# movil
+	if joystick != null and is_instance_valid(joystick):
+		direccion = joystick.direccion
+	else:
+		direction = direction.normalized()
+	# direction = direction.normalized()
 	
 	# Movimiento del jugador
 	if btnUp or btnDown or btnLeft or btnRight:
@@ -307,13 +315,8 @@ func _on_animation_frame_changed():
 func _on_timer_timeout():
 	can_shoot=true
 
-
-
-
-
-
-
-
-
+# movil
+func recibir_joystick(j : Joystick):
+	joystick = j
 
 

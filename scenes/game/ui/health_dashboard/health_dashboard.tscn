@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bbdmu0jrh4l4o"]
+[gd_scene load_steps=29 format=3 uid="uid://bbdmu0jrh4l4o"]
 
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/health_dashboard.gd" id="1_rufnl"]
 [ext_resource type="PackedScene" uid="uid://cc58vft7e5a2y" path="res://scenes/game/ui/Alerts/alert_level_up.tscn" id="2_ba3gi"]
@@ -22,6 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://b1ffrt80ib4na" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/17.png" id="15_ri0rr"]
 [ext_resource type="Texture2D" uid="uid://mqsgcbqwnnsq" path="res://assets/sprites/treasure_hunters/wood_and_paper_ui/sprites/big_banner/18.png" id="16_02sur"]
 [ext_resource type="Script" path="res://scenes/game/ui/health_dashboard/cronometro.gd" id="22_m1fmt"]
+[ext_resource type="Texture2D" uid="uid://60ijfcnd58eu" path="res://scenes/movil/disparo.png" id="23_ep74g"]
+[ext_resource type="Texture2D" uid="uid://dlahyjkch23fu" path="res://scenes/movil/pause_bottom.png" id="24_mapnq"]
+[ext_resource type="Texture2D" uid="uid://dh3u2jrv74oe1" path="res://scenes/movil/menu_button.png" id="25_4mskw"]
+[ext_resource type="Texture2D" uid="uid://cbb1ljf0327bs" path="res://scenes/movil/dash_button.png" id="26_iwfj5"]
+[ext_resource type="Texture2D" uid="uid://1fjeoytxfe5n" path="res://scenes/movil/habilidad_button.png" id="27_hxxmf"]
+[ext_resource type="PackedScene" uid="uid://bsdsca7ciucar" path="res://scenes/movil/joystick.tscn" id="28_tk7gl"]
 
 [node name="health_dashboard" type="CanvasLayer"]
 script = ExtResource("1_rufnl")
@@ -541,5 +547,65 @@ offset_top = 112.0
 offset_right = 598.0
 offset_bottom = 138.0
 text = "Carga"
+
+[node name="Sprite2D17" type="Sprite2D" parent="."]
+position = Vector2(959.375, 457)
+scale = Vector2(0.117602, 0.116582)
+texture = ExtResource("23_ep74g")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D17"]
+position = Vector2(-487.898, -488.927)
+scale = Vector2(1.00671, 1)
+texture_normal = ExtResource("23_ep74g")
+action = "attack"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1027, 196)
+scale = Vector2(0.385135, 0.385135)
+texture = ExtResource("24_mapnq")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D"]
+position = Vector2(-75.2983, -75.2982)
+texture_normal = ExtResource("24_mapnq")
+action = "pause"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1098, 196)
+scale = Vector2(0.380873, 0.380873)
+texture = ExtResource("25_4mskw")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D2"]
+position = Vector2(-76.1411, -76.141)
+texture_normal = ExtResource("25_4mskw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1066, 527)
+scale = Vector2(0.117347, 0.117347)
+texture = ExtResource("26_iwfj5")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D3"]
+position = Vector2(-485.739, -485.739)
+texture_normal = ExtResource("26_iwfj5")
+action = "fast"
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(1068, 388)
+scale = Vector2(0.118367, 0.118367)
+texture = ExtResource("27_hxxmf")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D4"]
+position = Vector2(-490, -490)
+texture_normal = ExtResource("27_hxxmf")
+action = "change_element"
+
+[node name="Joystick" parent="." instance=ExtResource("28_tk7gl")]
+position = Vector2(128, 465)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 220.0
+offset_top = 496.0
+offset_right = 260.0
+offset_bottom = 519.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
