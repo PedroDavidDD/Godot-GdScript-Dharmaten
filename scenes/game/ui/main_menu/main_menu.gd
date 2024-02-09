@@ -11,6 +11,8 @@ extends Node2D
 const PATH_INTRO = "res://scenes/game/ui/intro.tscn"
 const PATH_SURV = "res://scenes/game/levels/rooms/survival/survival.tscn"
 
+#movil
+var btnUp = Input.is_action_pressed("menu")
 
 # Variables para animación de nubes
 var _parallax_1_normal = true
@@ -56,8 +58,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 # Detecta eventos de teclado y ratón
+# menu reemplazo a ui_cancel
 func _unhandled_input(event):
-	if event.is_action_released("ui_cancel") and _started:
+	if event.is_action_released("menu") and _started:
 		# Al presionar "scape" mostramos/ocultamos el menú (solo si hemos "iniciado")
 		_toggle_show()
 

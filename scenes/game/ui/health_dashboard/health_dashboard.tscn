@@ -567,6 +567,7 @@ texture = ExtResource("25_4mskw")
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D2"]
 position = Vector2(-76.1411, -76.141)
 texture_normal = ExtResource("25_4mskw")
+action = "menu"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(1066, 527)
