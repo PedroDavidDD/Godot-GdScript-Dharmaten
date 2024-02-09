@@ -559,16 +559,6 @@ scale = Vector2(1.00671, 1)
 texture_normal = ExtResource("23_ep74g")
 action = "attack"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1027, 196)
-scale = Vector2(0.385135, 0.385135)
-texture = ExtResource("24_mapnq")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D"]
-position = Vector2(-75.2983, -75.2982)
-texture_normal = ExtResource("24_mapnq")
-action = "pause"
-
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(1098, 196)
 scale = Vector2(0.380873, 0.380873)
@@ -600,6 +590,16 @@ action = "change_element"
 
 [node name="Joystick" parent="." instance=ExtResource("28_tk7gl")]
 position = Vector2(128, 465)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1027, 196)
+scale = Vector2(0.385135, 0.385135)
+texture = ExtResource("24_mapnq")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Sprite2D"]
+position = Vector2(-75.2983, -75.2982)
+texture_normal = ExtResource("24_mapnq")
+action = "pause"
 
 [node name="Label" type="Label" parent="."]
 visible = false

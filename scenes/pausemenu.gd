@@ -6,3 +6,9 @@ func _input(event):
 		print("Pausado")
 		visible = not get_tree().paused
 		get_tree().paused = not get_tree().paused
+
+
+func _on_button_pressed():
+	visible = not get_tree().paused
+	get_tree().paused = not get_tree().paused
+
