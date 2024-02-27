@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b6dju53aaci78"]
+[gd_scene load_steps=28 format=3 uid="uid://b6dju53aaci78"]
 
 [ext_resource type="TileSet" uid="uid://bx1rsqucrwm2i" path="res://assets/resources/bg_tile_set.tres" id="1_1gmux"]
 [ext_resource type="Script" path="res://scenes/game/levels/rooms/scene_0/scene_0.gd" id="1_lrpxo"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cad28tkknu8yh" path="res://scenes/mandos x.png" id="24_xw67q"]
 [ext_resource type="Texture2D" uid="uid://duso44v60nhqg" path="res://scenes/mandos triangulo.png" id="25_rgx73"]
 [ext_resource type="Texture2D" uid="uid://bhjhynjsnivym" path="res://scenes/mandos cuadrado.png" id="25_sn3ln"]
+[ext_resource type="PackedScene" uid="uid://bbdmu0jrh4l4o" path="res://scenes/game/ui/health_dashboard/health_dashboard.tscn" id="27_38knt"]
 
 [node name="scene_1" type="Node2D" groups=["scene_0"]]
 position = Vector2(0, -1)
@@ -279,4 +280,7 @@ position = Vector2(563, 491)
 scale = Vector2(0.4375, 0.432692)
 texture = ExtResource("25_rgx73")
 
+[node name="health_dashboard" parent="." instance=ExtResource("27_38knt")]
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="enviar_joystick" from="health_dashboard" to="MainCharacter" method="recibir_joystick"]

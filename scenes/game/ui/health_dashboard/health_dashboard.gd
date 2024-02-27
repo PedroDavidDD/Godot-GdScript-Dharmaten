@@ -9,6 +9,14 @@ var enemies = {
 	SLIME = "Slime",
 }
 
+# movil
+signal enviar_joystick(j : Joystick)
+
+@onready var label = $Label
+@onready var joystick = $Joystick
+
+
+
 # Referencias hacia la barra de vida y los números de la puntuación
 @onready var bar = $LifeBar/Bar
 
@@ -32,10 +40,17 @@ var control_cron = load("res://scenes/game/ui/health_dashboard/cronometro.gd").n
 
 # Función de inicialización
 func _ready():
+	# movil
+	enviar_joystick.emit(joystick)
+	
 	self.visible = false
 	expBar.max_value = incre_max_value
 
 func _process(delta):
+	# movil
+	label.text = str(joystick.direccion)
+	
+	
 	alert_level_up.visible = isAlertLevelUP
 	
 #	Activar habilidades al subir ciertos niveles

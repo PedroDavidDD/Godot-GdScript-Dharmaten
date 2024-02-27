@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsdsca7ciucar"]
+
+[ext_resource type="Script" path="res://scenes/movil/joystick.gd" id="1_6bfe4"]
+[ext_resource type="Texture2D" uid="uid://duyt3jt0uvncr" path="res://scenes/movil/circulo.png" id="1_o6umq"]
+[ext_resource type="Texture2D" uid="uid://cma0e2g4e5k5p" path="res://scenes/movil/button_palanca.png" id="3_6opis"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qw0gc"]
+radius = 64.0
+
+[node name="Joystick" type="Area2D"]
+script = ExtResource("1_6bfe4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qw0gc")
+
+[node name="Rango" type="Sprite2D" parent="."]
+texture = ExtResource("1_o6umq")
+
+[node name="Palanca" type="Sprite2D" parent="."]
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6opis")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=106 format=3 uid="uid://ca3ueo0yewjov"]
+[gd_scene load_steps=108 format=3 uid="uid://ca3ueo0yewjov"]
 
+[ext_resource type="Script" path="res://scenes/game/characters/main_character/main_character.gd" id="1_dxwg0"]
 [ext_resource type="Texture2D" uid="uid://ty7vj41shftk" path="res://assets/sprites/Player/Blue_witch/B_witch_attack.png" id="4_eeya6"]
 [ext_resource type="Script" path="res://scenes/game/characters/main_character/main_character_movement.gd" id="7_fm4k8"]
 [ext_resource type="Texture2D" uid="uid://diuerkv0n2f4d" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/captain_clown_nose/sword_effects/25-attack_2/attack_2_01.png" id="10_1aidl"]
@@ -15,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c5a44cjyyq678" path="res://assets/sprites/Objects/elements/enabled/lightning_4.png" id="27_imgaw"]
 [ext_resource type="Texture2D" uid="uid://ba4ff8fhqnnsa" path="res://assets/sprites/Player/Blue_witch/B_witch_run.png" id="30_6evvu"]
 [ext_resource type="Texture2D" uid="uid://ch41lhl8qg4jv" path="res://scenes/luz.png" id="30_ih7pr"]
+[ext_resource type="PackedScene" uid="uid://bbdmu0jrh4l4o" path="res://scenes/game/ui/health_dashboard/health_dashboard.tscn" id="36_csmbv"]
 [ext_resource type="Texture2D" uid="uid://c5234cfrkd7i2" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/fall_01.png" id="41_6a4mw"]
 [ext_resource type="Texture2D" uid="uid://chvl4pfhnydl0" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/fall_02.png" id="42_yjra8"]
 [ext_resource type="Texture2D" uid="uid://cqja7i2c4ka4q" path="res://assets/sprites/treasure_hunters/captain_clown_nose/sprites/dust_particles/fall_03.png" id="43_g1ou6"]
@@ -680,6 +682,7 @@ radius = 39.0512
 [node name="MainCharacter" type="CharacterBody2D" groups=["player"]]
 disable_mode = 1
 collision_mask = 9
+script = ExtResource("1_dxwg0")
 
 [node name="MainCharacterMovement" type="Node2D" parent="."]
 script = ExtResource("7_fm4k8")
@@ -763,6 +766,9 @@ position = Vector2(-30, 0)
 shape = SubResource("CircleShape2D_cvvxi")
 disabled = true
 
+[node name="health_dashboard" parent="." instance=ExtResource("36_csmbv")]
+visible = false
+
 [connection signal="animation_finished" from="Animation" to="MainCharacterMovement" method="_on_animation_animation_finished"]
 [connection signal="frame_changed" from="Animation" to="MainCharacterMovement" method="_on_animation_frame_changed"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="MainCharacterMovement" method="_on_audio_stream_player_2d_finished"]
@@ -770,3 +776,4 @@ disabled = true
 [connection signal="animation_finished" from="Lightning/Effects0" to="MainCharacterMovement" method="_on_effects_animation_finished"]
 [connection signal="frame_changed" from="Lightning/Effects0" to="MainCharacterMovement" method="_on_effects_frame_changed"]
 [connection signal="body_entered" from="Lightning/Area2D" to="MainCharacterMovement" method="_on_area_2d_body_entered"]
+[connection signal="enviar_joystick" from="health_dashboard" to="MainCharacterMovement" method="recibir_joystick"]

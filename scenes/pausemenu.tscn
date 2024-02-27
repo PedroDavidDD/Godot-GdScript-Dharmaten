@@ -36,3 +36,13 @@ grow_vertical = 2
 text = "    GAME IS PAUSED
 
 PRESS P TO UNPAUSE"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 376.0
+offset_right = 627.0
+offset_bottom = 430.0
+text = "resume"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
