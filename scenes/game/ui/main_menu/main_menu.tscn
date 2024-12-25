@@ -1397,10 +1397,10 @@ libraries = {
 }
 
 [node name="Parallax2" type="AnimationPlayer" parent="Main/ParallaxBackground"]
-speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_hyuae")
 }
+speed_scale = 0.5
 
 [connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Main/CanvasLayer/Options/Init/Button3/inic_surv" to="." method="_on_inic_surv_pressed"]

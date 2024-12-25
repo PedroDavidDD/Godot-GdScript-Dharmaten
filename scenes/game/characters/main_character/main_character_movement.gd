@@ -233,8 +233,8 @@ func play_type_bullet_sound():
 		_hit_sound = preload("res://assets/sounds/lock.mp3")
 
 func _play_sound(sound):
-	# Pausamos el sonido
-	audio_player.stop()
+	# Pausamos el sonido anterior para producir el actual
+	# audio_player.stop() # Está comentado para combinar el sonido del daño con la balas al mismo tiempo.
 	# Reproducimos el sonido
 	audio_player.stream = sound
 	audio_player.play()
