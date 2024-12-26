@@ -26,6 +26,7 @@ var _movements = {
 	FLY = "run",
 	HIT = "hit",
 	DEAD_HIT = "dead_hit",
+	DEAD_GROUND = "dead_ground",
 	ATTACK = "attack_2",
 }
 var _current_movement = _movements.IDLE # Variable de movimiento
@@ -194,11 +195,11 @@ func cycle_element_value():
 func _set_animation():
 	# Personaje murio: Reiniciar escena actual
 	if _died:
-		main_animation.play(_movements.DEAD_HIT)
+		main_animation.play(_movements.DEAD_GROUND)
 		check = get_tree().get_nodes_in_group("menu")
 		check = check[0].survival 
 		if check:
-			await get_tree().create_timer(3).timeout
+			await get_tree().create_timer(2).timeout
 		HealthDashboard.restart()
 #		get_tree().change_scene_to_file("res://scenes/game/levels/rooms/scene_0/scene_0.tscn")
 		get_tree().reload_current_scene()
@@ -223,7 +224,7 @@ func _set_animation():
 		# Movimiento por defecto (animación de "reposo")
 		main_animation.play(_movements.IDLE)
 		# Pausamos el sonido
-		audio_player.stop()
+		# audio_player.stop() # Comentado: para recibir el sonido del daño al player
 		_is_playing = ""
 
 func play_type_bullet_sound(): 
@@ -241,25 +242,60 @@ func _play_sound(sound):
 
 
 # Recibir daño
+# Función para recibir daño
+# Esta función es llamada cuando el jugador recibe daño. Gestiona la animación del personaje,
+# el sonido asociado al daño y aplica un breve período de invencibilidad donde el jugador
+# no puede recibir más daño.
+
 func hit(value: int):
+	# Si el personaje ya está muerto, no se realiza ninguna acción
 	if _died:
 		return
+	
+	# Resta la vida del jugador utilizando el valor proporcionado
 	HealthDashboard.remove_life(value)
+	
+	# Reproduce la animación de daño recibido
+	main_animation.play(_movements.DEAD_HIT)
+	
+	# Reproduce el sonido asociado al daño recibido (daño de hombre)
 	_play_sound(_male_hurt_sound)
 	
-	# Bajamos vida y validamos si el personaje ha perdido
+	# Cambia las capas de colisión para activar la invencibilidad
+	# Desactiva la colisión con otros objetos durante 2 segundos (invencibilidad)
+	player.collision_mask &= ~8  # Desactiva la colisión (atravesar)
+	player.collision_layer &= ~1  # Desactiva la capa de colisión del jugador
+	
+	# Cambia la transparencia del personaje para mostrar un efecto visual de invencibilidad
+	main_animation.modulate = Color(1, 1, 1, 0.5)  # Reduce la opacidad al 50%
+	
+	# Espera 4 segundos antes de restaurar el estado original
+	await get_tree().create_timer(4).timeout
+	
+	# Restaura las colisiones y la capa a su estado original
+	player.collision_mask = 9  # Habilita la colisión
+	player.collision_layer = 1  # Restaura la capa de colisión del jugador
+	
+	# Restaura la opacidad del personaje al 100%
+	main_animation.modulate = Color(1, 1, 1, 1)  # Opacidad completa
+	
+	# Reproduce la animación de reposo después de recibir el daño
+	main_animation.play(_movements.IDLE)
+	
+	# Si la vida llega a 0, el personaje muere
 	if HealthDashboard.life == 0:
-		stop_cronometer = true
-		die()
-		await get_tree().create_timer(3).timeout
-		stop_cronometer = false
-		cron_reset = true
-		
+		stop_cronometer = true  # Detiene el cronómetro
+		die()  # Llama a la función que maneja la muerte del personaje
+		await get_tree().create_timer(3).timeout  # Espera 3 segundos antes de continuar
+		stop_cronometer = false  # Restaura el estado del cronómetro
+		cron_reset = true  # Marca que el cronómetro debe reiniciarse
+	
 	else:
-		pass
+		pass  # Si la vida no es 0, no hace nada
 
+# Función para manejar la muerte del personaje
 func die():
-	# Seteamos la variable de morir a verdadero
+	# Establece la variable de muerte a verdadera
 	_died = true
 
 # Función para encontrar el slimeGreen más cercano al player
